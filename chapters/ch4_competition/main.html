@@ -1,0 +1,757 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Competition &#8212; Airlift Challenge v1.0 Documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"Reals": "\\mathbb{R}", "Indicator": ["\\mathbf{I} \\left(#1\\right)", 1], "Airports": "\\mathbf{A}", "AirplanesAtAirport": ["\\Airplanes_{#1}(#2)", 2], "workingcapactity": ["\\textit{capacity}_{#1}", 1], "processtime": ["\\textit{processtime}_{#1}", 1], "Routes": "\\mathbf{R}", "routecost": ["\\textit{routecost}_{#1#2}", 2], "routetime": ["\\textit{routetime}_{#1#2}", 2], "routestart": ["\\textit{start}_{#1}", 1], "routeend": ["\\textit{end}_{#1}", 1], "numflights": ["\\textit{numflights}_{#1#2}", 2], "routeavailable": ["\\textit{available}_{#1}(#2)", 2], "routemapdiameter": ["\\textit{diameter}_{#1}", 1], "Airplanes": "\\mathbf{P}", "currentairport": ["\\textit{airport}_{#1}(#2)", 2], "weightcapacity": ["\\textit{weightcapacity}_{#1}", 1], "Cargos": "\\mathbf{C}", "CargoOnPlane": ["\\Cargos_{#1}(#2)", 2], "CargoAtAirport": ["\\Cargos_{#1}(#2)", 2], "cargoweight": ["\\textit{weight}_{#1}", 1], "cargosrc": ["\\textit{src}_{#1}", 1], "cargodest": ["\\textit{dest}_{#1}", 1], "softdeadline": ["\\textit{targetdelivery}_{#1}", 1], "harddeadline": ["\\textit{deadline}_{#1}", 1], "actualdelivery": ["\\textit{actualdelivery}_{#1}", 1], "totalcargo": "\\textit{totalcargo}", "missedcoeff": "\\alpha", "missed": "\\textit{missed}", "latenesscoeff": "\\beta", "lateness": ["\\textit{lateness}_{#1}", 1], "scaledlateness": "\\textit{scaledlateness}", "totalflightcostcoeff": "\\gamma", "flightcost": ["\\textit{flightcost}_{#1}", 1], "scaledflightcost": "\\textit{scaledflightcost}", "episodescore": "\\textit{EpisodeScore}", "randomscore": "\\textit{RandomScore}", "baselinescore": "\\textit{BaselineScore}", "normalizedescore": "\\textit{NormalizedScore}", "overallscore": "\\textit{OverallScore}"}}, "html_theme_options": {"use_download_button": false, "use_edit_page_button": false, "use_repository_button": false, "use_issues_button": false}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="../ch5_gen/main.html" />
+    <link rel="prev" title="Simulator Interface" href="../ch3_interface/main.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Airlift Challenge v1.0 Documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../main.html">
+                    Overview
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Main
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1_getting_started/main.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2_model/main.html">
+   Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3_interface/main.html">
+   Simulator Interface
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Competition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch6_solutions/main.html">
+   Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../API/essential_api.html">
+   Essential API
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Code
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../API/environment.html">
+   Environment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../API/airports.html">
+   Airports
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../API/agents.html">
+   Agents
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../API/plane_types.html">
+   Airplane Types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../API/renderer.html">
+   Renderer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../API/local_eval.html">
+   Local Evaluator
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../API/route_map.html">
+   Route Map
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../API/generators/generators.html">
+   Generators
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../API/generators/airplane_gen.html">
+     Airplane Generators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../API/generators/airport_gen.html">
+     Airport Generators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../API/generators/cargo_gen.html">
+     Cargo Generators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../API/generators/map_gen.html">
+     Map Generators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../API/generators/route_gen.html">
+     Route Generators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../API/generators/world_gen.html">
+     World Generators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../API/generators/event_gen.html">
+     Event Generator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../API/generators/event_interval_gen.html">
+     Event Interval Generator
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../misc/contact.html">
+   Contact Us
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../misc/credits.html">
+   Credits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../misc/bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/chapters/ch4_competition/main.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluation">
+   Evaluation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scenarios">
+   Scenarios
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generative-models">
+     Generative Models
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-set">
+     Test Set
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scoring">
+   Scoring
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#time-limits">
+   Time Limits
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Competition</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluation">
+   Evaluation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scenarios">
+   Scenarios
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generative-models">
+     Generative Models
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-set">
+     Test Set
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scoring">
+   Scoring
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#time-limits">
+   Time Limits
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="competition">
+<span id="sec-eval"></span><h1>Competition<a class="headerlink" href="#competition" title="Permalink to this headline">#</a></h1>
+<section id="evaluation">
+<h2>Evaluation<a class="headerlink" href="#evaluation" title="Permalink to this headline">#</a></h2>
+<p>There are a series of Tests which become progressively more difficult.
+Within each Test, there are a series of Levels which increase the difficulty within the parameters of the Test.
+The Tests proceed until one of the following stopping criterion are met:</p>
+<ul class="simple">
+<li><p>The percentage of missed deliveries, averaged over all Levels within a Test, exceeds a threshold.</p></li>
+<li><p>An overall evaluation time limit of two hours is reached.</p></li>
+<li><p>All tests are completed.</p></li>
+</ul>
+</section>
+<section id="scenarios">
+<h2>Scenarios<a class="headerlink" href="#scenarios" title="Permalink to this headline">#</a></h2>
+<section id="generative-models">
+<h3>Generative Models<a class="headerlink" href="#generative-models" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><em>Map.</em>
+We use a randomly generated environment as the basis for each episode.
+As bodies of water introduce constraints as to where airports may be placed, they can become an important factor in air routing problems.
+For this reason, we generate maps using Perlin noise, which is commonly used in the creation of procedurally generated games <span id="id1">[<a class="reference internal" href="../misc/bibliography.html#id16" title="Ken Perlin. An image synthesizer. In Proceedings of the 12th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '85, 287–296. New York, NY, USA, 1985. Association for Computing Machinery. URL: https://doi.org/10.1145/325334.325247.">12</a>]</span>.</p></li>
+<li><p><em>Airports.</em>
+Airports are placed uniformly at random within the map.
+A pickup zone is placed on the left side of the map and indicates where cargo are generated, whereas a dropoff zone is defined on the right side of the map indicating where thc cargo must be dropped off.</p></li>
+<li><p><em>Routes.</em>
+Routes are generated based on the maximum range of aircraft.
+All routes are bidirectional.
+To limit the degree of the route network only a subset of possible routes are placed.
+Two airplane types are defined, one of which is a slower long-range aircraft with larger cargo carrying capacity, and the other of which is a short-range aircraft with a smaller capacity.
+The long-range aircraft is limited in its ability to land at airports in the small pickup and dropoff zones: routes for the long-range aircraft are only connected to a certain percentage of the airports in the zones.
+Meanwhile, short-range aircraft are only able to travel within the zone and to airports adjacent to the zones (i.e., every short-range route must have one node within a zone).
+In general, this means that cargo cannot be delivered by one airplane: a successful delivery can require that the cargo be loaded on up to three airplanes.</p></li>
+<li><p><em>Cargo.</em>
+Cargo are generated in the dropoff zone uniformly at random.
+The delivery deadlines are scaled in relation to the shortest path between it’s location and destination, as well as average shortest path distances between all airports (to account for pickup time).</p></li>
+<li><p><em>Dynamic Events.</em></p>
+<ul>
+<li><p>Routes are randomly taken offline according to a Poisson process.
+The duration that the route is offline is generated uniformly at random within a given range.
+The agent is able to observe the end time of the event once it starts.</p></li>
+<li><p>New cargo is generated during the episode according to a Poisson process.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="test-set">
+<h3>Test Set<a class="headerlink" href="#test-set" title="Permalink to this headline">#</a></h3>
+<p>We provide a <a class="reference external" href="https://airlift-challenge.github.io/scenarios/test_scenario.zip">test scenario set</a> that you can use to evaluate your solution.
+Evaluation against these scenarios is described further in the <a class="reference external" href="https://github.com/airlift-challenge/airlift-starter-kit">Getting Started section of the Starter Kit</a></p>
+<p>The parameter progression is defined by the following Python code block:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">number_of_tests</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="n">number_of_levels</span> <span class="o">=</span> <span class="mi">20</span> <span class="c1"># Number of levels within each test</span>
+
+
+<span class="c1"># *** Fixed parameters</span>
+<span class="c1"># Amount of time it takes an airplane to refuel and load/unload cargo after landing </span>
+<span class="n">processing_time</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># Amount of slack time in the soft delivery deadline</span>
+<span class="n">soft_deadline_multiplier</span> <span class="o">=</span> <span class="mi">16</span>
+
+<span class="c1"># Amount of slack time in the hard delivery deadline</span>
+<span class="n">hard_deadline_multiplier</span> <span class="o">=</span> <span class="mi">24</span> 
+
+
+<span class="c1"># ***Parameters used for generating the test progression</span>
+<span class="n">max_working_capacity</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">starting_cargo_per_airport</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">starting_airplanes_per_airport</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">num_airports_increase</span> <span class="o">=</span> <span class="mi">4</span>
+
+
+<span class="c1"># *** Test variations</span>
+<span class="c1"># For each test, we scale up the &quot;static&quot; complexity of the simulation.</span>
+<span class="c1"># Specifically, for each test we increase the number of airports by a given percentage.</span>
+<span class="c1"># Then, the remaining parameters are scaled up in relation to the number of airports.</span>
+
+<span class="c1"># Number of airports for test 0</span>
+<span class="n">num_airports_test0</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># Number of airports for test k</span>
+<span class="n">num_airports_k</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">num_airports_test_kminus1</span> <span class="o">*</span> <span class="n">num_airports_increase</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)</span> 
+
+<span class="c1"># How many airplanes the airports can process</span>
+<span class="n">working_capacity</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">max_working_capacity</span> <span class="o">+</span> <span class="n">test</span><span class="o">/</span><span class="n">number_of_tests</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">max_working_capacity</span><span class="p">))</span> 
+
+<span class="c1"># Number of cargo to generate initially </span>
+<span class="n">num_cargo</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">starting_cargo_per_airport</span> <span class="o">*</span> <span class="n">num_airports</span><span class="p">)</span> 
+
+<span class="c1"># Number of airplanes</span>
+<span class="n">num_agents</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">starting_airplanes_per_airport</span> <span class="o">*</span> <span class="n">num_airports</span><span class="p">)</span> 
+
+<span class="c1"># Number of airports inside the drop off zone</span>
+<span class="n">num_drop_off_airports</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">num_airports</span><span class="p">))</span> 
+
+<span class="c1"># Number of airports inside the pick up zone</span>
+<span class="n">num_pick_up_airports</span> <span class="o">=</span> <span class="n">num_drop_off_airports</span> 
+
+
+<span class="c1"># ***Level variations</span>
+<span class="c1"># Within each level, we scale up the &quot;dynamic&quot; complecity of the simulation by increasing the number of new cargo generated</span>
+<span class="c1"># during the episode and rate at which routes go offline.</span>
+<span class="c1"># For each parameterization, we generate three instances with different random realizations. </span>
+<span class="n">levelset</span> <span class="o">=</span> <span class="n">level</span> <span class="o">//</span> <span class="mi">3</span>
+
+<span class="c1"># Number of cargo to dynamically generate during the episode</span>
+<span class="n">num_dynamic_cargo</span> <span class="o">=</span> <span class="n">levelset</span> <span class="o">*</span> <span class="mi">5</span>
+
+<span class="c1"># Amount of slack time in the soft delivery deadline</span>
+<span class="n">dynamic_cargo_soft_deadline_multiplier</span> <span class="o">=</span> <span class="mi">5</span> 
+
+<span class="c1"># Amount of slack time in the hard delivery deadline</span>
+<span class="n">dynamic_cargo_hard_deadline_multiplier</span> <span class="o">=</span> <span class="mi">15</span> 
+
+<span class="c1"># Rate at which the cargo is dynamically generated (Poisson process parameter)</span>
+<span class="n">dynamic_cargo_generation_rate</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">100</span> 
+
+<span class="c1"># Rate at which routes go offline (Poisson process parameter)</span>
+<span class="n">malfunction_rate</span> <span class="o">=</span> <span class="n">levelset</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">300</span> 
+
+<span class="c1"># Minimum duration for which a route will go offline</span>
+<span class="n">min_duration</span> <span class="o">=</span> <span class="mi">10</span> 
+
+<span class="c1"># Maximum duration for which a route will go offline</span>
+<span class="n">max_duration</span> <span class="o">=</span> <span class="mi">100</span> 
+</pre></div>
+</div>
+<p>Examples of various scenario difficulties are shown below.
+The first scenario has no dynamic events (i.e., no routes go offline and no dynamic cargo are generated).
+The remaining scenarios include dynamic events and show increasing complexity.</p>
+<figure class="align-left" id="fig-test0">
+<img alt="../../_images/Test0_lv0.gif" src="../../_images/Test0_lv0.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Test 0, Level 0</span><a class="headerlink" href="#fig-test0" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-left" id="fig-test0-lv19">
+<img alt="../../_images/Test0_lv19.gif" src="../../_images/Test0_lv19.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Test 0, Level 19</span><a class="headerlink" href="#fig-test0-lv19" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-left" id="fig-test10">
+<img alt="../../_images/Test10_lv19.gif" src="../../_images/Test10_lv19.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Test 10, Level 19</span><a class="headerlink" href="#fig-test10" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-left" id="fig-test20">
+<img alt="../../_images/Test20_lv19.gif" src="../../_images/Test20_lv19.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Test 20, Level 19</span><a class="headerlink" href="#fig-test20" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>An overall score will be generated for each submission from a hidden scenario set which is similar to the test set.</p>
+<p>We also provide <a class="reference external" href="https://airlift-challenge.github.io/scenarios/dev_scenario.zip">simpler scenarios</a> which can be used for debugging your solution.
+You may build your own set of evaluation scenarios as well. See <span class="xref myst">Generating Scenarios section</span> for more information.</p>
+</section>
+</section>
+<section id="scoring">
+<h2>Scoring<a class="headerlink" href="#scoring" title="Permalink to this headline">#</a></h2>
+<p>First, we assign an episode score.
+We use a large weight <span class="math notranslate nohighlight">\(\missedcoeff\)</span> to give missed deliveries the largest penalty, and then give a smaller penalty to lateness using a smaller weight <span class="math notranslate nohighlight">\(\latenesscoeff\)</span>.
+Flight cost is penalized by <span class="math notranslate nohighlight">\(\totalflightcostcoeff\)</span>.
+Then, the objective is to minimize the episode score</p>
+<div class="math notranslate nohighlight" id="equation-eqn-episodescore">
+<span class="eqno">(6)<a class="headerlink" href="#equation-eqn-episodescore" title="Permalink to this equation">#</a></span>\[\episodescore
+= \missedcoeff * \missed
++ \latenesscoeff * \scaledlateness
++ \totalflightcostcoeff * \scaledflightcost\]</div>
+<p>To determine an overall score for the submission, we find it useful to normalized against baseline scores and produce a score that increases with improved performance.
+For each scenario, we calculate episode scores <span class="math notranslate nohighlight">\(\randomscore\)</span> and <span class="math notranslate nohighlight">\(\baselinescore\)</span> for the Random Agent and “shortest path” baseline algorithm, respectively.
+Then given a episode score for a solution, we calculate a normalized score as</p>
+<div class="math notranslate nohighlight">
+\[\normalizedescore
+= \frac{\randomscore - \episodescore}
+       {\randomscore - BaselineScore}\]</div>
+<p>A solution will receive a normalized score of 0 if it only performs as well as a random agent, and will receive a score of 1 if it performs as well as a simple “shortest path” baseline algorithm.
+Scores greater than 1 indicate that the algorithm is exceeding the performance of the baselines.
+Note that it is possible to obtain negative normalized scores if the agent performs worse than the random agent.</p>
+<p>Finally, An overall score is calculated by summing the normalized score over all tests/levels.</p>
+<div class="math notranslate nohighlight">
+\[\overallscore
+= \sum_{i = 1}^\textrm{# of tests} \sum_{\textrm{levels in test } i} \normalizedescore(i)\]</div>
+</section>
+<section id="time-limits">
+<h2>Time Limits<a class="headerlink" href="#time-limits" title="Permalink to this headline">#</a></h2>
+<p>We impose a time limit on the algorithm for each time step (10 seconds), allowing extra time during the first step for pre-planning (10 minutes).
+We will ignore any action for a step where a timeout occurs (proceeding to operate based on the previous action).
+Subsequent steps will proceed normally.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters\ch4_competition"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../ch3_interface/main.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Simulator Interface</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../ch5_gen/main.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book community<br/>
+  
+      &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <p>
+Distribution Statement A: Approved for Public Release; Distribution Unlimited: Case Number: AFRL-2022-5074, CLEARED on 19 Oct 2022
+</p>
+
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
