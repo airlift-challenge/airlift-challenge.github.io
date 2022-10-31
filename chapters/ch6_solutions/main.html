@@ -465,14 +465,14 @@ Likewise, it may route cargo between airports 2 and 3 via airport 0.
 Now, suppose that the route between airports 4 and 3 become unavailable for a long duration due to a disruption, as shown in <a class="reference internal" href="#fig-bottleneck"><span class="std std-numref">Fig. 6</span></a>(b).
 In this case, since airport 4 no longer provides a viable route to the destination, a new policy for airplanes at airport 1 may route them through airport 0.
 However, this introduces a bottleneck at Airport 0.
-If we instead re-calculate the optimal policy for all planes, we may find a new policy as shown in <a class="reference internal" href="#fig-bottleneck"><span class="std std-numref">Fig. 6</span></a>(c).
+If we instead re-calculate the optimal policy for all planes, we may find a new policy as shown in <a class="reference internal" href="#fig-bottleneck"><span class="std std-numref">Fig. 6</span></a>©.
 This policy takes into account the interaction of the planes at airport 0, and opts to re-route the cargo from airport 2 through airport 5 instead of airport 0.</p>
 <figure class="align-left" id="fig-bottleneck">
 <img alt="../../_images/BottleneckScenario.svg" src="../../_images/BottleneckScenario.svg" /><figcaption>
 <p><span class="caption-number">Fig. 6 </span><span class="caption-text">Example of a bottleneck scenario that may be faced by an algorithm.
 (a) An optimal policy under normal conditions.
 (b) A disruption removes one of the routes, and airplanes from airport 1 are re-routed through airport 0, causing a bottleneck.
-(c) An optimal policy may re-route airplanes from airport 1 through airport 5 to eliminate the bottleneck.</span><a class="headerlink" href="#fig-bottleneck" title="Permalink to this image">#</a></p>
+© An optimal policy may re-route airplanes from airport 1 through airport 5 to eliminate the bottleneck.</span><a class="headerlink" href="#fig-bottleneck" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -497,13 +497,13 @@ Dynamic programming has been used for routing time-sensitive cargo while taking 
 However, the scope of this work does not cover all of the scenarios possible under our model.</p>
 <p>There is continued interest in applying ML techniques to problems typically addressed by the operations research community.
 Promising RL techniques have recently been applied to PDPs <span id="id10">[<a class="reference internal" href="../misc/bibliography.html#id12" title="Jingwen Li, Liang Xin, Zhiguang Cao, Andrew Lim, Wen Song, and Jie Zhang. Heterogeneous attentions for solving pickup and delivery problem via deep reinforcement learning. IEEE Transactions on Intelligent Transportation Systems, 23(3):2306-2315, 2022. URL: https://ieeexplore.ieee.org/document/9352489.">9</a>]</span>, as well as the closely related Vehicle Routing Problem <span id="id11">[<a class="reference internal" href="../misc/bibliography.html#id13" title="Waldy Joe and Hoong Chuin Lau. Deep reinforcement learning approach to solve dynamic vehicle routing problem with stochastic customers. Proceedings of the International Conference on Automated Planning and Scheduling, 30(1):394-402, Jun. 2020. URL: https://ojs.aaai.org/index.php/ICAPS/article/view/6685.">8</a>]</span>.
-There is hope that RL algorithms may be better able to prevent catastrophic results due to disruptions in large transportation networks <span id="id12">[<a class="reference internal" href="../misc/bibliography.html#id14" title="S. Prasanna and F. L. Mohanty. Neurips rl competitions: flatland challenge. https://slideslive.com/38940885/neurips-rl-competitions-flatland-challenge. Accessed: Feb 20, 2022.">13</a>]</span>.
+There is hope that RL algorithms may be better able to prevent catastrophic results due to disruptions in large transportation networks <span id="id12">[<a class="reference internal" href="../misc/bibliography.html#id14" title="S. Prasanna and F. L. Mohanty. Neurips rl competitions: flatland challenge. \url https://slideslive.com/38940885/neurips-rl-competitions-flatland-challenge. Accessed: Feb 20, 2022.">13</a>]</span>.
 We expect that the development of a light-weight surrogate environment will facilitate application of these new techniques to the airlift planning problem.</p>
 </section>
 <section id="baselines">
 <h2>Baselines<a class="headerlink" href="#baselines" title="Permalink to this headline">#</a></h2>
 <hr class="docutils" />
-<p>We include the following two <a class="reference external" href="https://github.com/airlift-challenge/airlift/solutions/baselines.py">baselines</a>:</p>
+<p>We include the following two <a class="reference external" href="https://github.com/airlift-challenge/airlift/blob/main/airlift/solutions/baselines.py">baselines</a>:</p>
 <ol class="simple">
 <li><p><em>Random Agent</em>.
 This agent performs random actions.

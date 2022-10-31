@@ -44,7 +44,7 @@ The Tests proceed until one of the following stopping criterion are met:
 
 
 ### Test Set
-We provide a [test scenario set](https://airlift-challenge.github.io/scenarios/test_scenario.zip) that you can use to evaluate your solution.
+We provide a [test scenario set](https://airliftchallenge.com/scenarios/scenarios_test.zip) that you can use to evaluate your solution.
 Evaluation against these scenarios is described further in the [Getting Started section of the Starter Kit](https://github.com/airlift-challenge/airlift-starter-kit)
 
 The parameter progression is defined by the following Python code block:
@@ -164,7 +164,7 @@ Test 20, Level 19
 
 An overall score will be generated for each submission from a hidden scenario set which is similar to the test set.
 
-We also provide [simpler scenarios](https://airlift-challenge.github.io/scenarios/dev_scenario.zip) which can be used for debugging your solution.
+We also provide [simpler scenarios](https://airliftchallenge.com/scenarios/scenarios_dev.zip) which can be used for debugging your solution.
 You may build your own set of evaluation scenarios as well. See [Generating Scenarios section](sec_gen) for more information.
 
 
@@ -206,3 +206,4 @@ Finally, An overall score is calculated by summing the normalized score over all
 We impose a time limit on the algorithm for each time step (10 seconds), allowing extra time during the first step for pre-planning (10 minutes).
 We will ignore any action for a step where a timeout occurs (proceeding to operate based on the previous action).
 Subsequent steps will proceed normally.
+

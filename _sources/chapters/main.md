@@ -85,8 +85,14 @@ For more details, see [the Evaluation documentation](sec_eval).
 * **Development Phase**: Oct. 31st, 2022 through Jan 13th, 2023 (participants score themselves against the public test scenarios)
 * **Validation Phase** Jan. 16th, 2023 through Jan. 20th, 2023 (1 submission per day to be scored against hidden validation scenarios)
 
+## Student Recognition
+Students are encouraged to participate in this challenge. Top student submissions will be recognized and receive award certificates. 
+
 ## Resources
-<!-- [Competition platform](https://competitions.codalab.org/competitions/0000) --->
+* {{codalab}}: Competition Platform
+* {{codaforums}}: Primary means of communicating with the development team
+* {{testscen}}: Used to evaluate your solution
+* {{simplescen}}: Used for debugging your solution
 * [Starter kit](https://github.com/airlift-challenge/airlift-starter-kit)
 * [Simulator source code](https://github.com/airlift-challenge/airlift)
 

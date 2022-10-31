@@ -64,7 +64,7 @@ We expect that the development of a light-weight surrogate environment will faci
 ## Baselines
 -------------------
 
-We include the following two [baselines](https://github.com/airlift-challenge/airlift/solutions/baselines.py):
+We include the following two [baselines](https://github.com/airlift-challenge/airlift/blob/main/airlift/solutions/baselines.py):
 
 1) *Random Agent*.
    This agent performs random actions.
