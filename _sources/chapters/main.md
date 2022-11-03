@@ -82,7 +82,7 @@ In addition to performing well on individual episodes, algorithms can also incre
 For more details, see [the Evaluation documentation](sec_eval).
 
 ## Schedule
-* **Development Phase**: Oct. 31st, 2022 through Jan 13th, 2023 (participants score themselves against the public test scenarios)
+* **Warm Up Phase**: Oct. 31st, 2022 through Jan 13th, 2023 (participants score themselves against the public test scenarios)
 * **Validation Phase** Jan. 16th, 2023 through Jan. 20th, 2023 (1 submission per day to be scored against hidden validation scenarios)
 
 ## Student Recognition

@@ -31,14 +31,20 @@ As the state machine proceeds, it will automatically update the current action (
   - Space Type  
     (see [Open AI Gym spaces](https://github.com/openai/gym/blob/master/gym/spaces/space.py))
   - Description
-* - process
-  - Discrete(2)
+* - `process`
+  - `Discrete(2)`
   - Flag indicating if the airplane should process when in the WAITING and READY_FOR_TAKEOFF states:  
     0 = Do not process.  
     1 = Process when working capacity is available at current airport.  
-* - cargo_to_load
-  - List(Discrete(max_num_cargo), maxsize=max_cargo_on_plane)
+* - `cargo_to_load`
+  - `List(Discrete(max_num_cargo), maxsize=max_cargo_on_plane)`
   - Cargo ID’s to load onto plane when processing
+* - `cargo_to_unload`
+  - `List(Discrete(max_num_cargo), maxsize=max_cargo_on_plane)`
+  - Cargo ID’s to load onto plane when processing
+* - `destination`
+  - `Discrete(max_airports + 1)`
+  - Contains ID of an airport where the Airplane will travel to next.
 ```
 
 ## Observation Space
@@ -68,6 +74,9 @@ We use a custom space named DiGraph which represents a NetworkX directed graph.
 * - `cargo_at_current_airport`
   - `List(Discrete(max_num_cargo), maxsize=max_cargo_on_airplane)`
   - ID's of cargo that is stored at the current airport.
+* - `state`
+  - `Discrete(max(s.value for s in PlaneState) + 1)`
+  - Contains the agent state. 
 * - `available_routes`
   - `List(Discrete(max_airports+1), maxsize=max_airports)`
   - ID’s of airports that can be reached from the current airport. Routes which are disabled will not be included in this list.

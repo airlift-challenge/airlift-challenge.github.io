@@ -508,15 +508,23 @@ As the state machine proceeds, it will automatically update the current action (
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>process</p></td>
-<td><p>Discrete(2)</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">process</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Discrete(2)</span></code></p></td>
 <td><p>Flag indicating if the airplane should process when in the WAITING and READY_FOR_TAKEOFF states:<br />
 0 = Do not process.<br />
 1 = Process when working capacity is available at current airport.</p></td>
 </tr>
-<tr class="row-odd"><td><p>cargo_to_load</p></td>
-<td><p>List(Discrete(max_num_cargo), maxsize=max_cargo_on_plane)</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cargo_to_load</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">List(Discrete(max_num_cargo),</span> <span class="pre">maxsize=max_cargo_on_plane)</span></code></p></td>
 <td><p>Cargo ID’s to load onto plane when processing</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">cargo_to_unload</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">List(Discrete(max_num_cargo),</span> <span class="pre">maxsize=max_cargo_on_plane)</span></code></p></td>
+<td><p>Cargo ID’s to load onto plane when processing</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">destination</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Discrete(max_airports</span> <span class="pre">+</span> <span class="pre">1)</span></code></p></td>
+<td><p>Contains ID of an airport where the Airplane will travel to next.</p></td>
 </tr>
 </tbody>
 </table>
@@ -557,15 +565,19 @@ We use a custom space named DiGraph which represents a NetworkX directed graph.<
 <td><p><code class="docutils literal notranslate"><span class="pre">List(Discrete(max_num_cargo),</span> <span class="pre">maxsize=max_cargo_on_airplane)</span></code></p></td>
 <td><p>ID’s of cargo that is stored at the current airport.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">available_routes</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">state</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Discrete(max(s.value</span> <span class="pre">for</span> <span class="pre">s</span> <span class="pre">in</span> <span class="pre">PlaneState)</span> <span class="pre">+</span> <span class="pre">1)</span></code></p></td>
+<td><p>Contains the agent state.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">available_routes</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">List(Discrete(max_airports+1),</span> <span class="pre">maxsize=max_airports)</span></code></p></td>
 <td><p>ID’s of airports that can be reached from the current airport. Routes which are disabled will not be included in this list.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">globalstate</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">globalstate</span></code></p></td>
 <td><p>State Space</p></td>
 <td><p>The global state of the environment.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">next_action</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">next_action</span></code></p></td>
 <td><p>Action Space (see <a class="reference internal" href="#tab-actionspace"><span class="std std-numref">Table 3</span></a>)</p></td>
 <td><p>Contains the last action issued by the agent. Entries will be modified by the state machine as transitions occur.</p></td>
 </tr>

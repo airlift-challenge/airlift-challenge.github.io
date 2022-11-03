@@ -86,7 +86,7 @@ Specifically, the total scaled flight cost over all planes is defined as
 \scaledflightcost
 = \sum_{p \in \Airplanes}
   \frac{\flightcost{p} * \routemapdiameter{p}}
-       {weightcapacity{p} * \totalcargo},
+       {\weightcapacity{p} * \totalcargo},
 ```
 where $\routemapdiameter{p}$ is the diameter of the largest connected component of airplane $p$'s route map.
   
