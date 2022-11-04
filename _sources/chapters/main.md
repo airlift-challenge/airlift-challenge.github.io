@@ -83,8 +83,8 @@ For more details, see [the Evaluation documentation](sec_eval).
 
 ## Schedule
 * **Warm Up Phase**: Starts on Oct. 31st, 2022. Submissions are not accepted at this phase. Warm up scenarios will be provided for competitors.
-* **Round 1**: Starts on Oct. 31st, 2022 (participants score themselves against the public test scenarios). One submission allowed per day, five per week.
-* **Round 2**: Starts on Oct. 31st, 2022 (participants score themselves against the public test scenarios). One submission allowed per day, five per week.
+* **Round 1**: Starts on Nov. 14th, 2022 (participants score themselves against the public test scenarios). One submission allowed per day, five per week.
+* **Round 2**: Starts on Dec. 12th, 2022 (participants score themselves against the public test scenarios). One submission allowed per day, five per week.
 * **Competition ends**: Jan 21st, 2023
 
 We may increase the number of allowed submissions at a later date. 
