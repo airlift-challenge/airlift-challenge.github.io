@@ -82,8 +82,12 @@ In addition to performing well on individual episodes, algorithms can also incre
 For more details, see [the Evaluation documentation](sec_eval).
 
 ## Schedule
-* **Warm Up Phase**: Oct. 31st, 2022 through Jan 13th, 2023 (participants score themselves against the public test scenarios)
-* **Validation Phase** Jan. 16th, 2023 through Jan. 20th, 2023 (1 submission per day to be scored against hidden validation scenarios)
+* **Warm Up Phase**: Starts on Oct. 31st, 2022. Submissions are not accepted at this phase. Warm up scenarios will be provided for competitors.
+* **Round 1**: Starts on Oct. 31st, 2022 (participants score themselves against the public test scenarios). One submission allowed per day, five per week.
+* **Round 2**: Starts on Oct. 31st, 2022 (participants score themselves against the public test scenarios). One submission allowed per day, five per week.
+* **Competition ends**: Jan 21st, 2023
+
+We may increase the number of allowed submissions at a later date. 
 
 ## Student Recognition
 Students are encouraged to participate in this challenge. Top student submissions will be recognized and receive award certificates. 
