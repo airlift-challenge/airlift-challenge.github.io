@@ -525,7 +525,7 @@ As the state machine proceeds, it will automatically update the current action (
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">cargo_to_unload</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">List(Discrete(max_num_cargo),</span> <span class="pre">maxsize=max_cargo_on_plane)</span></code></p></td>
-<td><p>Cargo ID’s to load onto plane when processing</p></td>
+<td><p>Cargo ID’s to unload from plane when processing</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">destination</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Discrete(max_airports</span> <span class="pre">+</span> <span class="pre">1)</span></code></p></td>
@@ -571,8 +571,8 @@ We use a custom space named DiGraph which represents a NetworkX directed graph.<
 <td><p>ID’s of cargo that is stored at the current airport.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">state</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">Discrete(max(s.value</span> <span class="pre">for</span> <span class="pre">s</span> <span class="pre">in</span> <span class="pre">PlaneState)</span> <span class="pre">+</span> <span class="pre">1)</span></code></p></td>
-<td><p>Contains the agent state.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Discrete(4)</span></code></p></td>
+<td><p>Contains the agent state. See: <a class="reference internal" href="../API/essential_api.html#plane-states"><span class="std std-ref">list of airplane states</span></a> and <a class="reference internal" href="../ch2_model/main.html#airplane-state-machine"><span class="std std-ref">state machine definition</span></a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">available_routes</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">List(Discrete(max_airports+1),</span> <span class="pre">maxsize=max_airports)</span></code></p></td>

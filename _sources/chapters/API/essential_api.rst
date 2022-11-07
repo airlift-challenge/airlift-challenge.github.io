@@ -103,11 +103,15 @@ The Agents class contains all the information pertaining to the individual agent
 as well as the loading and unloading of cargo. Just like the environment-- the agent also has its own step function. This step function is separate from the
 environment step function and assists the agent in transitioning appropriately between states.
 
+.. _Plane_States:
+
 Plane States
 -----------------
 Airplanes can be in one of four states. These are all contained in the PlaneState enumeration located in agents.py.
 
 .. autofunction:: airlift.envs.agents.PlaneState
+
+Also see: :ref:`airplane state machine <airplane_state_machine>`
 
 Load Cargo
 ---------------

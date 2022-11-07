@@ -123,9 +123,10 @@ The following dynamic events may occur:
 - Route $r \in R$ becomes temporarily unavailable for landing or takeoff (e.g., due to weather). Flights already en-route will still complete the flight to the destination.
 
 
+(airplane_state_machine)=
 ## Airplane State Machine
 
-A state machine for the airplane is shown in {numref}`fig-state-machine`.
+A state machine for the airplane is shown in {numref}`fig-state-machine` (see a [list of airplane states with descriptions](Plane_States)).
 Waiting airplanes must be processed before they are fully fueled and ready to take off.
 The agent may choose to load/unload cargo or may simply process the airplane without moving cargo. While the cargo is being loaded, it will be removed from the airport cargo set during processing, and then added to the airplane cargo set when finished.
 A similar process is followed for unloading cargo. Once ready for takeoff, the agent may choose to re-process the plane so that cargo can be loaded/unloaded (perhaps in response to recent events), or may specify a route for takeoff.

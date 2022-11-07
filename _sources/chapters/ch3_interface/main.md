@@ -41,7 +41,7 @@ As the state machine proceeds, it will automatically update the current action (
   - Cargo ID’s to load onto plane when processing
 * - `cargo_to_unload`
   - `List(Discrete(max_num_cargo), maxsize=max_cargo_on_plane)`
-  - Cargo ID’s to load onto plane when processing
+  - Cargo ID’s to unload from plane when processing
 * - `destination`
   - `Discrete(max_airports + 1)`
   - Contains ID of an airport where the Airplane will travel to next.
@@ -75,8 +75,8 @@ We use a custom space named DiGraph which represents a NetworkX directed graph.
   - `List(Discrete(max_num_cargo), maxsize=max_cargo_on_airplane)`
   - ID's of cargo that is stored at the current airport.
 * - `state`
-  - `Discrete(max(s.value for s in PlaneState) + 1)`
-  - Contains the agent state. 
+  - `Discrete(4)`
+  - Contains the agent state. See: [list of airplane states](Plane_States) and [state machine definition](airplane_state_machine).
 * - `available_routes`
   - `List(Discrete(max_airports+1), maxsize=max_airports)`
   - ID’s of airports that can be reached from the current airport. Routes which are disabled will not be included in this list.

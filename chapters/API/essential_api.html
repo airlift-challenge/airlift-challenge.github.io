@@ -548,7 +548,7 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
+    <a class="reference internal nav-link" href="#id4">
      Example
     </a>
    </li>
@@ -587,7 +587,7 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
+    <a class="reference internal nav-link" href="#id5">
      Example
     </a>
    </li>
@@ -762,7 +762,7 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
+    <a class="reference internal nav-link" href="#id4">
      Example
     </a>
    </li>
@@ -801,7 +801,7 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
+    <a class="reference internal nav-link" href="#id5">
      Example
     </a>
    </li>
@@ -1023,7 +1023,7 @@ to generate a policy for the agents:</p>
 as well as the loading and unloading of cargo. Just like the environment– the agent also has its own step function. This step function is separate from the
 environment step function and assists the agent in transitioning appropriately between states.</p>
 <section id="plane-states">
-<h2>Plane States<a class="headerlink" href="#plane-states" title="Permalink to this headline">#</a></h2>
+<span id="id3"></span><h2>Plane States<a class="headerlink" href="#plane-states" title="Permalink to this headline">#</a></h2>
 <p>Airplanes can be in one of four states. These are all contained in the PlaneState enumeration located in agents.py.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="airlift.envs.agents.PlaneState">
@@ -1033,31 +1033,25 @@ environment step function and assists the agent in transitioning appropriately b
 <div><ul class="simple">
 <li><dl class="field-list simple">
 <dt class="field-odd">0</dt>
-<dd class="field-odd"><p>Waiting</p>
+<dd class="field-odd"><p>Waiting - airplane is waiting to process at an airport</p>
 </dd>
 </dl>
 </li>
 <li><dl class="field-list simple">
 <dt class="field-odd">1</dt>
-<dd class="field-odd"><p>Processing</p>
+<dd class="field-odd"><p>Processing - airplane is refueling and loading/unloading cargo</p>
 </dd>
 </dl>
 </li>
 <li><dl class="field-list simple">
 <dt class="field-odd">2</dt>
-<dd class="field-odd"><p>Stopped</p>
+<dd class="field-odd"><p>Moving - Airplane is in flight to its destination</p>
 </dd>
 </dl>
 </li>
 <li><dl class="field-list simple">
 <dt class="field-odd">3</dt>
-<dd class="field-odd"><p>Moving</p>
-</dd>
-</dl>
-</li>
-<li><dl class="field-list simple">
-<dt class="field-odd">4</dt>
-<dd class="field-odd"><p>Ready for takeoff</p>
+<dd class="field-odd"><p>Ready for takeoff - airplane is ready for takeoff once it is given a destination</p>
 </dd>
 </dl>
 </li>
@@ -1065,6 +1059,7 @@ environment step function and assists the agent in transitioning appropriately b
 </div></blockquote>
 </dd></dl>
 
+<p>Also see: <a class="reference internal" href="../ch2_model/main.html#airplane-state-machine"><span class="std std-ref">airplane state machine</span></a></p>
 </section>
 <section id="load-cargo">
 <h2>Load Cargo<a class="headerlink" href="#load-cargo" title="Permalink to this headline">#</a></h2>
@@ -1224,8 +1219,8 @@ that airplane</p>
 </dd></dl>
 
 </section>
-<section id="id3">
-<h2>Example<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<section id="id4">
+<h2>Example<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>Using the ActionHelper we can issue actions to the agents:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">airlift.envs.airlift_env</span> <span class="kn">import</span> <span class="n">ActionHelper</span> <span class="k">as</span> <span class="n">ah</span>
 
@@ -1332,7 +1327,7 @@ that airplane</p>
 <h2>Get MultiGraph<a class="headerlink" href="#get-multigraph" title="Permalink to this headline">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="airlift.envs.airlift_env.ObservationHelper.get_multidigraph">
-<span class="sig-prename descclassname"><span class="pre">airlift.envs.airlift_env.ObservationHelper.</span></span><span class="sig-name descname"><span class="pre">get_multidigraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">&lt;networkx.classes.multidigraph.MultiDiGraph</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x000001B1E28C52E0&gt;</span></span></span><a class="headerlink" href="#airlift.envs.airlift_env.ObservationHelper.get_multidigraph" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">airlift.envs.airlift_env.ObservationHelper.</span></span><span class="sig-name descname"><span class="pre">get_multidigraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">&lt;networkx.classes.multidigraph.MultiDiGraph</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x0000024552F54700&gt;</span></span></span><a class="headerlink" href="#airlift.envs.airlift_env.ObservationHelper.get_multidigraph" title="Permalink to this definition">#</a></dt>
 <dd><p>Gets the routemap as a multigraph.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1347,8 +1342,8 @@ that airplane</p>
 </dd></dl>
 
 </section>
-<section id="id4">
-<h2>Example<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<section id="id5">
+<h2>Example<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <p>Using the ObservationHelper we can get important information that assists us in making the proper agent actions. An example
 of using the observation helper to check if an agent is idle and also has available routes. After checking for this we then use the “get_active_cargo_info”
 function to get active cargo information for that agent:</p>
