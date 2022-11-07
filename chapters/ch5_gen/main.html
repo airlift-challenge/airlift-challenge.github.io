@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; Airlift Challenge v1.0 Documentation</title>
+    <title>Generating Scenarios &#8212; Airlift Challenge v1.0 Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -114,7 +114,7 @@ const thebe_selector_output = ".output, .cell_output"
   Main
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../ch1_getting_started/main.html">
    Getting Started
@@ -133,6 +133,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../ch4_competition/main.html">
    Competition
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Generating Scenarios
   </a>
  </li>
  <li class="toctree-l1">
@@ -312,6 +317,17 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -392,7 +408,37 @@ title="Print to PDF"
         <i class="fas fa-list"></i> Contents
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="simple visible nav section-nav flex-column">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generating-individual-scenarios">
+   Generating individual scenarios
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#initialization">
+   Initialization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#one-plane-type-no-zones">
+   One plane type, No zones
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-plane-types-no-zones">
+   Multiple plane types, No zones
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-plane-types-with-zones-no-restrictions-on-routes">
+   Multiple plane types, With zones, No restrictions on routes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generating-a-complete-set-of-scenarios-for-evaluation">
+   Generating a complete set of scenarios for evaluation
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -402,7 +448,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><no title></h1>
+                <h1>Generating Scenarios</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -411,7 +457,37 @@ title="Print to PDF"
                             <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
-                            <ul class="simple visible nav section-nav flex-column">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generating-individual-scenarios">
+   Generating individual scenarios
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#initialization">
+   Initialization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#one-plane-type-no-zones">
+   One plane type, No zones
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-plane-types-no-zones">
+   Multiple plane types, No zones
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-plane-types-with-zones-no-restrictions-on-routes">
+   Multiple plane types, With zones, No restrictions on routes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generating-a-complete-set-of-scenarios-for-evaluation">
+   Generating a complete set of scenarios for evaluation
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -422,7 +498,197 @@ title="Print to PDF"
                 
               <div>
                 
-  
+  <section class="tex2jax_ignore mathjax_ignore" id="generating-scenarios">
+<span id="sec-gen"></span><h1>Generating Scenarios<a class="headerlink" href="#generating-scenarios" title="Permalink to this headline">#</a></h1>
+<section id="generating-individual-scenarios">
+<h2>Generating individual scenarios<a class="headerlink" href="#generating-individual-scenarios" title="Permalink to this headline">#</a></h2>
+<p>The <a class="reference external" href="https://airliftchallenge.com/scenarios/scenarios_dev.zip">development scenario set</a> provides a series of simple scenarios that can be used for development. Here, we show the code required to generate these scenarios. You can use this code as a template for generating your own scenarios. Each code snippet produces an environment against which you can run your solution using the doepisode method. To increase the speed of scenario generation, we do not use the Perlin map generator for these scenarios, but instead use a plain map.</p>
+</section>
+<section id="initialization">
+<h2>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">airlift.envs</span> <span class="kn">import</span> <span class="n">PlaneType</span>
+<span class="kn">from</span> <span class="nn">airlift.envs</span> <span class="kn">import</span> <span class="n">EventIntervalGenerator</span><span class="p">,</span> <span class="n">NoEventIntervalGen</span>
+<span class="kn">from</span> <span class="nn">airlift.envs</span> <span class="kn">import</span> <span class="n">StaticCargoGenerator</span><span class="p">,</span> <span class="n">DynamicCargoGenerator</span>
+<span class="kn">from</span> <span class="nn">airlift.envs</span> <span class="kn">import</span> <span class="n">AirliftEnv</span><span class="p">,</span> <span class="n">AirliftWorldGenerator</span>
+<span class="kn">from</span> <span class="nn">airlift.envs</span> <span class="kn">import</span> <span class="n">AirplaneGenerator</span><span class="p">,</span> <span class="n">RandomAirportGenerator</span><span class="p">,</span> <span class="n">RouteByDistanceGenerator</span><span class="p">,</span> <span class="n">LimitedDropoffEntryRouteGenerator</span>
+<span class="kn">from</span> <span class="nn">airlift.envs</span> <span class="kn">import</span> <span class="n">PerlinMapGenerator</span><span class="p">,</span> <span class="n">PlainMapGenerator</span>
+
+<span class="n">working_capacity</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">processing_time</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">num_airports</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">num_cargo</span> <span class="o">=</span> <span class="mi">600</span>
+<span class="n">num_agents</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">num_drop_off_airports</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">num_pick_up_airports</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">soft_deadline_multiplier</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">hard_deadline_multiplier</span> <span class="o">=</span> <span class="mi">50</span>
+
+<span class="n">num_dynamic_cargo</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">dynamic_cargo_generation_rate</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">100</span>
+<span class="n">malfunction_rate</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">300</span>
+<span class="n">min_duration</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">max_duration</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">route_ratio</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">drop_off_fraction_reachable</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="n">pick_up_fraction_reachable</span> <span class="o">=</span> <span class="mf">0.2</span>
+
+<span class="n">single_plane_type</span> <span class="o">=</span> <span class="p">[</span><span class="n">PlaneType</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_range</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">speed</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">max_weight</span><span class="o">=</span><span class="mi">10</span><span class="p">)]</span>
+
+<span class="n">multiple_plane_types</span> <span class="o">=</span> <span class="p">[</span><span class="n">PlaneType</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_range</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">speed</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">max_weight</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span>
+                        <span class="n">PlaneType</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_range</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">speed</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">max_weight</span><span class="o">=</span><span class="mi">3</span><span class="p">)]</span>
+
+<span class="n">max_cycles</span> <span class="o">=</span> <span class="mi">5000</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\ProgramData\Anaconda3\envs\amcgym\lib\site-packages\numpy\_distributor_init.py:30: UserWarning: loaded more than 1 DLL from .libs:
+C:\ProgramData\Anaconda3\envs\amcgym\lib\site-packages\numpy\.libs\libopenblas.EL2C6PLE4ZYW3ECEVIV3OXXGRN2NRFM2.gfortran-win_amd64.dll
+C:\ProgramData\Anaconda3\envs\amcgym\lib\site-packages\numpy\.libs\libopenblas.FB5AE2TYXYH2IJRDKGDGQ3XBKLKTF43H.gfortran-win_amd64.dll
+  warnings.warn(&quot;loaded more than 1 DLL from .libs:&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="one-plane-type-no-zones">
+<h2>One plane type, No zones<a class="headerlink" href="#one-plane-type-no-zones" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">env</span> <span class="o">=</span> <span class="n">AirliftEnv</span><span class="p">(</span>
+         <span class="n">world_generator</span><span class="o">=</span><span class="n">AirliftWorldGenerator</span><span class="p">(</span>
+             <span class="n">plane_types</span><span class="o">=</span><span class="n">single_plane_type</span><span class="p">,</span>
+             <span class="n">airport_generator</span><span class="o">=</span><span class="n">RandomAirportGenerator</span><span class="p">(</span>
+                 <span class="n">max_airports</span><span class="o">=</span><span class="n">num_airports</span><span class="p">,</span>
+                 <span class="n">processing_time</span><span class="o">=</span><span class="n">processing_time</span><span class="p">,</span>
+                 <span class="n">working_capacity</span><span class="o">=</span><span class="n">working_capacity</span><span class="p">,</span>
+                 <span class="n">make_drop_off_area</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                 <span class="n">make_pick_up_area</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                 <span class="n">num_drop_off_airports</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                 <span class="n">num_pick_up_airports</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                 <span class="n">mapgen</span><span class="o">=</span><span class="n">PlainMapGenerator</span><span class="p">()),</span>
+             <span class="n">route_generator</span><span class="o">=</span><span class="n">RouteByDistanceGenerator</span><span class="p">(</span>
+                 <span class="n">malfunction_generator</span><span class="o">=</span><span class="n">EventIntervalGenerator</span><span class="p">(</span>
+                     <span class="n">malfunction_rate</span><span class="o">=</span><span class="n">malfunction_rate</span><span class="p">,</span>
+                     <span class="n">min_duration</span><span class="o">=</span><span class="n">min_duration</span><span class="p">,</span>
+                     <span class="n">max_duration</span><span class="o">=</span><span class="n">max_duration</span><span class="p">),</span>
+                 <span class="n">route_ratio</span><span class="o">=</span><span class="n">route_ratio</span><span class="p">),</span>
+             <span class="n">cargo_generator</span><span class="o">=</span><span class="n">DynamicCargoGenerator</span><span class="p">(</span>
+                 <span class="n">cargo_creation_rate</span><span class="o">=</span><span class="n">dynamic_cargo_generation_rate</span><span class="p">,</span>
+                 <span class="n">max_cargo_to_create</span><span class="o">=</span><span class="n">num_dynamic_cargo</span><span class="p">,</span>
+                 <span class="n">num_initial_tasks</span><span class="o">=</span><span class="n">num_cargo</span><span class="p">,</span>
+                 <span class="n">soft_deadline_multiplier</span><span class="o">=</span><span class="n">soft_deadline_multiplier</span><span class="p">,</span>
+                 <span class="n">hard_deadline_multiplier</span><span class="o">=</span><span class="n">hard_deadline_multiplier</span><span class="p">),</span>
+             <span class="n">airplane_generator</span><span class="o">=</span><span class="n">AirplaneGenerator</span><span class="p">(</span><span class="n">num_agents</span><span class="p">),</span>
+             <span class="n">max_cycles</span><span class="o">=</span><span class="n">max_cycles</span>
+         <span class="p">)</span>
+<span class="p">)</span>
+<span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">54</span><span class="p">)</span>
+<span class="n">env</span><span class="o">.</span><span class="n">set_render_options</span><span class="p">(</span><span class="n">show_routes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">render_to_image</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/main_4_0.png" src="../../_images/main_4_0.png" />
+</div>
+</div>
+</section>
+<section id="multiple-plane-types-no-zones">
+<h2>Multiple plane types, No zones<a class="headerlink" href="#multiple-plane-types-no-zones" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">env</span> <span class="o">=</span> <span class="n">AirliftEnv</span><span class="p">(</span>
+         <span class="n">world_generator</span><span class="o">=</span><span class="n">AirliftWorldGenerator</span><span class="p">(</span>
+             <span class="n">plane_types</span><span class="o">=</span><span class="n">multiple_plane_types</span><span class="p">,</span>
+             <span class="n">airport_generator</span><span class="o">=</span><span class="n">RandomAirportGenerator</span><span class="p">(</span>
+                 <span class="n">max_airports</span><span class="o">=</span><span class="n">num_airports</span><span class="p">,</span>
+                 <span class="n">processing_time</span><span class="o">=</span><span class="n">processing_time</span><span class="p">,</span>
+                 <span class="n">working_capacity</span><span class="o">=</span><span class="n">working_capacity</span><span class="p">,</span>
+                 <span class="n">make_drop_off_area</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                 <span class="n">make_pick_up_area</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                 <span class="n">num_drop_off_airports</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                 <span class="n">num_pick_up_airports</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                 <span class="n">mapgen</span><span class="o">=</span><span class="n">PlainMapGenerator</span><span class="p">()),</span>
+             <span class="n">route_generator</span><span class="o">=</span><span class="n">RouteByDistanceGenerator</span><span class="p">(</span>
+                 <span class="n">malfunction_generator</span><span class="o">=</span><span class="n">EventIntervalGenerator</span><span class="p">(</span>
+                     <span class="n">malfunction_rate</span><span class="o">=</span><span class="n">malfunction_rate</span><span class="p">,</span>
+                     <span class="n">min_duration</span><span class="o">=</span><span class="n">min_duration</span><span class="p">,</span>
+                     <span class="n">max_duration</span><span class="o">=</span><span class="n">max_duration</span><span class="p">),</span>
+                 <span class="n">route_ratio</span><span class="o">=</span><span class="n">route_ratio</span><span class="p">),</span>
+             <span class="n">cargo_generator</span><span class="o">=</span><span class="n">DynamicCargoGenerator</span><span class="p">(</span>
+                 <span class="n">cargo_creation_rate</span><span class="o">=</span><span class="n">dynamic_cargo_generation_rate</span><span class="p">,</span>
+                 <span class="n">max_cargo_to_create</span><span class="o">=</span><span class="n">num_dynamic_cargo</span><span class="p">,</span>
+                 <span class="n">num_initial_tasks</span><span class="o">=</span><span class="n">num_cargo</span><span class="p">,</span>
+                 <span class="n">soft_deadline_multiplier</span><span class="o">=</span><span class="n">soft_deadline_multiplier</span><span class="p">,</span>
+                 <span class="n">hard_deadline_multiplier</span><span class="o">=</span><span class="n">hard_deadline_multiplier</span><span class="p">),</span>
+             <span class="n">airplane_generator</span><span class="o">=</span><span class="n">AirplaneGenerator</span><span class="p">(</span><span class="n">num_agents</span><span class="p">),</span>
+             <span class="n">max_cycles</span><span class="o">=</span><span class="n">max_cycles</span>
+         <span class="p">)</span>
+<span class="p">)</span>
+<span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">54</span><span class="p">)</span>
+<span class="n">env</span><span class="o">.</span><span class="n">set_render_options</span><span class="p">(</span><span class="n">show_routes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">render_to_image</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/main_6_0.png" src="../../_images/main_6_0.png" />
+</div>
+</div>
+</section>
+<section id="multiple-plane-types-with-zones-no-restrictions-on-routes">
+<h2>Multiple plane types, With zones, No restrictions on routes<a class="headerlink" href="#multiple-plane-types-with-zones-no-restrictions-on-routes" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">env</span> <span class="o">=</span> <span class="n">AirliftEnv</span><span class="p">(</span>
+         <span class="n">world_generator</span><span class="o">=</span><span class="n">AirliftWorldGenerator</span><span class="p">(</span>
+             <span class="n">plane_types</span><span class="o">=</span><span class="n">multiple_plane_types</span><span class="p">,</span>
+             <span class="n">airport_generator</span><span class="o">=</span><span class="n">RandomAirportGenerator</span><span class="p">(</span>
+                 <span class="n">max_airports</span><span class="o">=</span><span class="n">num_airports</span><span class="p">,</span>
+                 <span class="n">processing_time</span><span class="o">=</span><span class="n">processing_time</span><span class="p">,</span>
+                 <span class="n">working_capacity</span><span class="o">=</span><span class="n">working_capacity</span><span class="p">,</span>
+                 <span class="n">make_drop_off_area</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                 <span class="n">make_pick_up_area</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                 <span class="n">num_drop_off_airports</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                 <span class="n">num_pick_up_airports</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                 <span class="n">mapgen</span><span class="o">=</span><span class="n">PlainMapGenerator</span><span class="p">()),</span>
+             <span class="n">route_generator</span><span class="o">=</span><span class="n">RouteByDistanceGenerator</span><span class="p">(</span>
+                 <span class="n">malfunction_generator</span><span class="o">=</span><span class="n">EventIntervalGenerator</span><span class="p">(</span>
+                     <span class="n">malfunction_rate</span><span class="o">=</span><span class="n">malfunction_rate</span><span class="p">,</span>
+                     <span class="n">min_duration</span><span class="o">=</span><span class="n">min_duration</span><span class="p">,</span>
+                     <span class="n">max_duration</span><span class="o">=</span><span class="n">max_duration</span><span class="p">),</span>
+                 <span class="n">route_ratio</span><span class="o">=</span><span class="n">route_ratio</span><span class="p">),</span>
+             <span class="n">cargo_generator</span><span class="o">=</span><span class="n">DynamicCargoGenerator</span><span class="p">(</span>
+                 <span class="n">cargo_creation_rate</span><span class="o">=</span><span class="n">dynamic_cargo_generation_rate</span><span class="p">,</span>
+                 <span class="n">max_cargo_to_create</span><span class="o">=</span><span class="n">num_dynamic_cargo</span><span class="p">,</span>
+                 <span class="n">num_initial_tasks</span><span class="o">=</span><span class="n">num_cargo</span><span class="p">,</span>
+                 <span class="n">soft_deadline_multiplier</span><span class="o">=</span><span class="n">soft_deadline_multiplier</span><span class="p">,</span>
+                 <span class="n">hard_deadline_multiplier</span><span class="o">=</span><span class="n">hard_deadline_multiplier</span><span class="p">),</span>
+             <span class="n">airplane_generator</span><span class="o">=</span><span class="n">AirplaneGenerator</span><span class="p">(</span><span class="n">num_agents</span><span class="p">),</span>
+             <span class="n">max_cycles</span><span class="o">=</span><span class="n">max_cycles</span>
+         <span class="p">)</span>
+<span class="p">)</span>
+<span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">55</span><span class="p">)</span>
+<span class="n">env</span><span class="o">.</span><span class="n">set_render_options</span><span class="p">(</span><span class="n">show_routes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">render_to_image</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/main_8_0.png" src="../../_images/main_8_0.png" />
+</div>
+</div>
+</section>
+<section id="generating-a-complete-set-of-scenarios-for-evaluation">
+<h2>Generating a complete set of scenarios for evaluation<a class="headerlink" href="#generating-a-complete-set-of-scenarios-for-evaluation" title="Permalink to this headline">#</a></h2>
+<p>You can also generate a set of files by using this <a class="reference external" href="https://github.com/airlift-challenge/airlift/airlift/evaluators/generate_dev_scenarios.py">generator script</a> as a template. These files can then be used in conjunction with the local evaluator as described in the <a class="reference external" href="https://github.com/airlift-challenge/airlift-starter-kit">starter kit</a>.</p>
+</section>
+</section>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -432,16 +698,16 @@ title="Print to PDF"
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "amcgym"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "amcgym",
             path: "./chapters\ch5_gen"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'amcgym'</script>
 
               </div>
               
