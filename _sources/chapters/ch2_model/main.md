@@ -31,7 +31,6 @@ As in {cite}`doi:10.1287/opre.50.4.582.2864`, we impose two deadlines: one is a 
 * - $\Airplanes$
   - Airplane
   - For airplane $p \in \Airplanes$:
-    * Current airport: $\currentairport{p} \in \Airports$
     * Cargo weight capacity: $\weightcapacity{p}$
     * Time to process: $\processtime{p}$
     In practice, we will have a small number of airplane types which will have shared parameterizations. We leave this as an implementation detail.
