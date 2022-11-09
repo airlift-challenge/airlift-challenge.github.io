@@ -50,7 +50,8 @@ As the state machine proceeds, it will automatically update the current action (
 ## Observation Space
 
 {numref}`tab_obsspace` shows the observation space itself.
-The observation contains information specific to an agent, whereas the "globalstate" entry contains information global to all agents.
+The observation contains information specific to an agent, whereas the "globalstate" entry contains information global to all agents (including the observations of all other agents).
+Note that the "globalstate" value is the same as that returned by the environment's `state()` method.
 {numref}`tab_cargoinfo`, {numref}`tab_planetype`, and {numref}`tab_actionspace` describe subspaces that are used in the observation, and 
 We use a custom space named DiGraph which represents a NetworkX directed graph.
 
@@ -71,6 +72,12 @@ We use a custom space named DiGraph which represents a NetworkX directed graph.
 * - `cargo_onboard`
   - `List(Discrete(max_num_cargo), maxsize=max_cargo_on_airplane)`
   - ID's of cargo that is onboard the airplane
+* - `max_weight`
+  - `Discrete(10000)`
+  - Maximum cargo weight that can be carried by airplane
+* - `current_weight`
+  - `Discrete(10000)`
+  - Curent cargo weight carried by airplane
 * - `cargo_at_current_airport`
   - `List(Discrete(max_num_cargo), maxsize=max_cargo_on_airplane)`
   - ID's of cargo that is stored at the current airport.
@@ -137,6 +144,12 @@ We use a custom space named DiGraph which represents a NetworkX directed graph.
 * - `active_cargo`
   - `List(CargoInfo,  maxsize=max_num_cargo)`
   - List of active cargo (cargo not delivered or missed)
+* - `event_new_cargo`
+  - `List(CargoInfo,  maxsize=max_num_cargo)`
+  - List of new cargo which was generated and added to the active cargo list in the last step.
+* - `agents`
+  - Dictionary of agent observations
+  - Contains the observation for each agent
 * - `plane_types`
   - `List(PlaneType, maxsize=num_plane_types)`
   - Plane types available in this episode

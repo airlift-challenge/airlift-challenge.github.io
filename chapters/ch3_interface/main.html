@@ -537,7 +537,8 @@ As the state machine proceeds, it will automatically update the current action (
 <section id="observation-space">
 <h2>Observation Space<a class="headerlink" href="#observation-space" title="Permalink to this headline">#</a></h2>
 <p><a class="reference internal" href="#tab-obsspace"><span class="std std-numref">Table 4</span></a> shows the observation space itself.
-The observation contains information specific to an agent, whereas the “globalstate” entry contains information global to all agents.
+The observation contains information specific to an agent, whereas the “globalstate” entry contains information global to all agents (including the observations of all other agents).
+Note that the “globalstate” value is the same as that returned by the environment’s <code class="docutils literal notranslate"><span class="pre">state()</span></code> method.
 <a class="reference internal" href="#tab-cargoinfo"><span class="std std-numref">Table 5</span></a>, <a class="reference internal" href="#tab-planetype"><span class="std std-numref">Table 6</span></a>, and <a class="reference internal" href="#tab-actionspace"><span class="std std-numref">Table 3</span></a> describe subspaces that are used in the observation, and
 We use a custom space named DiGraph which represents a NetworkX directed graph.</p>
 <table class="colwidths-given table" id="tab-obsspace">
@@ -565,6 +566,14 @@ We use a custom space named DiGraph which represents a NetworkX directed graph.<
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">cargo_onboard</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">List(Discrete(max_num_cargo),</span> <span class="pre">maxsize=max_cargo_on_airplane)</span></code></p></td>
 <td><p>ID’s of cargo that is onboard the airplane</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">max_weight</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Discrete(10000)</span></code></p></td>
+<td><p>Maximum cargo weight that can be carried by airplane</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">current_weight</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Discrete(10000)</span></code></p></td>
+<td><p>Curent cargo weight carried by airplane</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cargo_at_current_airport</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">List(Discrete(max_num_cargo),</span> <span class="pre">maxsize=max_cargo_on_airplane)</span></code></p></td>
@@ -661,6 +670,14 @@ We use a custom space named DiGraph which represents a NetworkX directed graph.<
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">active_cargo</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">List(CargoInfo,</span>&#160; <span class="pre">maxsize=max_num_cargo)</span></code></p></td>
 <td><p>List of active cargo (cargo not delivered or missed)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">event_new_cargo</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">List(CargoInfo,</span>&#160; <span class="pre">maxsize=max_num_cargo)</span></code></p></td>
+<td><p>List of new cargo which was generated and added to the active cargo list in the last step.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">agents</span></code></p></td>
+<td><p>Dictionary of agent observations</p></td>
+<td><p>Contains the observation for each agent</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">plane_types</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">List(PlaneType,</span> <span class="pre">maxsize=num_plane_types)</span></code></p></td>
