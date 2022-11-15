@@ -43,6 +43,88 @@ As in {cite}`doi:10.1287/opre.50.4.582.2864`, we impose two deadlines: one is a 
     * Delivery deadline: $\harddeadline{c}$
 ```
 
+## Dynamic Features
+
+We start by providing a list of variables.
+For brevity, we only identify key variables rather than provide an exhaustive list.
+Given airplane $p \in \Airplanes$ and airport $a \in \Airports$, {numref}`tab-state` defines variables and sets that reflect the environment state at time $t$.
+
+```{list-table} State
+:widths: 20 80
+:header-rows: 1
+:name: tab-state
+
+* - Variable / Set
+  - Description
+* - $\currentairport{p}{t} \in \Airports$
+  - The current location of airplane $p$.
+* - $\AvailableRoutes{t} \subseteq \Routes$
+  - Set of available routes.
+* - $\CargoOnPlane{p}{t} \subseteq \Cargos$
+  - The set of cargo loaded on airplane $p$
+* - $\CargoAtAirport{a}{t} \subseteq \Cargos$
+  - The set of cargo stored at airport $a$
+* - $\AirplanesAtAirport{a}{t} \subseteq \Airplanes$
+  - The set of planes processing at airport $a$
+```
+
+The following dynamic events may occur:
+- A new cargo order is added to set $C$.
+- Route $r \in R$ becomes temporarily unavailable for landing or takeoff (e.g., due to weather). Flights already en-route will still complete the flight to the destination.
+
+The available actions for each agent are shown {numref}`tab-actions`.
+Note that actions may become invalid as the state of the model evolves (for example an airplane's destination may become unreachable).
+
+```{list-table} Actions for airplane $p \in \Airplanes$ at time $t$
+:widths: 20 80
+:header-rows: 1
+:name: tab-actions
+
+* - Action
+  - Description
+* - $\process{p}$
+  - Boolean indicating whether airplane should refuel and load/unload cargo when landed.
+* - $\cargotoload{p} \subseteq \CargoAtAirport{\currentairport{p}{t}}{t}$
+  - Boolean indicating whether or not route $r$ is available.
+* - $\cargotounload{p} \subseteq \CargoOnPlane{p}{t}$
+  - The set of cargo unload from the airplane.
+* - $destination$
+    $\in \{ a_2 \in \Airports | (\currentairport{p}{t}, a_2) \in \AvailableRoutes{t} \}$
+  - The next destination of the airplane.
+```
+
+(airplane_state_machine)=
+## Airplane State Machine
+
+A state machine for the airplane is shown in {numref}`fig-state-machine` (see a [list of airplane states with descriptions](Plane_States)).
+Waiting airplanes must be processed before they are fully fueled and ready to take off.
+The agent may choose to load/unload cargo or may simply process the airplane without moving cargo. While the cargo is being loaded, it will be removed from the airport cargo set during processing, and then added to the airplane cargo set when finished.
+A similar process is followed for unloading cargo. Once ready for takeoff, the agent may choose to re-process the plane so that cargo can be loaded/unloaded (perhaps in response to recent events), or may specify a route for takeoff.
+The airplane will only take off if the route is available, i.e., if a random event has not taken the route offline.
+While in-flight, the airplane moves at a uniform rate along the route, set according to the flight time for that plane on the given route.
+The agent cannot issue any actions during the flight. Once it reaches an airport, the airplane will land and return to a waiting state pending further action by the agent.
+
+% To create the svg:
+% 1) Open "AirplaneStateMachine.pptx" with PowerPoint.
+% 2) File -> "Save as Adobe PDF"
+% 3) Open the PDF with Inkscape
+%    Choose to import using Poppler/Cairo Import
+% 4) Go to Document Properties.
+%    Reduce the document size until the left/bottom borders are just larger than the image (doesn't need to be exact).
+% 5) Save as an SVG.
+```{figure} AirplaneStateMachine.svg
+---
+name: fig-state-machine
+align: left
+---
+Airplane state machine.
+Time parameters are omitted from events for clarity.
+The transition labels indicate the condition required for the transition to occur.
+State transitions are evaluated at each time step.
+The notation $\mathbf{A} \stackrel{\mathbf{B}}{\leftarrowtail} \mathbf{C}$ indicates that the elements in set $\mathbf{B}$ are removed from set $\mathbf{C}$ and added to set $\mathbf{A}$ (if $\mathbf{B}$ is omitted, all elements are moved from set $\mathbf{C}$ to $\mathbf{A}$).
+```
+
+
 ## Metrics
 
 We base the score and reward on three raw metrics:
@@ -88,59 +170,3 @@ Specifically, the total scaled flight cost over all planes is defined as
        {\weightcapacity{p} * \totalcargo},
 ```
 where $\routemapdiameter{p}$ is the diameter of the largest connected component of airplane $p$'s route map.
-  
-
-
-
-## Dynamic Features
-
-We start by providing a list of variables.
-For brevity, we only identify key variables rather than provide an exhaustive list.
-Given airplane $p \in \Airplanes$ and airport $a \in \Airports$, {numref}`tab-state` defines variables and sets that reflect the environment state at time $t$.
-
-```{list-table} State
-:widths: 20 80
-:header-rows: 1
-:name: tab-state
-
-* - Variable / Set
-  - Description
-* - $\currentairport{p}{t} \in \Airports$
-  - The current location of airplane $p$.
-* - $\routeavailable{r}{t}$
-  - Boolean indicating whether or not route $r$ is available.
-* - $\CargoOnPlane{p}{t} \subseteq \Cargos$
-  - The set of cargo loaded on airplane $p$
-* - $\CargoAtAirport{a}{t} \subseteq \Cargos$
-  - The set of cargo stored at airport $a$
-* - $\AirplanesAtAirport{a}{t} \subseteq \Airplanes$
-  - The set of planes processing at airport $a$
-```
-
-The following dynamic events may occur:
-- A new cargo order is added to set $C$.
-- Route $r \in R$ becomes temporarily unavailable for landing or takeoff (e.g., due to weather). Flights already en-route will still complete the flight to the destination.
-
-
-(airplane_state_machine)=
-## Airplane State Machine
-
-A state machine for the airplane is shown in {numref}`fig-state-machine` (see a [list of airplane states with descriptions](Plane_States)).
-Waiting airplanes must be processed before they are fully fueled and ready to take off.
-The agent may choose to load/unload cargo or may simply process the airplane without moving cargo. While the cargo is being loaded, it will be removed from the airport cargo set during processing, and then added to the airplane cargo set when finished.
-A similar process is followed for unloading cargo. Once ready for takeoff, the agent may choose to re-process the plane so that cargo can be loaded/unloaded (perhaps in response to recent events), or may specify a route for takeoff.
-The airplane will only take off if the route is available, i.e., if a random event has not taken the route offline.
-While in-flight, the airplane moves at a uniform rate along the route, set according to the flight time for that plane on the given route.
-The agent cannot issue any actions during the flight. Once it reaches an airport, the airplane will land and return to a waiting state pending further action by the agent.
-
-```{figure} AirplaneStateMachine.svg
----
-name: fig-state-machine
-align: left
----
-Airplane state machine.
-Time parameters are omitted from events for clarity.
-The transition labels indicate the condition required for the transition to occur.
-State transitions are evaluated at each time step.
-The notation $\mathbf{A} \stackrel{\mathbf{B}}{\leftarrowtail} \mathbf{C}$ indicates that the elements in set $\mathbf{B}$ are removed from set $\mathbf{C}$ and added to set $\mathbf{A}$ (if $\mathbf{B}$ is omitted, all elements are moved from set $\mathbf{C}$ to $\mathbf{A}$).
-```
