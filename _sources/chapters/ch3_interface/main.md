@@ -37,8 +37,8 @@ As the state machine proceeds, it will automatically update the current action (
 * - `process`
   - $\process{p}$
   - `Discrete(2)`
-  - Flag indicating if the airplane should process when in the WAITING and READY_FOR_TAKEOFF states.
-    This flag should always be set to 1, unless the current airplane should wait for other airplanes to process first.
+  - Flag indicating if the airplane should load/unload cargo when in the WAITING and READY_FOR_TAKEOFF states.
+    The airplane must process at least one time after landing at an airport before it can take off again.
   - 0 = Do not process.  
     1 = Process when working capacity is available at current airport.  
 * - `cargo_to_load`

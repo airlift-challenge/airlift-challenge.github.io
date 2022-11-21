@@ -523,8 +523,8 @@ As the state machine proceeds, it will automatically update the current action (
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">process</span></code></p></td>
 <td><p><span class="math notranslate nohighlight">\(\process{p}\)</span></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Discrete(2)</span></code></p></td>
-<td><p>Flag indicating if the airplane should process when in the WAITING and READY_FOR_TAKEOFF states.
-This flag should always be set to 1, unless the current airplane should wait for other airplanes to process first.</p></td>
+<td><p>Flag indicating if the airplane should load/unload cargo when in the WAITING and READY_FOR_TAKEOFF states.
+The airplane must process at least one time after landing at an airport before it can take off again.</p></td>
 <td><p>0 = Do not process.<br />
 1 = Process when working capacity is available at current airport.</p></td>
 </tr>

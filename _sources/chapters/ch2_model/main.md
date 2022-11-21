@@ -97,8 +97,10 @@ Note that actions may become invalid as the state of the model evolves (for exam
 ## Airplane State Machine
 
 A state machine for the airplane is shown in {numref}`fig-state-machine` (see a [list of airplane states with descriptions](Plane_States)).
-Waiting airplanes must be processed before they are fully fueled and ready to take off.
-The agent may choose to load/unload cargo or may simply process the airplane without moving cargo. While the cargo is being loaded, it will be removed from the airport cargo set during processing, and then added to the airplane cargo set when finished.
+Airplanes must process at least once after landing before they can before they are fully fueled and ready to take off.
+Although we do not explicitly model fuel usage, the processing state introduces a wait typically needed for refueling and other maintenance.
+The agent may choose to load/unload cargo during processing, or may simply process the airplane without moving cargo.
+While the cargo is being loaded, it will be removed from the airport cargo set during processing, and then added to the airplane cargo set when finished.
 A similar process is followed for unloading cargo. Once ready for takeoff, the agent may choose to re-process the plane so that cargo can be loaded/unloaded (perhaps in response to recent events), or may specify a route for takeoff.
 The airplane will only take off if the route is available, i.e., if a random event has not taken the route offline.
 While in-flight, the airplane moves at a uniform rate along the route, set according to the flight time for that plane on the given route.
