@@ -837,13 +837,17 @@ While we do include the API in its entirety, this goal of this page is to assist
 and returns a new observation. Based on the new observation, the policy should create another set of actions for the next step.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>actions</strong> – Dictionary that contains the actions for all agents</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>obs, Dictionary that contains the observation for all agents. rewards,Dictionary that contains rewards.
-dones, Dictionary that indicates if an agent has completed a scenario. info, A dictionary containing a list of Warnings for each agent.</p>
-</dd>
+<dd class="field-odd"><p></p></dd>
 </dl>
+<p><cite>actions</cite> : Dictionary that contains the actions for all agents</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<p><cite>obs</cite> : Dictionary that contains the observation for all agents
+<cite>rewards</cite>: Dictionary that contains rewards
+<cite>dones</cite> : Dictionary that indicates if an agent has completed a scenario
+<cite>info</cite> : A dictionary contain containing a list of Warnings for each agent.</p>
 </dd></dl>
 
 </section>
@@ -852,15 +856,18 @@ dones, Dictionary that indicates if an agent has completed a scenario. info, A d
 <dl class="py function">
 <dt class="sig sig-object py" id="airlift.envs.airlift_env.AirliftEnv.reset">
 <span class="sig-prename descclassname"><span class="pre">airlift.envs.airlift_env.AirliftEnv.</span></span><span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span></span></span><a class="headerlink" href="#airlift.envs.airlift_env.AirliftEnv.reset" title="Permalink to this definition">#</a></dt>
-<dd><p>Resets the environment and generates a new random realization. If called without a seed, a new realization is generated.</p>
+<dd><p>Resets the environment and generates a new random realization.
+If called without a seed, a new realization is generated.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>seed</strong> – Environment seed</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A dictionary containing the initial observations for all agents. Individual observations of agents can be accessed using the ‘a_0…n’ keys.</p>
-</dd>
+<dd class="field-odd"><p></p></dd>
 </dl>
+<p><cite>seed</cite> : Environment seed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<p><cite>observe</cite> : A dictionary containing the initial observations for all agents. Individual observations of agents can be accessed using the ‘a_0…n’ keys.</p>
 </dd></dl>
 
 </section>
@@ -921,14 +928,12 @@ with your own solution.</p>
 <dd><p>Resets the solution with a seed. initializes  the state space, observation space and action space.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>obs</strong> – A dictionary containing the observation</p></li>
-<li><p><strong>observation_spaces</strong> – A dictionary containing all the observation spaces</p></li>
-<li><p><strong>action_spaces</strong> – A dictionary containing all the action spaces.</p></li>
-<li><p><strong>seed</strong> – Environment seed.</p></li>
-</ul>
-</dd>
+<dd class="field-odd"><p></p></dd>
 </dl>
+<p><cite>obs</cite>: A dictionary containing the observation
+<cite>observation_spaces</cite>: A dictionary containing all the observation spaces
+<cite>action_spaces</cite>: A dictionary containing all the action spaces.
+seed</p>
 </dd></dl>
 
 </section>
@@ -940,15 +945,15 @@ with your own solution.</p>
 <dd><p>The main policy for returning actions for each agent is contained here.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>obs</strong> – A dictionary containing an observation</p></li>
-<li><p><strong>dones</strong> – A dictionary containing the done values for each agent</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Actions for each agent.</p>
-</dd>
+<dd class="field-odd"><p></p></dd>
 </dl>
+<p><cite>obs</cite>: A dictionary containing an observation
+<cite>dones</cite>: A dictionary containing the done values for each agent</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<p>Actions for each agent.</p>
 </dd></dl>
 
 </section>
@@ -996,20 +1001,20 @@ to generate a policy for the agents:</p>
 <dd><p>Runs a single episode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>env</strong> – AirLiftEnv - An initialized Airlift Environment</p></li>
-<li><p><strong>solution</strong> – Solution - the solution that is being utilized</p></li>
-<li><p><strong>render</strong> – Render options, (video, window, none…)</p></li>
-<li><p><strong>env_seed</strong> – int, environment seed,</p></li>
-<li><p><strong>solution_seed</strong> – int, solution seed</p></li>
-<li><p><strong>render_sleep_time</strong> – float, sleep timer</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><cite>env.env_info</cite>: a NamedTuple that contains all the environment initialization parameters
-<cite>env.metrics</cite>: a NamedTuple that contains all the environment metrics collected for the solution.</p>
-</dd>
+<dd class="field-odd"><p></p></dd>
 </dl>
+<p><cite>env</cite>: AirLiftEnv - An initialized Airlift Environment
+<cite>solution</cite>: Solution - the solution that is being utilized
+<cite>render</cite>: Render options, (video, window, none…)
+<cite>env_seed</cite>: int, environment seed,
+<cite>solution_seed</cite>: int, solution seed
+<cite>render_sleep_time</cite>: float, sleep timer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<p><cite>env.env_info</cite>: a NamedTuple that contains all the environment initialization parameters
+<cite>env.metrics</cite>: a NamedTuple that contains all the environment metrics collected for the solution.</p>
 </dd></dl>
 
 </section>
@@ -1067,12 +1072,10 @@ environment step function and assists the agent in transitioning appropriately b
 that airplane</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>cargo_to_load</strong> – A list that contains the Cargo to load</p></li>
-<li><p><strong>warnings</strong> – List of warnings issued by the environment. Ex: If an action is given to an unavailable route</p></li>
-</ul>
-</dd>
+<dd class="field-odd"><p></p></dd>
 </dl>
+<p><cite>cargo_to_load</cite> : A list that contains the Cargo to load</p>
+<p><cite>warnings</cite> : List of warnings issued by the environment. Ex: If an action is given to an unavailable route</p>
 </dd></dl>
 
 </section>
@@ -1084,12 +1087,10 @@ that airplane</p>
 <dd><p>Does a check to ensure the correct cargo is being unloaded and removes the cargo from the airplane.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>cargo_to_unload</strong> – A list that contains the Cargo to unload</p></li>
-<li><p><strong>warnings</strong> – List of warnings issued by the environment. Ex: If an action is given to an unavailable route</p></li>
-</ul>
-</dd>
+<dd class="field-odd"><p></p></dd>
 </dl>
+<p><cite>cargo_to_unload</cite> : A list that contains the Cargo to unload</p>
+<p><cite>warnings</cite> : List of warnings issued by the environment. Ex: If an action is given to an unavailable route</p>
 </dd></dl>
 
 </section>
@@ -1101,9 +1102,9 @@ that airplane</p>
 <dd><p>Gets the total current cargo weight on an airplane</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>current cargo weight on an airplane</p>
-</dd>
+<dd class="field-odd"><p></p></dd>
 </dl>
+<p><cite>weight</cite> : current cargo weight on an airplane</p>
 </dd></dl>
 
 </section>
@@ -1119,12 +1120,14 @@ that airplane</p>
 <dd><p>Loads Cargo by ID</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>cargo_to_load</strong> – int,cargo ID to load</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A dictionary containing all the actions the agent will take that includes the cargo to load.</p>
-</dd>
+<dd class="field-odd"><p></p></dd>
 </dl>
+<p>‘cargo_to_load:’ int,cargo ID to load</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<p>A dictionary containing all the actions the agent will take that includes the cargo to load.</p>
 </dd></dl>
 
 </section>
@@ -1136,12 +1139,14 @@ that airplane</p>
 <dd><p>Unloads Cargo by ID</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>cargo_to_unload</strong> – int, cargo ID to unload</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A dictionary containing all the actions the agent will take that includes the cargo to unload.</p>
-</dd>
+<dd class="field-odd"><p></p></dd>
 </dl>
+<p><cite>cargo_to_unload</cite>: int, cargo ID to unload</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<p>A dictionary containing all the actions the agent will take that includes the cargo to unload.</p>
 </dd></dl>
 
 </section>
@@ -1153,15 +1158,15 @@ that airplane</p>
 <dd><p>Processes an action</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>cargo_to_load</strong> – A list containing the cargo IDs to load</p></li>
-<li><p><strong>cargo_to_unload</strong> – A list containing cargo IDs to unload</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A dictionary that contains all the cargo to load and unload.</p>
-</dd>
+<dd class="field-odd"><p></p></dd>
 </dl>
+<p><cite>cargo_to_load</cite>: A list containing the cargo IDs to load</p>
+<p><cite>cargo_to_unload</cite>: A list containing cargo IDs to unload</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<p>A dictionary that contains all the cargo to load and unload.</p>
 </dd></dl>
 
 </section>
@@ -1170,15 +1175,16 @@ that airplane</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="airlift.envs.airlift_env.ActionHelper.takeoff_action">
 <span class="sig-prename descclassname"><span class="pre">airlift.envs.airlift_env.ActionHelper.</span></span><span class="sig-name descname"><span class="pre">takeoff_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#airlift.envs.airlift_env.ActionHelper.takeoff_action" title="Permalink to this definition">#</a></dt>
-<dd><p>Gives the next destination</p>
-<dl class="field-list simple">
+<dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>destination</strong> – int, destination ID airport</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A dictionary containing the destination for the airplane to take off to.</p>
-</dd>
+<dd class="field-odd"><p></p></dd>
 </dl>
+<p><cite>destination</cite>: int, destination ID airport</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<p>A dictionary containing the destination for the airplane to take off to.</p>
 </dd></dl>
 
 </section>
@@ -1190,9 +1196,9 @@ that airplane</p>
 <dd><p>No-Op Action, “Do nothing”</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A dictionary where the values contained will make the airplane take no action.</p>
-</dd>
+<dd class="field-odd"><p></p></dd>
 </dl>
+<p>A dictionary where the values contained will make the airplane take no action.</p>
 </dd></dl>
 
 </section>
@@ -1204,12 +1210,14 @@ that airplane</p>
 <dd><p>Checks if an action is a No-Op action.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>action</strong> – dictionary, contains actions of a single agent</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Boolean, True if No-Op action.</p>
-</dd>
+<dd class="field-odd"><p></p></dd>
 </dl>
+<p><cite>action</cite>: dictionary, contains actions of a single agent</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<p>Boolean, True if No-Op action.</p>
 </dd></dl>
 
 </section>
@@ -1244,12 +1252,14 @@ that airplane</p>
 <dd><p>Checks to see if an airplane is idle.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>airplane_obs</strong> – agent observation</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Returns True if the Airplane is in the Waiting state, or ready for take off and does not have any actions assigned.</p>
-</dd>
+<dd class="field-odd"><p></p></dd>
 </dl>
+<p><cite>airplane_obs</cite>: agent observation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<p>Returns True if the Airplane is in the Waiting state, or ready for take off and does not have any actions assigned.</p>
 </dd></dl>
 
 </section>
@@ -1258,19 +1268,18 @@ that airplane</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="airlift.envs.airlift_env.ObservationHelper.available_destinations">
 <span class="sig-prename descclassname"><span class="pre">airlift.envs.airlift_env.ObservationHelper.</span></span><span class="sig-name descname"><span class="pre">available_destinations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">airplane_obs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.airlift_env.ObservationHelper.available_destinations" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns available destination from an airport node.</p>
-<dl class="field-list simple">
+<dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>state</strong> – Airplane current state</p></li>
-<li><p><strong>airplane_obs</strong> – Airplane Observation</p></li>
-<li><p><strong>plane_type</strong> – Airplane Model by PlaneTypeID</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Returns a list of all available destinations that the agent can travel to from its current node.</p>
-</dd>
+<dd class="field-odd"><p></p></dd>
 </dl>
+<p><cite>state</cite>: Airplane current state
+<cite>airplane_obs</cite>: Airplane Observation
+<cite>plane_type</cite>: Airplane Model by PlaneTypeID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<p>Returns a list of all available destinations that the agent can travel to from its current node.</p>
 </dd></dl>
 
 </section>
@@ -1282,17 +1291,17 @@ that airplane</p>
 <dd><p>Gets the shortest path from airport1 to airport2 based on the plane model.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>state</strong> – Airplane current state</p></li>
-<li><p><strong>airport1</strong> – From Airport</p></li>
-<li><p><strong>airport2</strong> – To Airport</p></li>
-<li><p><strong>plane_type</strong> – airplane model by PlaneTypeID</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A list containing the shortest path from airport1 to airport2.</p>
-</dd>
+<dd class="field-odd"><p></p></dd>
 </dl>
+<p><cite>state</cite>: Airplane current state
+<cite>airport1</cite>: From Airport
+<cite>airport2</cite>: To Airport
+<cite>plane_type</cite>: airplane model by PlaneTypeID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<p>A list containing the shortest path from airport1 to airport2.</p>
 </dd></dl>
 
 </section>
@@ -1304,15 +1313,15 @@ that airplane</p>
 <dd><p>Gets current active cargo info. Active cargo is cargo that has not been assigned &amp; delivered.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>state</strong> – Airplane current state</p></li>
-<li><p><strong>cargoid</strong> – Cargo by ID</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A list containing all the currently active cargo.</p>
-</dd>
+<dd class="field-odd"><p></p></dd>
 </dl>
+<p><cite>state</cite>: Airplane current state
+<cite>cargoid</cite>: Cargo by ID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<p>A list containing all the currently active cargo.</p>
 </dd></dl>
 
 </section>
@@ -1320,16 +1329,18 @@ that airplane</p>
 <h2>Get MultiGraph<a class="headerlink" href="#get-multigraph" title="Permalink to this headline">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="airlift.envs.airlift_env.ObservationHelper.get_multidigraph">
-<span class="sig-prename descclassname"><span class="pre">airlift.envs.airlift_env.ObservationHelper.</span></span><span class="sig-name descname"><span class="pre">get_multidigraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">&lt;networkx.classes.multidigraph.MultiDiGraph</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x0000021BFF907A90&gt;</span></span></span><a class="headerlink" href="#airlift.envs.airlift_env.ObservationHelper.get_multidigraph" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">airlift.envs.airlift_env.ObservationHelper.</span></span><span class="sig-name descname"><span class="pre">get_multidigraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">&lt;networkx.classes.multidigraph.MultiDiGraph</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x0000025FDE0CA250&gt;</span></span></span><a class="headerlink" href="#airlift.envs.airlift_env.ObservationHelper.get_multidigraph" title="Permalink to this definition">#</a></dt>
 <dd><p>Gets the routemap as a multigraph.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>state</strong> – Current Airplane state</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A route map as a MultiDiGraph</p>
-</dd>
+<dd class="field-odd"><p></p></dd>
 </dl>
+<p><cite>state:</cite> Current Airplane state</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<p>A route map as a MultiDiGraph</p>
 </dd></dl>
 
 </section>
