@@ -403,23 +403,23 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="world-generators">
-<h1>World Generators<a class="headerlink" href="#world-generators" title="Permalink to this headline">#</a></h1>
-<span class="target" id="module-airlift.envs.generators.world_generators"></span><dl class="py class">
+  <section id="module-airlift.envs.generators.world_generators">
+<span id="world-generators"></span><h1>World Generators<a class="headerlink" href="#module-airlift.envs.generators.world_generators" title="Permalink to this headline">#</a></h1>
+<dl class="py class">
 <dt class="sig sig-object py" id="airlift.envs.generators.world_generators.AirliftWorldGenerator">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">airlift.envs.generators.world_generators.</span></span><span class="sig-name descname"><span class="pre">AirliftWorldGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">plane_types=[A0],</span> <span class="pre">airport_generator=&lt;airlift.envs.generators.airport_generators.RandomAirportGenerator</span> <span class="pre">object&gt;,</span> <span class="pre">route_generator=&lt;airlift.envs.generators.route_generators.RouteByDistanceGenerator</span> <span class="pre">object&gt;,</span> <span class="pre">cargo_generator=&lt;airlift.envs.generators.cargo_generators.StaticCargoGenerator</span> <span class="pre">object&gt;,</span> <span class="pre">airplane_generator=&lt;airlift.envs.generators.airplane_generators.AirplaneGenerator</span> <span class="pre">object&gt;,</span> <span class="pre">static_airports=False,</span> <span class="pre">max_cycles=10000</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.generators.world_generators.AirliftWorldGenerator" title="Permalink to this definition">#</a></dt>
 <dd><p>Utilizes all the generators (Airport, Route, Cargo, Airplane etc…) to create the environment.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="airlift.envs.generators.world_generators.AirliftWorldGenerator.generate">
-<span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../route_map.html#airlift.envs.route_map.RouteMap" title="airlift.envs.route_map.RouteMap"><span class="pre">airlift.envs.route_map.RouteMap</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../agents.html#airlift.envs.agents.EnvAgent" title="airlift.envs.agents.EnvAgent"><span class="pre">airlift.envs.agents.EnvAgent</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">airlift.envs.cargo.Cargo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#airlift.envs.generators.world_generators.AirliftWorldGenerator.generate" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../route_map.html#airlift.envs.route_map.RouteMap" title="airlift.envs.route_map.RouteMap"><span class="pre">airlift.envs.route_map.RouteMap</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">airlift.envs.agents.EnvAgent</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">airlift.envs.cargo.Cargo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#airlift.envs.generators.world_generators.AirliftWorldGenerator.generate" title="Permalink to this definition">#</a></dt>
 <dd><p>Generates the initial cargo orders, the routes for each plane type, environment agents (airplanes). The world map is also generated within
 the airport_generator.generate() function. One of the initialization parameters for the airport generator is to decide
 which world map generator to use with the keyword mapgen=””.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p></dd>
+<dd class="field-odd"><p><cite>(routemap, airplanes, cargo)</cite> : Returns a Tuple that contains the Routemap, the list of agents and the set of cargo generated.</p>
+</dd>
 </dl>
-<p><cite>(routemap, airplanes, cargo)</cite> : Returns a Tuple that contains the Routemap, the list of agents and the set of cargo generated.</p>
 </dd></dl>
 
 <dl class="py method">

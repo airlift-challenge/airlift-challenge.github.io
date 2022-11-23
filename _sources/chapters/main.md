@@ -82,12 +82,14 @@ In addition to performing well on individual episodes, algorithms can also incre
 For more details, see [the Evaluation documentation](sec_eval).
 
 ## Schedule
-* **Warm Up Phase**: Starts on Oct. 31st, 2022. Submissions are not accepted at this phase. Warm up scenarios will be provided for competitors.
-* **Round 1**: Starts on Nov. 14th, 2022 (participants score themselves against the public test scenarios). One submission allowed per day, five per week. You can download Round 1 Scenarios [here](https://airliftchallenge.com/scenarios/scenarios_round1_test.zip)
-* **Round 2**: Starts on Dec. 12th, 2022 (participants score themselves against the public test scenarios). One submission allowed per day, five per week.
-* **Competition ends**: Jan 21st, 2023
+* **Warm Up Phase**: The {{round1testscen}} are currently available for participants to familiarize with features of the simulator and evaluator. Submissions are not accepted during this phase.
+* **Round 1**: To be announced...
+* **Round 2**: To be announced...
+* **Competition ends**: Feb. 10th, 2023
 
-We may increase the number of allowed submissions at a later date. 
+% * **Round 1**: Starts on Nov. 14th, 2022 (participants score themselves against the public test scenarios). One submission allowed per day, five per week. You can download Round 1 Scenarios [here](https://airliftchallenge.com/scenarios/scenarios_round1_test.zip)
+% * **Round 2**: Starts on Dec. 12th, 2022 (participants score themselves against the public test scenarios). One submission allowed per day, five per week.
+% We may increase the number of allowed submissions at a later date. 
 
 ## Student Recognition
 Students are encouraged to participate in this challenge. Top student submissions will be recognized and receive award certificates. 
@@ -97,7 +99,7 @@ Students are encouraged to participate in this challenge. Top student submission
 * {{codaforums}}: Primary means of communicating with the development team
 * {{testscen}}: Used to evaluate your solution
 * {{simplescen}}: Used for debugging your solution
-* [Round 1 Scenarios](https://airliftchallenge.com/scenarios/scenarios_round1_test.zip): Scenarios used for Round 1 of the competition
+* {{round1testscen}}: Test scenarios used for Round 1 of the competition
 * [Starter kit](https://github.com/airlift-challenge/airlift-starter-kit): Everything you need to get started for writing and submitting a solution
 * [Simulator source code](https://github.com/airlift-challenge/airlift): Contains the entire environment source code 
 

@@ -406,56 +406,56 @@ title="Print to PDF"
   <section id="environment">
 <h1>Environment<a class="headerlink" href="#environment" title="Permalink to this headline">#</a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="airlift.envs.airlift_env.AirliftEnv">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">airlift.envs.airlift_env.</span></span><span class="sig-name descname"><span class="pre">AirliftEnv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">world_generator=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pickuponly=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">renderer=&lt;airlift.envs.renderer.FlatRenderer</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.airlift_env.AirliftEnv" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">airlift.envs.airlift_env.</span></span><span class="sig-name descname"><span class="pre">AirliftEnv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">world_generator=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pickuponly=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">renderer=&lt;airlift.envs.renderer.FlatRenderer</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Controls all aspects of the simulation/environment.
 The primary interface is the step method, which provides observations/states to the agents and steps the environment
 to the next state given agent actions</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="airlift.envs.airlift_env.AirliftEnv.action_space">
-<span class="sig-name descname"><span class="pre">action_space</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">gym.spaces.space.Space</span></span></span><a class="headerlink" href="#airlift.envs.airlift_env.AirliftEnv.action_space" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">action_space</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">gym.spaces.space.Space</span></span></span></dt>
 <dd><p>Takes in agent and returns the action space for that agent.</p>
 <p>MUST return the same value for the same agent name</p>
 <p>Default implementation is to return the action_spaces dict</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="airlift.envs.airlift_env.AirliftEnv.clear_rewards_dict">
-<span class="sig-name descname"><span class="pre">clear_rewards_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.airlift_env.AirliftEnv.clear_rewards_dict" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">clear_rewards_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
 <dd><p>Reset the rewards dictionary</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="airlift.envs.airlift_env.AirliftEnv.close">
-<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.airlift_env.AirliftEnv.close" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
 <dd><p>This methods closes any renderer window.</p>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="airlift.envs.airlift_env.AirliftEnv.env_info">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">env_info</span></span><a class="headerlink" href="#airlift.envs.airlift_env.AirliftEnv.env_info" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">env_info</span></span></dt>
 <dd><p>Returns environment info.
 Should not be called before the environment is reset.</p>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="airlift.envs.airlift_env.AirliftEnv.metrics">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">metrics</span></span><a class="headerlink" href="#airlift.envs.airlift_env.AirliftEnv.metrics" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">metrics</span></span></dt>
 <dd><p>Returns metrics collected by the environment.
 Should be called after the episode is done.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="airlift.envs.airlift_env.AirliftEnv.observation_space">
-<span class="sig-name descname"><span class="pre">observation_space</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">gym.spaces.space.Space</span></span></span><a class="headerlink" href="#airlift.envs.airlift_env.AirliftEnv.observation_space" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">observation_space</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">gym.spaces.space.Space</span></span></span></dt>
 <dd><p>Takes in agent and returns the observation space for that agent.</p>
 <p>MUST return the same value for the same agent name</p>
 <p>Default implementation is to return the observation_spaces dict</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="airlift.envs.airlift_env.AirliftEnv.render">
-<span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'human'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.airlift_env.AirliftEnv.render" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'human'</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Displays a rendered frame from the environment, if supported.
 Alternate render modes in the default environments are <cite>‘rgb_array’</cite>
 which returns a numpy array and is supported by all environments outside
@@ -464,46 +464,39 @@ of classic, and <cite>‘ansi’</cite> which returns the strings printed
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="airlift.envs.airlift_env.AirliftEnv.reset">
-<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span></span></span><a class="headerlink" href="#airlift.envs.airlift_env.AirliftEnv.reset" title="Permalink to this definition">#</a></dt>
-<dd><p>Resets the environment and generates a new random realization.
-If called without a seed, a new realization is generated.</p>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span></span></span></dt>
+<dd><p>Resets the environment and generates a new random realization. If called without a seed, a new realization is generated.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p></p></dd>
+<dd class="field-odd"><p><strong>seed</strong> – Environment seed</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dictionary containing the initial observations for all agents. Individual observations of agents can be accessed using the ‘a_0…n’ keys.</p>
+</dd>
 </dl>
-<p><cite>seed</cite> : Environment seed</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p></dd>
-</dl>
-<p><cite>observe</cite> : A dictionary containing the initial observations for all agents. Individual observations of agents can be accessed using the ‘a_0…n’ keys.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="airlift.envs.airlift_env.AirliftEnv.state">
-<span class="sig-name descname"><span class="pre">state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.airlift_env.AirliftEnv.state" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
 <dd><p>Returns the complete state of the environment.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="airlift.envs.airlift_env.AirliftEnv.step">
-<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">actions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.airlift_env.AirliftEnv.step" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">actions</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Steps the environment base don the given actions
 and returns a new observation. Based on the new observation, the policy should create another set of actions for the next step.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p></p></dd>
+<dd class="field-odd"><p><strong>actions</strong> – Dictionary that contains the actions for all agents</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>obs, Dictionary that contains the observation for all agents. rewards,Dictionary that contains rewards.
+dones, Dictionary that indicates if an agent has completed a scenario. info, A dictionary containing a list of Warnings for each agent.</p>
+</dd>
 </dl>
-<p><cite>actions</cite> : Dictionary that contains the actions for all agents</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p></dd>
-</dl>
-<p><cite>obs</cite> : Dictionary that contains the observation for all agents
-<cite>rewards</cite>: Dictionary that contains rewards
-<cite>dones</cite> : Dictionary that indicates if an agent has completed a scenario
-<cite>info</cite> : A dictionary contain containing a list of Warnings for each agent.</p>
 </dd></dl>
 
 </dd></dl>

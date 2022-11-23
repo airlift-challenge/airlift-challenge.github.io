@@ -47,7 +47,7 @@ with a seed, actions being created from an observation, as well as the environme
 
 
 *Solutions*
-===========
+===============
 
 This solutions class does not have to be utilized, but it offers key insight how a solution can be created and agent actions can be generated. The solution class can be extended
 with your own solution.
@@ -129,7 +129,7 @@ Current Cargo Weight
 
 
 *Action Helper*
-===============
+=================
 
 This class will assist you in making actions in the environment.
 
@@ -179,7 +179,7 @@ Using the ActionHelper we can issue actions to the agents::
 
 
 *Observation Helper*
-===============
+=====================
 
 This is a helper class to assist with utilizing the state and observation. Includes helper functions such as getting available destinations or the shortest path route.
 
@@ -188,15 +188,15 @@ Airplane Idle
 .. autofunction:: airlift.envs.airlift_env.ObservationHelper.is_airplane_idle
 
 Available Destinations
-----------------
+-----------------------
 .. autofunction:: airlift.envs.airlift_env.ObservationHelper.available_destinations
 
 Get Lowest Cost Path
-----------------
+------------------------
 .. autofunction:: airlift.envs.airlift_env.ObservationHelper.get_lowest_cost_path
 
 Get Active Cargo Info
-----------------
+-----------------------
 .. autofunction:: airlift.envs.airlift_env.ObservationHelper.get_active_cargo_info
 
 Get MultiGraph

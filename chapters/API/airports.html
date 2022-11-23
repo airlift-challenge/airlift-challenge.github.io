@@ -415,20 +415,20 @@ title="Print to PDF"
 <dd><p>Adds a cargo item to an airport.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p></p></dd>
+<dd class="field-odd"><p><strong>cargo</strong> – Cargo to be added</p>
+</dd>
 </dl>
-<p><cite>cargo</cite> : ‘Cargo’</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="airlift.envs.airport.Airport.add_to_capacity">
-<span class="sig-name descname"><span class="pre">add_to_capacity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="agents.html#airlift.envs.agents.EnvAgent" title="airlift.envs.agents.EnvAgent"><span class="pre">EnvAgent</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#airlift.envs.airport.Airport.add_to_capacity" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">add_to_capacity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">EnvAgent</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#airlift.envs.airport.Airport.add_to_capacity" title="Permalink to this definition">#</a></dt>
 <dd><p>Adds an agent to the processing queue of an airport if it has capacity available.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p></p></dd>
+<dd class="field-odd"><p><strong>agent</strong> – Adds an agent to Airport capacity for processing.</p>
+</dd>
 </dl>
-<p><cite>agent</cite> : EnvAgent</p>
 </dd></dl>
 
 <dl class="py method">
@@ -437,9 +437,9 @@ title="Print to PDF"
 <dd><p>Checks to see if the current airport has capacity in order to start processing an agent.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p></dd>
+<dd class="field-odd"><p>Boolean, True if there is space available</p>
+</dd>
 </dl>
-<p>Boolean : True if there is space available</p>
 </dd></dl>
 
 <dl class="py method">
@@ -448,20 +448,20 @@ title="Print to PDF"
 <dd><p>Removes cargo from the airport’s cargo list</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p></p></dd>
+<dd class="field-odd"><p><strong>cargo</strong> – Cargo to be removed</p>
+</dd>
 </dl>
-<p><cite>cargo</cite> : Cargo</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="airlift.envs.airport.Airport.remove_from_capacity">
-<span class="sig-name descname"><span class="pre">remove_from_capacity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="agents.html#airlift.envs.agents.EnvAgent" title="airlift.envs.agents.EnvAgent"><span class="pre">EnvAgent</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#airlift.envs.airport.Airport.remove_from_capacity" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">remove_from_capacity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">EnvAgent</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#airlift.envs.airport.Airport.remove_from_capacity" title="Permalink to this definition">#</a></dt>
 <dd><p>Removes the agent from the processing queue.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p></p></dd>
+<dd class="field-odd"><p><strong>agent</strong> – Removes an agent from an airport capacity that has completed processing.</p>
+</dd>
 </dl>
-<p><cite>agent</cite> : EnvAgent</p>
 </dd></dl>
 
 </dd></dl>

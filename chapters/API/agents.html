@@ -403,90 +403,92 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="module-airlift.envs.agents">
-<span id="agents"></span><h1>Agents<a class="headerlink" href="#module-airlift.envs.agents" title="Permalink to this headline">#</a></h1>
+  <section id="agents">
+<h1>Agents<a class="headerlink" href="#agents" title="Permalink to this headline">#</a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="airlift.envs.agents.EnvAgent">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">airlift.envs.agents.</span></span><span class="sig-name descname"><span class="pre">EnvAgent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_airport</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">routemap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_loaded_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">malfunction_generator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.agents.EnvAgent" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">airlift.envs.agents.</span></span><span class="sig-name descname"><span class="pre">EnvAgent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_airport</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">routemap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_loaded_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">malfunction_generator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Represents an individual agent (airplane) in an environment.</p>
 <dl class="py property">
-<dt class="sig sig-object py" id="airlift.envs.agents.EnvAgent.current_cargo_weight">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">current_cargo_weight</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#airlift.envs.agents.EnvAgent.current_cargo_weight" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">current_cargo_weight</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em></dt>
 <dd><p>Gets the total current cargo weight on an airplane</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p></dd>
+<dd class="field-odd"><p>current cargo weight on an airplane</p>
+</dd>
 </dl>
-<p><cite>weight</cite> : current cargo weight on an airplane</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="airlift.envs.agents.EnvAgent.load_cargo">
-<span class="sig-name descname"><span class="pre">load_cargo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cargo_to_load</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Collection</span><span class="p"><span class="pre">[</span></span><span class="pre">airlift.envs.cargo.Cargo</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elapsed_steps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warnings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.agents.EnvAgent.load_cargo" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">load_cargo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cargo_to_load</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Collection</span><span class="p"><span class="pre">[</span></span><span class="pre">airlift.envs.cargo.Cargo</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elapsed_steps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warnings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Checks to make sure airplane can load cargo and loads the cargo. Also checks to ensure that cargo is assigned to
 that airplane</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p></p></dd>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cargo_to_load</strong> – A list that contains the Cargo to load</p></li>
+<li><p><strong>warnings</strong> – List of warnings issued by the environment. Ex: If an action is given to an unavailable route</p></li>
+</ul>
+</dd>
 </dl>
-<p><cite>cargo_to_load</cite> : A list that contains the Cargo to load</p>
-<p><cite>warnings</cite> : List of warnings issued by the environment. Ex: If an action is given to an unavailable route</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="airlift.envs.agents.EnvAgent.step">
-<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cargo_by_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">airlift.envs.cargo.Cargo</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elapsed_time</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#airlift.envs.agents.EnvAgent.step" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cargo_by_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">airlift.envs.cargo.Cargo</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elapsed_time</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span></dt>
 <dd><p>Updates the agent’s state.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p></p></dd>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>action</strong> – A dictionary of actions that contains ‘process’, ‘cargo_to_load’, ‘cargo_to_unload’ and ‘destination’</p></li>
+<li><p><strong>cargo_by_id</strong> – Dictionary containing the Cargo and CargoID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Tuple containing updated_action and warnings. The updated action contains any updated events to the action dict that occurred during the time step. The warnings list contains any issues with the current actions given.</p>
+</dd>
 </dl>
-<p><cite>action</cite> : A dictionary of actions that contains ‘process’, ‘cargo_to_load’, ‘cargo_to_unload’ and ‘destination’</p>
-<p><cite>cargo_by_id</cite> : Dictionary containing the Cargo and CargoID</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p></dd>
-</dl>
-<p><cite>updated_action</cite> : The updated action contains any updated events to the action dict that occurred during the time
-step</p>
-<p><cite>warnings</cite> : A list containing any issues with the current actions given.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="airlift.envs.agents.EnvAgent.try_to_process">
-<span class="sig-name descname"><span class="pre">try_to_process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cargo_to_load</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Collection</span><span class="p"><span class="pre">[</span></span><span class="pre">airlift.envs.cargo.Cargo</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cargo_to_unload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Collection</span><span class="p"><span class="pre">[</span></span><span class="pre">airlift.envs.cargo.Cargo</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elapsed_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warnings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#airlift.envs.agents.EnvAgent.try_to_process" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">try_to_process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cargo_to_load</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Collection</span><span class="p"><span class="pre">[</span></span><span class="pre">airlift.envs.cargo.Cargo</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cargo_to_unload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Collection</span><span class="p"><span class="pre">[</span></span><span class="pre">airlift.envs.cargo.Cargo</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elapsed_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warnings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span></dt>
 <dd><p>Checks to see if the current airport has capacity. If there is capacity the agent will go into
 the PROCESSING state and the processing timer will be updated. The agent is added to the airports capacity.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p></p></dd>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cargo_to_load</strong> – A set that contains cargo to load</p></li>
+<li><p><strong>cargo_to_unload</strong> – A set that contains cargo to unload</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Boolean, if successfully load or unloaded cargo</p>
+</dd>
 </dl>
-<p><cite>cargo_to_load</cite> : A set that contains cargo to load</p>
-<p><cite>cargo_to_unload</cite> : A set that contains cargo to unload</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p></dd>
-</dl>
-<p><cite>success</cite> : If successfully load or unloaded cargo</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="airlift.envs.agents.EnvAgent.unload_cargo">
-<span class="sig-name descname"><span class="pre">unload_cargo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cargo_to_unload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Collection</span><span class="p"><span class="pre">[</span></span><span class="pre">airlift.envs.cargo.Cargo</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warnings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.agents.EnvAgent.unload_cargo" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">unload_cargo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cargo_to_unload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Collection</span><span class="p"><span class="pre">[</span></span><span class="pre">airlift.envs.cargo.Cargo</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warnings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Does a check to ensure the correct cargo is being unloaded and removes the cargo from the airplane.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p></p></dd>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cargo_to_unload</strong> – A list that contains the Cargo to unload</p></li>
+<li><p><strong>warnings</strong> – List of warnings issued by the environment. Ex: If an action is given to an unavailable route</p></li>
+</ul>
+</dd>
 </dl>
-<p><cite>cargo_to_unload</cite> : A list that contains the Cargo to unload</p>
-<p><cite>warnings</cite> : List of warnings issued by the environment. Ex: If an action is given to an unavailable route</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="airlift.envs.agents.PlaneState">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">airlift.envs.agents.</span></span><span class="sig-name descname"><span class="pre">PlaneState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.agents.PlaneState" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">airlift.envs.agents.</span></span><span class="sig-name descname"><span class="pre">PlaneState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Enumeration that defines the states an agent can be in</p>
 <blockquote>
 <div><ul class="simple">

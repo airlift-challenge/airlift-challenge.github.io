@@ -403,9 +403,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="cargo-generators">
-<h1>Cargo Generators<a class="headerlink" href="#cargo-generators" title="Permalink to this headline">#</a></h1>
-<span class="target" id="module-airlift.envs.generators.cargo_generators"></span><dl class="py class">
+  <section id="module-airlift.envs.generators.cargo_generators">
+<span id="cargo-generators"></span><h1>Cargo Generators<a class="headerlink" href="#module-airlift.envs.generators.cargo_generators" title="Permalink to this headline">#</a></h1>
+<dl class="py class">
 <dt class="sig sig-object py" id="airlift.envs.generators.cargo_generators.CargoGenerator">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">airlift.envs.generators.cargo_generators.</span></span><span class="sig-name descname"><span class="pre">CargoGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_initial_tasks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_cargo_per_episode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.generators.cargo_generators.CargoGenerator" title="Permalink to this definition">#</a></dt>
 <dd><p>Handles the generation of Cargo Tasks</p>
@@ -470,9 +470,9 @@ title="Print to PDF"
 the upperbound limit of max cargo generated per episode is also adhered to.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p></dd>
+<dd class="field-odd"><p><cite>cargo_task</cite> : a List that contains a single Cargo or an empty list if no cargo was generated</p>
+</dd>
 </dl>
-<p><cite>cargo_task</cite> : a List that contains a single Cargo or an empty list if no cargo was generated</p>
 </dd></dl>
 
 </dd></dl>
@@ -488,16 +488,16 @@ concentrated drop off or pick up location as well as non-concentrated locations 
 The dynamic cargo generator accesses this function without going through the above generate_order function.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p></p></dd>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cargo_id</strong> – Incremental count of what cargo to create</p></li>
+<li><p><strong>drop_off_airports</strong> – List that contains all the airports that are drop off locations’</p></li>
+<li><p><strong>pick_up_airports</strong> – List that contains all the airports that are pick up locations</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><cite>cargo_task</cite> : A fully generated cargo task</p>
+</dd>
 </dl>
-<p><cite>cargo_id</cite> : Incremental count of what cargo to create</p>
-<p><cite>drop_off_airports</cite> : List that contains all the airports that are drop off locations’</p>
-<p><cite>pick_up_airports</cite> : List that contains all the airports that are pick up locations</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p></dd>
-</dl>
-<p><cite>cargo_task</cite> : A fully generated cargo task</p>
 </dd></dl>
 
 </dd></dl>
@@ -513,9 +513,9 @@ static or dynamic generators. Generally used for testing purposes.</p>
 <dd><p>Generates the initial hard-coded cargo values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p></dd>
+<dd class="field-odd"><p><cite>initialcargo</cite> : A set that contains the cargo.</p>
+</dd>
 </dl>
-<p><cite>initialcargo</cite> : A set that contains the cargo.</p>
 </dd></dl>
 
 </dd></dl>
@@ -537,15 +537,15 @@ static or dynamic generators. Generally used for testing purposes.</p>
 missed (hard deadline)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p></p></dd>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> – Source Airport</p></li>
+<li><p><strong>destination</strong> – Destination Airport</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><cite>(soft_deadline, hard_deadline)</cite> : Returns a tuple[int, int] containing soft/hard deadlines for cargo.</p>
+</dd>
 </dl>
-<p><cite>source</cite> : Source Airport</p>
-<p><cite>destination</cite> : Destination Airport</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p></dd>
-</dl>
-<p><cite>soft_deadline, hard_deadline</cite> : Returns a tuple[int, int] containing soft/hard deadlines for cargo.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -556,16 +556,16 @@ concentrated drop off or pick up location as well as non-concentrated locations 
 The dynamic cargo generator accesses this function without going through the above generate_order function.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p></p></dd>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cargo_id</strong> – Incremental count of what cargo to create</p></li>
+<li><p><strong>drop_off_airports</strong> – List that contains all the airports that are drop off locations’</p></li>
+<li><p><strong>pick_up_airports</strong> – List that contains all the airports that are pick up locations</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><cite>cargo_task</cite> : A fully generated cargo task</p>
+</dd>
 </dl>
-<p><cite>cargo_id</cite> : Incremental count of what cargo to create</p>
-<p><cite>drop_off_airports</cite> : List that contains all the airports that are drop off locations’</p>
-<p><cite>pick_up_airports</cite> : List that contains all the airports that are pick up locations</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p></dd>
-</dl>
-<p><cite>cargo_task</cite> : A fully generated cargo task</p>
 </dd></dl>
 
 <dl class="py method">
@@ -574,9 +574,9 @@ The dynamic cargo generator accesses this function without going through the abo
 <dd><p>Generates static cargo orders upon creation of the environment.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p></dd>
+<dd class="field-odd"><p><cite>order_list</cite> - Returns a set that contains all the (static) generated cargo orders</p>
+</dd>
 </dl>
-<p><cite>order_list</cite> : Returns a set that contains all the (static) generated cargo orders</p>
 </dd></dl>
 
 </dd></dl>

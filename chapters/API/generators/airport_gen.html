@@ -403,9 +403,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="airport-generators">
-<h1>Airport Generators<a class="headerlink" href="#airport-generators" title="Permalink to this headline">#</a></h1>
-<span class="target" id="module-airlift.envs.generators.airport_generators"></span><dl class="py class">
+  <section id="module-airlift.envs.generators.airport_generators">
+<span id="airport-generators"></span><h1>Airport Generators<a class="headerlink" href="#module-airlift.envs.generators.airport_generators" title="Permalink to this headline">#</a></h1>
+<dl class="py class">
 <dt class="sig sig-object py" id="airlift.envs.generators.airport_generators.AirportGenerator">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">airlift.envs.generators.airport_generators.</span></span><span class="sig-name descname"><span class="pre">AirportGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_airports</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">processing_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">working_capacity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">make_drop_off_area</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_off_border_fraction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_off_area_radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">make_pick_up_area</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pick_up_border_fraction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pick_up_area_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_land_coverage_fraction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mapgen=&lt;airlift.envs.generators.map_generators.PlainMapGenerator</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.generators.airport_generators.AirportGenerator" title="Permalink to this definition">#</a></dt>
 <dd><p>Generates Airports in the environment. Controls where pick up and drop of zones are located as well as their
@@ -427,12 +427,13 @@ respective sizes and distances from each other. Controls which map generator is 
 <dd><p>Generates the airport coordinates/locations, the map, as well as the designated drop-off and pickup areas.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p></dd>
+<dd class="field-odd"><p>A tuple containing,
+<cite>airports</cite> :  A list of airports
+<cite>map</cite> : A generated world map that was created using the map generator
+<cite>dropoff_area</cite> : An area containing the designated cargo dropoff zone
+<cite>pick_up_area</cite> : An area containing the designated cargo pickup zone</p>
+</dd>
 </dl>
-<p><cite>airports</cite> :  A list of airports</p>
-<p><cite>map</cite> : A generated world map that was created using the map generator</p>
-<p><cite>dropoff_area</cite> : An area containing the designated cargo dropoff zone</p>
-<p><cite>pick_up_area</cite> : An area containing the designated cargo pickup zone</p>
 </dd></dl>
 
 </dd></dl>
@@ -446,12 +447,13 @@ respective sizes and distances from each other. Controls which map generator is 
 <dd><p>Generates the airport coordinates/locations, the map, as well as the designated drop-off and pickup areas.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p></dd>
+<dd class="field-odd"><p>A tuple containing,
+<cite>airports</cite> :  A list of airports
+<cite>map</cite> : A generated world map that was created using the map generator
+<cite>dropoff_area</cite> : An area containing the designated cargo dropoff zone
+<cite>pick_up_area</cite> : An area containing the designated cargo pickup zone</p>
+</dd>
 </dl>
-<p><cite>airports</cite> :  A list of airports</p>
-<p><cite>map</cite> : A generated world map that was created using the map generator</p>
-<p><cite>dropoff_area</cite> : An area containing the designated cargo dropoff zone</p>
-<p><cite>pick_up_area</cite> : An area containing the designated cargo pickup zone</p>
 </dd></dl>
 
 </dd></dl>
@@ -466,12 +468,13 @@ respective sizes and distances from each other. Controls which map generator is 
 <dd><p>Generates the airport coordinates/locations, the map, as well as the designated drop-off and pickup areas.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p></dd>
+<dd class="field-odd"><p>A tuple containing,
+<cite>airports</cite> :  A list of airports
+<cite>map</cite> : A generated world map that was created using the map generator
+<cite>dropoff_area</cite> : An area containing the designated cargo dropoff zone
+<cite>pick_up_area</cite> : An area containing the designated cargo pickup zone</p>
+</dd>
 </dl>
-<p><cite>airports</cite>:  A list of airports</p>
-<p><cite>map</cite>: A generated world map that was created using the map generator</p>
-<p><cite>dropoff_area</cite>: An area containing the designated cargo dropoff zone</p>
-<p><cite>pick_up_area</cite>: An area containing the designated cargo pickup zone</p>
 </dd></dl>
 
 </dd></dl>

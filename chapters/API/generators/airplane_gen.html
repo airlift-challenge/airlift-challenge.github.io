@@ -412,17 +412,19 @@ title="Print to PDF"
 limitations are.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="airlift.envs.generators.airplane_generators.AirplaneGenerator.generate">
-<span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">routemap</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../route_map.html#airlift.envs.route_map.RouteMap" title="airlift.envs.route_map.RouteMap"><span class="pre">airlift.envs.route_map.RouteMap</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../agents.html#airlift.envs.agents.EnvAgent" title="airlift.envs.agents.EnvAgent"><span class="pre">airlift.envs.agents.EnvAgent</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#airlift.envs.generators.airplane_generators.AirplaneGenerator.generate" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">routemap</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../route_map.html#airlift.envs.route_map.RouteMap" title="airlift.envs.route_map.RouteMap"><span class="pre">airlift.envs.route_map.RouteMap</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">airlift.envs.agents.EnvAgent</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#airlift.envs.generators.airplane_generators.AirplaneGenerator.generate" title="Permalink to this definition">#</a></dt>
 <dd><p>Generates an EnvAgent at a start location for each plane model as defined in the plane_types.py file. The function
 ensures that there is at a minimum of 2 or more connected components at an airport before placing the airplane at 
 that location. This in turn makes sure that the agent is not stuck on one single airport. The dictionary keys are 
 accessible using the plane model: Ex: 0, 1..</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p></p></dd>
+<dd class="field-odd"><p><strong>routemap</strong> – A Dictionary of DiGraphs that that contains all the routes specific plane models are able to traverse</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><cite>airplanes</cite>, A list that contains all the EnvAgents</p>
+</dd>
 </dl>
-<p><cite>routemap</cite>: A Dictionary of DiGraphs that that contains all the routes specific plane models are able to traverse</p>
-<p><cite>airplanes</cite>: A list that contains all the EnvAgents</p>
 </dd></dl>
 
 </dd></dl>
