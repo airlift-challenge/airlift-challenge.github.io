@@ -6,8 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Airlift Challenge - Model</title>
-    <meta name="description" content="A breakdown of the Airlift Challenge model, including sets and associated parameters.">
+    <title>Model &#8212; Airlift Challenge v1.0 Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -640,9 +639,9 @@ The notation <span class="math notranslate nohighlight">\(\mathbf{A} \stackrel{\
 <div class="math notranslate nohighlight" id="equation-eqn-missed">
 <span class="eqno">(1)<a class="headerlink" href="#equation-eqn-missed" title="Permalink to this equation">#</a></span>\[\missed
 = \sum_{c \in \Cargos}
-  \Indicator{\actualdelivery{c} &gt; \harddeadline{c}}\]</div>
+  \Indicator{\actualdelivery{c} &gt; \harddeadline{c}},\]</div>
 <div class="math notranslate nohighlight" id="equation-eqn-lateness">
-<span class="eqno">(2)<a class="headerlink" href="#equation-eqn-lateness" title="Permalink to this equation">#</a></span>\[\begin{split}\lateness{p}
+<span class="eqno">(2)<a class="headerlink" href="#equation-eqn-lateness" title="Permalink to this equation">#</a></span>\[\begin{split}\lateness{c}
 =&amp; \max \left\{ 0, \actualdelivery{c} - \softdeadline{c} \right\}
 \\
 &amp;\qquad * \,\, \Indicator{\actualdelivery{c} \leq \harddeadline{c}},\end{split}\]</div>
