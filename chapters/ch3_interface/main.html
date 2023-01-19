@@ -53,7 +53,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"Reals": "\\mathbb{R}", "Indicator": ["\\mathbf{I} \\left(#1\\right)", 1], "Airports": "\\mathbf{A}", "AirplanesAtAirport": ["\\Airplanes_{#1}(#2)", 2], "workingcapactity": ["\\textit{capacity}_{#1}", 1], "processtime": ["\\textit{processtime}_{#1}", 1], "Routes": "\\mathbf{R}", "routecost": ["\\textit{routecost}_{#1#2}", 2], "routetime": ["\\textit{routetime}_{#1#2}", 2], "routestart": ["\\textit{start}_{#1}", 1], "routeend": ["\\textit{end}_{#1}", 1], "numflights": ["\\textit{numflights}_{#1#2}", 2], "AvailableRoutes": ["\\overline{\\mathbf{R}}(#1)", 1], "routemapdiameter": ["\\textit{diameter}_{#1}", 1], "Airplanes": "\\mathbf{P}", "currentairport": ["\\textit{airport}_{#1}(#2)", 2], "weightcapacity": ["\\textit{weightcapacity}_{#1}", 1], "Cargos": "\\mathbf{C}", "CargoOnPlane": ["\\Cargos_{#1}(#2)", 2], "CargoAtAirport": ["\\Cargos_{#1}(#2)", 2], "cargoweight": ["\\textit{weight}_{#1}", 1], "cargosrc": ["\\textit{src}_{#1}", 1], "cargodest": ["\\textit{dest}_{#1}", 1], "softdeadline": ["\\textit{targetdelivery}_{#1}", 1], "harddeadline": ["\\textit{deadline}_{#1}", 1], "actualdelivery": ["\\textit{actualdelivery}_{#1}", 1], "totalcargo": "\\textit{totalcargo}", "process": ["process_{#1}", 1], "cargotoload": ["cargo\\_to\\_load_{#1}", 1], "cargotounload": ["cargo\\_to\\_unload_{#1}", 1], "destination": ["destination", 1], "missedcoeff": "\\alpha", "missed": "\\textit{missed}", "latenesscoeff": "\\beta", "lateness": ["\\textit{lateness}_{#1}", 1], "scaledlateness": "\\textit{scaledlateness}", "totalflightcostcoeff": "\\gamma", "flightcost": ["\\textit{flightcost}_{#1}", 1], "scaledflightcost": "\\textit{scaledflightcost}", "episodescore": "\\textit{EpisodeScore}", "randomscore": "\\textit{RandomScore}", "baselinescore": "\\textit{BaselineScore}", "normalizedescore": "\\textit{NormalizedScore}", "overallscore": "\\textit{OverallScore}"}}, "html_theme_options": {"use_download_button": false, "use_edit_page_button": false, "use_repository_button": false, "use_issues_button": false}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"Reals": "\\mathbb{R}", "Indicator": ["\\mathbf{I} \\left(#1\\right)", 1], "Airports": "\\mathbf{A}", "AirplanesAtAirport": ["\\Airplanes_{#1}(#2)", 2], "workingcapactity": ["\\textit{capacity}_{#1}", 1], "processtime": ["\\textit{processtime}_{#1}", 1], "Routes": "\\mathbf{R}", "routecost": ["\\textit{routecost}_{#1#2}", 2], "routetime": ["\\textit{routetime}_{#1#2}", 2], "routestart": ["\\textit{start}_{#1}", 1], "routeend": ["\\textit{end}_{#1}", 1], "numflights": ["\\textit{numflights}_{#1#2}", 2], "AvailableRoutes": ["\\overline{\\mathbf{R}}(#1)", 1], "routemapdiameter": ["\\textit{diameter}_{#1}", 1], "Airplanes": "\\mathbf{P}", "currentairport": ["\\textit{airport}_{#1}(#2)", 2], "weightcapacity": ["\\textit{weightcapacity}_{#1}", 1], "Cargos": "\\mathbf{C}", "CargoOnPlane": ["\\Cargos_{#1}(#2)", 2], "CargoAtAirport": ["\\Cargos_{#1}(#2)", 2], "cargoweight": ["\\textit{weight}_{#1}", 1], "cargoloc": ["\\textit{loc}_{#1}", 1], "cargodest": ["\\textit{dest}_{#1}", 1], "softdeadline": ["\\textit{targetdelivery}_{#1}", 1], "harddeadline": ["\\textit{deadline}_{#1}", 1], "actualdelivery": ["\\textit{actualdelivery}_{#1}", 1], "totalcargo": "\\textit{totalcargo}", "process": ["process_{#1}", 1], "cargotoload": ["cargo\\_to\\_load_{#1}", 1], "cargotounload": ["cargo\\_to\\_unload_{#1}", 1], "destination": ["destination", 1], "missedcoeff": "\\alpha", "missed": "\\textit{missed}", "latenesscoeff": "\\beta", "lateness": ["\\textit{lateness}_{#1}", 1], "scaledlateness": "\\textit{scaledlateness}", "totalflightcostcoeff": "\\gamma", "flightcost": ["\\textit{flightcost}_{#1}", 1], "scaledflightcost": "\\textit{scaledflightcost}", "episodescore": "\\textit{EpisodeScore}", "randomscore": "\\textit{RandomScore}", "baselinescore": "\\textit{BaselineScore}", "normalizedescore": "\\textit{NormalizedScore}", "overallscore": "\\textit{OverallScore}"}}, "html_theme_options": {"use_download_button": false, "use_edit_page_button": false, "use_repository_button": false, "use_issues_button": false}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -622,6 +622,11 @@ We use a custom space named DiGraph which represents a NetworkX directed graph.<
 <td><p>Action Space (see <a class="reference internal" href="#tab-actionspace"><span class="std std-numref">Table 4</span></a>)</p></td>
 <td><p>Contains the last action issued by the agent. Entries will be modified by the state machine as transitions occur.</p></td>
 </tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">scenario_info</span></code></p></td>
+<td><p>N/A</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Discrete(1000)</span></code></p></td>
+<td><p>Contains information about the scenario. This includes maximum airport capacity and processing time.</p></td>
+</tr>
 </tbody>
 </table>
 <p>The state space uses the following named tuple to describe cargo:</p>
@@ -647,7 +652,7 @@ We use a custom space named DiGraph which represents a NetworkX directed graph.<
 <td><p>ID of the cargo</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">location</span></code></p></td>
-<td><p><span class="math notranslate nohighlight">\(\cargosrc{c}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\cargoloc{c}\)</span></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Discrete(max_airports+1)</span></code></p></td>
 <td><p>ID of airport where cargo is located, or <code class="docutils literal notranslate"><span class="pre">NOAIRPORT_ID</span></code> if cargo is on an airplane or being loaded/unloaded</p></td>
 </tr>
@@ -660,6 +665,16 @@ We use a custom space named DiGraph which represents a NetworkX directed graph.<
 <td><p><span class="math notranslate nohighlight">\(\cargoweight{c}\)</span></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Discrete(10000)</span></code></p></td>
 <td><p>Weight of the cargo</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">soft_deadline</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\softdeadline{c}\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Discrete(10000)</span></code></p></td>
+<td><p>Soft deadline for delivery. This is the target delivery time.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">hard_deadline</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\harddeadline{c}\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Discrete(10000)</span></code></p></td>
+<td><p>Hard deadline to deliver cargo by. Considered missed if not met.</p></td>
 </tr>
 </tbody>
 </table>
@@ -695,12 +710,36 @@ We use a custom space named DiGraph which represents a NetworkX directed graph.<
 </tr>
 </tbody>
 </table>
+<table class="colwidths-given table" id="tab-scenariospace">
+<caption><span class="caption-number">Table 8 </span><span class="caption-text">ScenarioSpace (NamedTuple) used by observation space. This contains general information about the scenario itself.</span><a class="headerlink" href="#tab-scenariospace" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Space Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">working_capacity</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Discrete(1000)</span></code></p></td>
+<td><p>Maximum working capacity of all airports.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">processing_time</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Discrete(1000)</span></code></p></td>
+<td><p>Processing time for all airports.</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="reward">
 <h2>Reward<a class="headerlink" href="#reward" title="Permalink to this headline">#</a></h2>
-<p>The reward signal is shown in <a class="reference internal" href="#tab-rewards"><span class="std std-numref">Table 8</span></a>, and follows directly from the objective function defined in <em>(4)</em>.</p>
+<p>The reward signal is shown in <a class="reference internal" href="#tab-rewards"><span class="std std-numref">Table 9</span></a>, and follows directly from the objective function defined in <em>(4)</em>.</p>
 <table class="colwidths-given table" id="tab-rewards">
-<caption><span class="caption-number">Table 8 </span><span class="caption-text">Rewards given at each step of the simulation.</span><a class="headerlink" href="#tab-rewards" title="Permalink to this table">#</a></caption>
+<caption><span class="caption-number">Table 9 </span><span class="caption-text">Rewards given at each step of the simulation.</span><a class="headerlink" href="#tab-rewards" title="Permalink to this table">#</a></caption>
 <colgroup>
 <col style="width: 75%" />
 <col style="width: 25%" />
@@ -728,7 +767,7 @@ We use a custom space named DiGraph which represents a NetworkX directed graph.<
 <p>The step method returns an <code class="docutils literal notranslate"><span class="pre">info</span></code> dictionary with an entry for each agent.
 The value is a dictionary with the following entries:</p>
 <table class="colwidths-given table" id="tab-info">
-<caption><span class="caption-number">Table 9 </span><span class="caption-text">Info dictionary.</span><a class="headerlink" href="#tab-info" title="Permalink to this table">#</a></caption>
+<caption><span class="caption-number">Table 10 </span><span class="caption-text">Info dictionary.</span><a class="headerlink" href="#tab-info" title="Permalink to this table">#</a></caption>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
