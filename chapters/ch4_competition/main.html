@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Competition &#8212; Airlift Challenge v1.0 Documentation</title>
+    <title>Competition &#8212; Airlift Challenge v1.0.1 Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -98,7 +98,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <h1 class="site-logo" id="site-title">Airlift Challenge v1.0 Documentation</h1>
+      <h1 class="site-logo" id="site-title">Airlift Challenge v1.0.1 Documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -509,7 +509,7 @@ title="Print to PDF"
 Within each Test, there are a series of Levels which increase the difficulty within the parameters of the Test.
 The Tests proceed until one of the following stopping criterion are met:</p>
 <ul class="simple">
-<li><p>The percentage of missed deliveries, averaged over all Levels within a Test, exceeds a threshold.</p></li>
+<li><p>The percentage of missed deliveries, averaged over all Levels within a Test, exceeds a threshold of 30%.</p></li>
 <li><p>An overall evaluation time limit of two hours is reached.</p></li>
 <li><p>All tests are completed.</p></li>
 </ul>
@@ -692,6 +692,9 @@ Note that it is possible to obtain negative normalized scores if the agent perfo
 <p>We impose a time limit on the algorithm for each time step (10 seconds), allowing extra time during the first step for pre-planning (10 minutes).
 We will ignore any action for a step where a timeout occurs (proceeding to operate based on the previous action).
 Subsequent steps will proceed normally.</p>
+<p>An overall time limit of 2 hours will be placed on each submission run.
+If the evaluation on the entire scenario set exceeds this time, the evaluation will be halted.
+The score will be calculated based on the tests run up to that point.</p>
 </section>
 </section>
 
