@@ -551,9 +551,9 @@ The agent is able to observe the end time of the event once it starts.</p></li>
 <h3>Test Set<a class="headerlink" href="#test-set" title="Permalink to this headline">#</a></h3>
 <p>We provide a <a class="reference external" href="https://airliftchallenge.com/scenarios/scenarios_test.zip">test scenario set</a> that you can use to evaluate your solution.
 Evaluation against these scenarios is described further in the <a class="reference external" href="https://github.com/airlift-challenge/airlift-starter-kit">Getting Started section of the Starter Kit</a></p>
-<p>The parameter progression is defined by the following Python code block:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">number_of_tests</span> <span class="o">=</span> <span class="mi">40</span>
-<span class="n">number_of_levels</span> <span class="o">=</span> <span class="mi">20</span> <span class="c1"># Number of levels within each test</span>
+<p>The parameter progression for the test set is defined by the following Python code block:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">number_of_tests</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">number_of_levels</span> <span class="o">=</span> <span class="mi">12</span> <span class="c1"># Number of levels within each test</span>
 
 
 <span class="c1"># *** Fixed parameters</span>
@@ -608,25 +608,25 @@ Evaluation against these scenarios is described further in the <a class="referen
 <span class="n">levelset</span> <span class="o">=</span> <span class="n">level</span> <span class="o">//</span> <span class="mi">3</span>
 
 <span class="c1"># Number of cargo to dynamically generate during the episode</span>
-<span class="n">num_dynamic_cargo</span> <span class="o">=</span> <span class="n">levelset</span> <span class="o">*</span> <span class="mi">5</span>
+<span class="n">num_dynamic_cargo</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">test</span> <span class="o">/</span> <span class="mi">20</span><span class="p">)</span> <span class="o">*</span> <span class="n">levelset</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span>
 
 <span class="c1"># Amount of slack time in the soft delivery deadline</span>
-<span class="n">dynamic_cargo_soft_deadline_multiplier</span> <span class="o">=</span> <span class="mi">5</span> 
+<span class="n">dynamic_cargo_soft_deadline_multiplier</span> <span class="o">=</span> <span class="p">(</span><span class="n">test</span> <span class="o">/</span> <span class="mi">20</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span>
 
 <span class="c1"># Amount of slack time in the hard delivery deadline</span>
-<span class="n">dynamic_cargo_hard_deadline_multiplier</span> <span class="o">=</span> <span class="mi">15</span> 
+<span class="n">dynamic_cargo_hard_deadline_multiplier</span> <span class="o">=</span> <span class="p">(</span><span class="n">test</span> <span class="o">/</span> <span class="mi">20</span><span class="p">)</span> <span class="o">*</span> <span class="mi">15</span>
 
 <span class="c1"># Rate at which the cargo is dynamically generated (Poisson process parameter)</span>
-<span class="n">dynamic_cargo_generation_rate</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">100</span> 
+<span class="n">dynamic_cargo_generation_rate</span> <span class="o">=</span> <span class="p">(</span><span class="n">test</span> <span class="o">/</span> <span class="mi">20</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">100</span>
 
 <span class="c1"># Rate at which routes go offline (Poisson process parameter)</span>
-<span class="n">malfunction_rate</span> <span class="o">=</span> <span class="n">levelset</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">300</span> 
+<span class="n">malfunction_rate</span> <span class="o">=</span> <span class="p">(</span><span class="n">test</span> <span class="o">/</span> <span class="mi">20</span><span class="p">)</span> <span class="o">*</span> <span class="n">levelset</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">300</span>
 
 <span class="c1"># Minimum duration for which a route will go offline</span>
-<span class="n">min_duration</span> <span class="o">=</span> <span class="mi">10</span> 
+<span class="n">min_duration</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">test</span> <span class="o">/</span> <span class="mi">20</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span>
 
 <span class="c1"># Maximum duration for which a route will go offline</span>
-<span class="n">max_duration</span> <span class="o">=</span> <span class="mi">100</span> 
+<span class="n">max_duration</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">test</span> <span class="o">/</span> <span class="mi">20</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Examples of various scenario difficulties are shown below.
