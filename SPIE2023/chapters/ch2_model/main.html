@@ -1,0 +1,744 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Model &#8212; Airlift Challenge v1.0.1 Documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"Reals": "\\mathbb{R}", "Indicator": ["\\mathbf{I} \\left(#1\\right)", 1], "Airports": "\\mathbf{A}", "AirplanesAtAirport": ["\\Airplanes_{#1}(#2)", 2], "workingcapactity": ["\\textit{capacity}_{#1}", 1], "processtime": ["\\textit{processtime}_{#1}", 1], "Routes": "\\mathbf{R}", "routecost": ["\\textit{routecost}_{#1#2}", 2], "routetime": ["\\textit{routetime}_{#1#2}", 2], "routestart": ["\\textit{start}_{#1}", 1], "routeend": ["\\textit{end}_{#1}", 1], "numflights": ["\\textit{numflights}_{#1#2}", 2], "AvailableRoutes": ["\\overline{\\mathbf{R}}(#1)", 1], "routemapdiameter": ["\\textit{diameter}_{#1}", 1], "Airplanes": "\\mathbf{P}", "currentairport": ["\\textit{airport}_{#1}(#2)", 2], "weightcapacity": ["\\textit{weightcapacity}_{#1}", 1], "Cargos": "\\mathbf{C}", "CargoOnPlane": ["\\Cargos_{#1}(#2)", 2], "CargoAtAirport": ["\\Cargos_{#1}(#2)", 2], "cargoweight": ["\\textit{weight}_{#1}", 1], "cargoloc": ["\\textit{loc}_{#1}", 1], "cargodest": ["\\textit{dest}_{#1}", 1], "softdeadline": ["\\textit{targetdelivery}_{#1}", 1], "harddeadline": ["\\textit{deadline}_{#1}", 1], "actualdelivery": ["\\textit{actualdelivery}_{#1}", 1], "totalcargo": "\\textit{totalcargo}", "process": ["process_{#1}", 1], "cargotoload": ["cargo\\_to\\_load_{#1}", 1], "cargotounload": ["cargo\\_to\\_unload_{#1}", 1], "destination": ["destination", 1], "missedcoeff": "\\alpha", "missed": "\\textit{missed}", "latenesscoeff": "\\beta", "lateness": ["\\textit{lateness}_{#1}", 1], "scaledlateness": "\\textit{scaledlateness}", "totalflightcostcoeff": "\\gamma", "flightcost": ["\\textit{flightcost}_{#1}", 1], "scaledflightcost": "\\textit{scaledflightcost}", "episodescore": "\\textit{EpisodeScore}", "randomscore": "\\textit{RandomScore}", "baselinescore": "\\textit{BaselineScore}", "normalizedescore": "\\textit{NormalizedScore}", "overallscore": "\\textit{OverallScore}"}}, "html_theme_options": {"use_download_button": false, "use_edit_page_button": false, "use_repository_button": false, "use_issues_button": false}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Simulator Interface" href="../ch3_interface/main.html" />
+    <link rel="prev" title="Getting Started" href="../ch1_getting_started/main.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Airlift Challenge v1.0.1 Documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../main.html">
+                    Overview
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Main
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1_getting_started/main.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3_interface/main.html">
+   Simulator Interface
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4_competition/main.html">
+   Competition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch5_gen/main.html">
+   Generating Scenarios
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch6_solutions/main.html">
+   Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../API/essential_api.html">
+   Essential API
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Code
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../API/environment.html">
+   Environment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../API/airports.html">
+   Airports
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../API/agents.html">
+   Agents
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../API/plane_types.html">
+   Airplane Types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../API/renderer.html">
+   Renderer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../API/local_eval.html">
+   Local Evaluator
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../API/route_map.html">
+   Route Map
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../API/generators/generators.html">
+   Generators
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../API/generators/airplane_gen.html">
+     Airplane Generators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../API/generators/airport_gen.html">
+     Airport Generators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../API/generators/cargo_gen.html">
+     Cargo Generators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../API/generators/map_gen.html">
+     Map Generators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../API/generators/route_gen.html">
+     Route Generators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../API/generators/world_gen.html">
+     World Generators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../API/generators/event_gen.html">
+     Event Generator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../API/generators/event_interval_gen.html">
+     Event Interval Generator
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../misc/contact.html">
+   Contact Us
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../misc/credits.html">
+   Credits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../misc/termsconditions.html">
+   Terms and Conditions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../misc/bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/chapters/ch2_model/main.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definitions">
+   Definitions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dynamic-features">
+   Dynamic Features
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#airplane-state-machine">
+   Airplane State Machine
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#metrics">
+   Metrics
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Model</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definitions">
+   Definitions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dynamic-features">
+   Dynamic Features
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#airplane-state-machine">
+   Airplane State Machine
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#metrics">
+   Metrics
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="model">
+<span id="sec-model"></span><h1>Model<a class="headerlink" href="#model" title="Permalink to this headline">#</a></h1>
+<section id="definitions">
+<h2>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">#</a></h2>
+<p>The sets and their associated parameters are shown in <a class="reference internal" href="#tab-sets"><span class="std std-numref">Table 1</span></a>.
+We elaborate on a few aspects of this model.
+If the working capacity at an airport is reached, then a plane will wait for an open slot.
+Once the airplane starts processing, it will need a fixed amount of processing time <span class="math notranslate nohighlight">\(\processtime{p}\)</span>, regardless of whether cargo is being loaded or unloaded.
+As in <span id="id1">[<a class="reference internal" href="../misc/bibliography.html#id5" title="Steven F. Baker, David P. Morton, Richard E. Rosenthal, and Laura Melody Williams. Optimizing military airlift. Operations Research, 50(4):582-602, 2002. URL: https://doi.org/10.1287/opre.50.4.582.2864.">2</a>]</span>, we impose two deadlines: one is a soft deadline <span class="math notranslate nohighlight">\(\softdeadline{c}\)</span> by which the cargo is expected to be delivered, and one is a hard deadline <span class="math notranslate nohighlight">\(\harddeadline{c}\)</span> after which the delivery is considered missed and no longer useful.</p>
+<table class="colwidths-given table" id="tab-sets">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Sets and parameters</span><a class="headerlink" href="#tab-sets" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Set</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Associated Parameters</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\Airports\)</span></p></td>
+<td><p>Airports</p></td>
+<td><p>For airport <span class="math notranslate nohighlight">\(a \in Airports\)</span>:</p>
+<ul class="simple">
+<li><p>Working capacity (number of planes that can be processed at same time): <span class="math notranslate nohighlight">\(\workingcapactity{a}\)</span></p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\Routes\)</span></p></td>
+<td><p>Routes between airports</p></td>
+<td><p>For route <span class="math notranslate nohighlight">\(r \in \Routes \subseteq \Airports \times \Airports\)</span>:</p>
+<ul class="simple">
+<li><p>Cost of flying route by airplane <span class="math notranslate nohighlight">\(p \in \Airplanes\)</span>:  <span class="math notranslate nohighlight">\(\routecost{r}{p}\)</span></p></li>
+<li><p>Time required for airplane <span class="math notranslate nohighlight">\(p \in \Airplanes\)</span> to fly route: <span class="math notranslate nohighlight">\(\routetime{r}{p}\)</span></p></li>
+<li><p>Start/end airports: <span class="math notranslate nohighlight">\(\routestart{r},\routeend{r} \in \Airports\)</span>
+Note: Routes are directed, i.e., the route between airports <span class="math notranslate nohighlight">\(a_{1}\)</span> and <span class="math notranslate nohighlight">\(a_{2}\)</span> is distinct from the route from <span class="math notranslate nohighlight">\(a_{2}\)</span> to <span class="math notranslate nohighlight">\(a_{1}\)</span>.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\Airplanes\)</span></p></td>
+<td><p>Airplane</p></td>
+<td><p>For airplane <span class="math notranslate nohighlight">\(p \in \Airplanes\)</span>:</p>
+<ul class="simple">
+<li><p>Cargo weight capacity: <span class="math notranslate nohighlight">\(\weightcapacity{p}\)</span></p></li>
+<li><p>Time to process: <span class="math notranslate nohighlight">\(\processtime{p}\)</span>
+In practice, we will have a small number of airplane types which will have shared parameterizations. We leave this as an implementation detail.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\Cargos\)</span></p></td>
+<td><p>Cargo items</p></td>
+<td><p>For cargo item <span class="math notranslate nohighlight">\(c \in \Cargos\)</span>:</p>
+<ul class="simple">
+<li><p>Weight: <span class="math notranslate nohighlight">\(\cargoweight{c} \in \Reals\)</span></p></li>
+<li><p>Location/destination airports: <span class="math notranslate nohighlight">\(\cargoloc{c},\cargodest{c} \in \Airports\)</span></p></li>
+<li><p>Target delivery time: <span class="math notranslate nohighlight">\(\softdeadline{c}\)</span></p></li>
+<li><p>Delivery deadline: <span class="math notranslate nohighlight">\(\harddeadline{c}\)</span></p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="dynamic-features">
+<h2>Dynamic Features<a class="headerlink" href="#dynamic-features" title="Permalink to this headline">#</a></h2>
+<p>We start by providing a list of variables.
+For brevity, we only identify key variables rather than provide an exhaustive list.
+Given airplane <span class="math notranslate nohighlight">\(p \in \Airplanes\)</span> and airport <span class="math notranslate nohighlight">\(a \in \Airports\)</span>, <a class="reference internal" href="#tab-state"><span class="std std-numref">Table 2</span></a> defines variables and sets that reflect the environment state at time <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<table class="colwidths-given table" id="tab-state">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">State</span><a class="headerlink" href="#tab-state" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable / Set</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\currentairport{p}{t} \in \Airports\)</span></p></td>
+<td><p>The current location of airplane <span class="math notranslate nohighlight">\(p\)</span>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\AvailableRoutes{t} \subseteq \Routes\)</span></p></td>
+<td><p>Set of available routes.</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\CargoOnPlane{p}{t} \subseteq \Cargos\)</span></p></td>
+<td><p>The set of cargo loaded on airplane <span class="math notranslate nohighlight">\(p\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\CargoAtAirport{a}{t} \subseteq \Cargos\)</span></p></td>
+<td><p>The set of cargo stored at airport <span class="math notranslate nohighlight">\(a\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\AirplanesAtAirport{a}{t} \subseteq \Airplanes\)</span></p></td>
+<td><p>The set of planes processing at airport <span class="math notranslate nohighlight">\(a\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>The following dynamic events may occur:</p>
+<ul class="simple">
+<li><p>A new cargo order is added to set <span class="math notranslate nohighlight">\(C\)</span>.</p></li>
+<li><p>Route <span class="math notranslate nohighlight">\(r \in R\)</span> becomes temporarily unavailable for landing or takeoff (e.g., due to weather). Flights already en-route will still complete the flight to the destination.</p></li>
+</ul>
+<p>The available actions for each agent are shown <a class="reference internal" href="#tab-actions"><span class="std std-numref">Table 3</span></a>.
+Note that actions may become invalid as the state of the model evolves (for example an airplane’s destination may become unreachable).</p>
+<table class="colwidths-given table" id="tab-actions">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Actions for airplane <span class="math notranslate nohighlight">\(p \in \Airplanes\)</span> at time <span class="math notranslate nohighlight">\(t\)</span></span><a class="headerlink" href="#tab-actions" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Action</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\process{p}\)</span></p></td>
+<td><p>Boolean indicating whether airplane should refuel and load/unload cargo when landed.</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\cargotoload{p} \subseteq \CargoAtAirport{\currentairport{p}{t}}{t}\)</span></p></td>
+<td><p>Boolean indicating whether or not route <span class="math notranslate nohighlight">\(r\)</span> is available.</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\cargotounload{p} \subseteq \CargoOnPlane{p}{t}\)</span></p></td>
+<td><p>The set of cargo unload from the airplane.</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(destination\)</span>
+<span class="math notranslate nohighlight">\(\in \{ a_2 \in \Airports | (\currentairport{p}{t}, a_2) \in \AvailableRoutes{t} \}\)</span></p></td>
+<td><p>The next destination of the airplane.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="airplane-state-machine">
+<span id="id2"></span><h2>Airplane State Machine<a class="headerlink" href="#airplane-state-machine" title="Permalink to this headline">#</a></h2>
+<p>A state machine for the airplane is shown in <a class="reference internal" href="#fig-state-machine"><span class="std std-numref">Fig. 1</span></a> (see a <a class="reference internal" href="../API/essential_api.html#plane-states"><span class="std std-ref">list of airplane states with descriptions</span></a>).
+Airplanes must process at least once after landing before they can before they are fully fueled and ready to take off.
+Although we do not explicitly model fuel usage, the processing state introduces a wait typically needed for refueling and other maintenance.
+The agent may choose to load/unload cargo during processing, or may simply process the airplane without moving cargo.
+While the cargo is being loaded, it will be removed from the airport cargo set during processing, and then added to the airplane cargo set when finished.
+A similar process is followed for unloading cargo. Once ready for takeoff, the agent may choose to re-process the plane so that cargo can be loaded/unloaded (perhaps in response to recent events), or may specify a route for takeoff.
+The airplane will only take off if the route is available, i.e., if a random event has not taken the route offline.
+While in-flight, the airplane moves at a uniform rate along the route, set according to the flight time for that plane on the given route.
+The agent cannot issue any actions during the flight. Once it reaches an airport, the airplane will land and return to a waiting state pending further action by the agent.</p>
+<figure class="align-left" id="fig-state-machine">
+<img alt="../../_images/AirplaneStateMachine.svg" src="../../_images/AirplaneStateMachine.svg" /><figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Airplane state machine.
+Time parameters are omitted from events for clarity.
+The transition labels indicate the condition required for the transition to occur.
+State transitions are evaluated at each time step.
+The notation <span class="math notranslate nohighlight">\(\mathbf{A} \stackrel{\mathbf{B}}{\leftarrowtail} \mathbf{C}\)</span> indicates that the elements in set <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> are removed from set <span class="math notranslate nohighlight">\(\mathbf{C}\)</span> and added to set <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> (if <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> is omitted, all elements are moved from set <span class="math notranslate nohighlight">\(\mathbf{C}\)</span> to <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>).</span><a class="headerlink" href="#fig-state-machine" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="metrics">
+<h2>Metrics<a class="headerlink" href="#metrics" title="Permalink to this headline">#</a></h2>
+<p>We base the score and reward on three raw metrics:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-missed">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eqn-missed" title="Permalink to this equation">#</a></span>\[\missed
+= \sum_{c \in \Cargos}
+  \Indicator{\actualdelivery{c} &gt; \harddeadline{c}},\]</div>
+<div class="math notranslate nohighlight" id="equation-eqn-lateness">
+<span class="eqno">(2)<a class="headerlink" href="#equation-eqn-lateness" title="Permalink to this equation">#</a></span>\[\begin{split}\lateness{c}
+=&amp; \max \left\{ 0, \actualdelivery{c} - \softdeadline{c} \right\}
+\\
+&amp;\qquad * \,\, \Indicator{\actualdelivery{c} \leq \harddeadline{c}},\end{split}\]</div>
+<div class="math notranslate nohighlight" id="equation-eqn-flightcost">
+<span class="eqno">(3)<a class="headerlink" href="#equation-eqn-flightcost" title="Permalink to this equation">#</a></span>\[\flightcost{p}
+= \sum_{r \in \Routes}
+  \left( \routecost{r}{p} * \numflights{r}{p} \right),\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Indicator{\cdot}\)</span> is the indicator function, <span class="math notranslate nohighlight">\(\actualdelivery{c}\)</span> is the actual time when the cargo is delivered (or <span class="math notranslate nohighlight">\(\infty\)</span> if the delivery never occured), and <span class="math notranslate nohighlight">\(\numflights{r}{p}\)</span> is the number of flights by plane <span class="math notranslate nohighlight">\(p\)</span> over route <span class="math notranslate nohighlight">\(r\)</span>.
+The number of missed deliveries is captured by <a class="reference internal" href="#equation-eqn-missed">(1)</a>.
+For deliveries that are not missed, <a class="reference internal" href="#equation-eqn-lateness">(2)</a> indicates the amount of time by which these deliveries miss the delivery deadline.
+The cost incurred by airplane <span class="math notranslate nohighlight">\(p\)</span> flying routes during the course of the episode is identified by <a class="reference internal" href="#equation-eqn-flightcost">(3)</a>.
+We note that although the cost may be primarily driven by fuel usage, it can also quantify other costs.</p>
+<p>In order to encourage more uniformity across scenarios, we derive two scaled metrics.
+First, we scale the lateness so that it’s value will range between 0 and 1:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-scaled-lateness">
+<span class="eqno">(4)<a class="headerlink" href="#equation-eqn-scaled-lateness" title="Permalink to this equation">#</a></span>\[\scaledlateness
+= \sum_{c \in \Cargos} \frac{\lateness{c}}{\harddeadline{c} - \softdeadline{c}}\]</div>
+<p>Second, we scale the flight costs of each airplane against the diameter of the route map graph, the number of cargo generated <span class="math notranslate nohighlight">\(\totalcargo\)</span>, and the capacity of the airplane.
+Specifically, the total scaled flight cost over all planes is defined as</p>
+<div class="math notranslate nohighlight" id="equation-eqn-scaled-total-flightcost">
+<span class="eqno">(5)<a class="headerlink" href="#equation-eqn-scaled-total-flightcost" title="Permalink to this equation">#</a></span>\[\scaledflightcost
+= \sum_{p \in \Airplanes}
+  \frac{\flightcost{p} * \routemapdiameter{p}}
+       {\weightcapacity{p} * \totalcargo},\]</div>
+<p>where <span class="math notranslate nohighlight">\(\routemapdiameter{p}\)</span> is the diameter of the largest connected component of airplane <span class="math notranslate nohighlight">\(p\)</span>’s route map.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters\ch2_model"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../ch1_getting_started/main.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Getting Started</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../ch3_interface/main.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Simulator Interface</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book community<br/>
+  
+    <div class="extra_footer">
+      <p>
+Distribution Statement A: Approved for Public Release; Distribution Unlimited: Case Number: AFRL-2022-5074, CLEARED on 19 Oct 2022
+</p>
+
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
