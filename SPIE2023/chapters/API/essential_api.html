@@ -1,0 +1,1435 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Essential API &#8212; Airlift Challenge v1.0.1 Documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Environment" href="environment.html" />
+    <link rel="prev" title="Solutions" href="../ch6_solutions/main.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Airlift Challenge v1.0.1 Documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../main.html">
+                    Overview
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Main
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1_getting_started/main.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2_model/main.html">
+   Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3_interface/main.html">
+   Simulator Interface
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4_competition/main.html">
+   Competition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch5_gen/main.html">
+   Generating Scenarios
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch6_solutions/main.html">
+   Solutions
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Essential API
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Code
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="environment.html">
+   Environment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="airports.html">
+   Airports
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="agents.html">
+   Agents
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plane_types.html">
+   Airplane Types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="renderer.html">
+   Renderer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="local_eval.html">
+   Local Evaluator
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="route_map.html">
+   Route Map
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="generators/generators.html">
+   Generators
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="generators/airplane_gen.html">
+     Airplane Generators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="generators/airport_gen.html">
+     Airport Generators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="generators/cargo_gen.html">
+     Cargo Generators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="generators/map_gen.html">
+     Map Generators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="generators/route_gen.html">
+     Route Generators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="generators/world_gen.html">
+     World Generators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="generators/event_gen.html">
+     Event Generator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="generators/event_interval_gen.html">
+     Event Interval Generator
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../misc/contact.html">
+   Contact Us
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../misc/credits.html">
+   Credits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../misc/termsconditions.html">
+   Terms and Conditions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../misc/bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/chapters/API/essential_api.rst"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Essential API
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#airliftenv">
+   <em>
+    AirliftEnv
+   </em>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step">
+     Step
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reset">
+     Reset
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#state">
+     State
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#observe">
+     Observe
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#action-space">
+     Action Space
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solutions">
+   <em>
+    Solutions
+   </em>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Reset
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#policies">
+     Policies
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#name">
+     Name
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-state">
+     Get State
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Example
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#do-episode">
+     Do Episode
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#agents">
+   <em>
+    Agents
+   </em>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plane-states">
+     Plane States
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-cargo">
+     Load Cargo
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unload-cargo">
+     Unload Cargo
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#current-cargo-weight">
+     Current Cargo Weight
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#action-helper">
+   <em>
+    Action Helper
+   </em>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-action">
+     Load Action
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unload-action">
+     Unload Action
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#process-action">
+     Process Action
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#takeoff-action">
+     Takeoff Action
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#noop-action">
+     Noop Action
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#is-noop-action">
+     Is Noop Action
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#observation-helper">
+   <em>
+    Observation Helper
+   </em>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#airplane-idle">
+     Airplane Idle
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#available-destinations">
+     Available Destinations
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-lowest-cost-path">
+     Get Lowest Cost Path
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-active-cargo-info">
+     Get Active Cargo Info
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-multigraph">
+     Get MultiGraph
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Example
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Essential API</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Essential API
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#airliftenv">
+   <em>
+    AirliftEnv
+   </em>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step">
+     Step
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reset">
+     Reset
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#state">
+     State
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#observe">
+     Observe
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#action-space">
+     Action Space
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solutions">
+   <em>
+    Solutions
+   </em>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Reset
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#policies">
+     Policies
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#name">
+     Name
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-state">
+     Get State
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Example
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#do-episode">
+     Do Episode
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#agents">
+   <em>
+    Agents
+   </em>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plane-states">
+     Plane States
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-cargo">
+     Load Cargo
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unload-cargo">
+     Unload Cargo
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#current-cargo-weight">
+     Current Cargo Weight
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#action-helper">
+   <em>
+    Action Helper
+   </em>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-action">
+     Load Action
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unload-action">
+     Unload Action
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#process-action">
+     Process Action
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#takeoff-action">
+     Takeoff Action
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#noop-action">
+     Noop Action
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#is-noop-action">
+     Is Noop Action
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#observation-helper">
+   <em>
+    Observation Helper
+   </em>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#airplane-idle">
+     Airplane Idle
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#available-destinations">
+     Available Destinations
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-lowest-cost-path">
+     Get Lowest Cost Path
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-active-cargo-info">
+     Get Active Cargo Info
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-multigraph">
+     Get MultiGraph
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Example
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="essential-api">
+<h1>Essential API<a class="headerlink" href="#essential-api" title="Permalink to this headline">#</a></h1>
+<p>The functions and classes that are necessary to create a solution and run our environment appropriately are contained on this page.
+While we do include the API in its entirety, this goal of this page is to assist anyone that needs to know the bare minimum API to run their solutions</p>
+</section>
+<section id="airliftenv">
+<h1><em>AirliftEnv</em><a class="headerlink" href="#airliftenv" title="Permalink to this headline">#</a></h1>
+<p>The Airlift Environment is the main interface between the actions given to agents by your solution and the appropriate events occurring based on that input.</p>
+<section id="step">
+<h2>Step<a class="headerlink" href="#step" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="airlift.envs.airlift_env.AirliftEnv.step">
+<span class="sig-prename descclassname"><span class="pre">airlift.envs.airlift_env.AirliftEnv.</span></span><span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.airlift_env.AirliftEnv.step" title="Permalink to this definition">#</a></dt>
+<dd><p>Steps the environment base don the given actions
+and returns a new observation. Based on the new observation, the policy should create another set of actions for the next step.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>actions</strong> – Dictionary that contains the actions for all agents</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>obs, Dictionary that contains the observation for all agents. rewards,Dictionary that contains rewards.
+dones, Dictionary that indicates if an agent has completed a scenario. info, A dictionary containing a list of Warnings for each agent.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="reset">
+<h2>Reset<a class="headerlink" href="#reset" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="airlift.envs.airlift_env.AirliftEnv.reset">
+<span class="sig-prename descclassname"><span class="pre">airlift.envs.airlift_env.AirliftEnv.</span></span><span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span></span></span><a class="headerlink" href="#airlift.envs.airlift_env.AirliftEnv.reset" title="Permalink to this definition">#</a></dt>
+<dd><p>Resets the environment and generates a new random realization. If called without a seed, a new realization is generated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>seed</strong> – Environment seed</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dictionary containing the initial observations for all agents. Individual observations of agents can be accessed using the ‘a_0…n’ keys.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="state">
+<h2>State<a class="headerlink" href="#state" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="airlift.envs.airlift_env.AirliftEnv.state">
+<span class="sig-prename descclassname"><span class="pre">airlift.envs.airlift_env.AirliftEnv.</span></span><span class="sig-name descname"><span class="pre">state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.airlift_env.AirliftEnv.state" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the complete state of the environment.</p>
+</dd></dl>
+
+</section>
+<section id="observe">
+<h2>Observe<a class="headerlink" href="#observe" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="airlift.envs.airlift_env.AirliftEnv.observe">
+<span class="sig-prename descclassname"><span class="pre">airlift.envs.airlift_env.AirliftEnv.</span></span><span class="sig-name descname"><span class="pre">observe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">agent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.airlift_env.AirliftEnv.observe" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="action-space">
+<h2>Action Space<a class="headerlink" href="#action-space" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="airlift.envs.airlift_env.AirliftEnv.action_space">
+<span class="sig-prename descclassname"><span class="pre">airlift.envs.airlift_env.AirliftEnv.</span></span><span class="sig-name descname"><span class="pre">action_space</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">agent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">gym.spaces.space.Space</span></span></span><a class="headerlink" href="#airlift.envs.airlift_env.AirliftEnv.action_space" title="Permalink to this definition">#</a></dt>
+<dd><p>Takes in agent and returns the action space for that agent.</p>
+<p>MUST return the same value for the same agent name</p>
+<p>Default implementation is to return the action_spaces dict</p>
+</dd></dl>
+
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h2>
+<p>The following codeblock is an example of an environment being initialized with some parameters. The reset function is called
+with a seed, actions being created from an observation, as well as the environment being stepped to the next time-step and a new observation returned:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">env</span> <span class="o">=</span> <span class="n">AirliftEnv</span><span class="p">(</span><span class="n">initialization_parameters</span><span class="p">)</span>
+<span class="n">_done</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">obs</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">379</span><span class="p">)</span>
+<span class="n">solution</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="mi">462</span><span class="p">)</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">_done</span><span class="p">:</span>
+    <span class="n">actions</span> <span class="o">=</span> <span class="n">solution</span><span class="o">.</span><span class="n">policies</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">observe</span><span class="p">(),</span> <span class="n">env</span><span class="o">.</span><span class="n">dones</span><span class="p">)</span>
+    <span class="n">obs</span><span class="p">,</span> <span class="n">rewards</span><span class="p">,</span> <span class="n">dones</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">actions</span><span class="p">)</span>
+    <span class="n">_done</span> <span class="o">=</span> <span class="nb">all</span><span class="p">(</span><span class="n">dones</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+    <span class="n">env</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="solutions">
+<h1><em>Solutions</em><a class="headerlink" href="#solutions" title="Permalink to this headline">#</a></h1>
+<p>Utilizing the solution class is a <strong>requirement</strong> for your submission. As shown in the example below with the LegalRandomAgent, your solution should also be an extension of the Solution class.</p>
+<section id="id1">
+<h2>Reset<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="airlift.solutions.solutions.Solution.reset">
+<span class="sig-prename descclassname"><span class="pre">airlift.solutions.solutions.Solution.</span></span><span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observation_spaces</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_spaces</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.solutions.solutions.Solution.reset" title="Permalink to this definition">#</a></dt>
+<dd><p>Resets the solution with a seed. initializes  the state space, observation space and action space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obs</strong> – A dictionary containing the observation</p></li>
+<li><p><strong>observation_spaces</strong> – A dictionary containing all the observation spaces</p></li>
+<li><p><strong>action_spaces</strong> – A dictionary containing all the action spaces.</p></li>
+<li><p><strong>seed</strong> – Environment seed.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="policies">
+<h2>Policies<a class="headerlink" href="#policies" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="airlift.solutions.solutions.Solution.policies">
+<span class="sig-prename descclassname"><span class="pre">airlift.solutions.solutions.Solution.</span></span><span class="sig-name descname"><span class="pre">policies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dones</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.solutions.solutions.Solution.policies" title="Permalink to this definition">#</a></dt>
+<dd><p>The main policy for returning actions for each agent is contained here.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obs</strong> – A dictionary containing an observation</p></li>
+<li><p><strong>dones</strong> – A dictionary containing the done values for each agent</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Actions for each agent.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="name">
+<h2>Name<a class="headerlink" href="#name" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="airlift.solutions.solutions.Solution.name">
+<span class="sig-prename descclassname"><span class="pre">airlift.solutions.solutions.Solution.</span></span><span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#airlift.solutions.solutions.Solution.name" title="Permalink to this definition">#</a></dt>
+<dd><p>A property that contains the name of the solution.</p>
+</dd></dl>
+
+</section>
+<section id="get-state">
+<h2>Get State<a class="headerlink" href="#get-state" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="airlift.solutions.solutions.Solution.get_state">
+<span class="sig-prename descclassname"><span class="pre">airlift.solutions.solutions.Solution.</span></span><span class="sig-name descname"><span class="pre">get_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.solutions.solutions.Solution.get_state" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets the state for each agent. Assumes that the state space for each agent is the same</p>
+</dd></dl>
+
+</section>
+<section id="id2">
+<h2>Example<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p>This example is taken from our random legal agent. We create a new class that extends the Solution class and use the observation
+to generate a policy for the agents:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">LegalRandomAgent</span><span class="p">(</span><span class="n">Solution</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">observation_spaces</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">action_spaces</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">observation_spaces</span><span class="p">,</span> <span class="n">action_spaces</span><span class="p">,</span> <span class="n">seed</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_action_helper</span> <span class="o">=</span> <span class="n">ActionHelper</span><span class="p">(</span><span class="n">np_random</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_np_random</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">policies</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">dones</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_action_helper</span><span class="o">.</span><span class="n">sample_legal_actions</span><span class="p">(</span><span class="n">observation</span><span class="o">=</span><span class="n">obs</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="do-episode">
+<h2>Do Episode<a class="headerlink" href="#do-episode" title="Permalink to this headline">#</a></h2>
+<p>The solutions module also contains a <em>doepisode</em> function that can assist in creating the environment and running the defined solution.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="airlift.solutions.solutions.doepisode">
+<span class="sig-prename descclassname"><span class="pre">airlift.solutions.solutions.</span></span><span class="sig-name descname"><span class="pre">doepisode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution_seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_sleep_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.solutions.solutions.doepisode" title="Permalink to this definition">#</a></dt>
+<dd><p>Runs a single episode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>env</strong> – AirLiftEnv - An initialized Airlift Environment</p></li>
+<li><p><strong>solution</strong> – Solution - the solution that is being utilized</p></li>
+<li><p><strong>render</strong> – Render options, (video, window, none…)</p></li>
+<li><p><strong>env_seed</strong> – int, environment seed,</p></li>
+<li><p><strong>solution_seed</strong> – int, solution seed</p></li>
+<li><p><strong>render_sleep_time</strong> – float, sleep timer</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><cite>env.env_info</cite>: a NamedTuple that contains all the environment initialization parameters
+<cite>env.metrics</cite>: a NamedTuple that contains all the environment metrics collected for the solution.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+<section id="agents">
+<h1><em>Agents</em><a class="headerlink" href="#agents" title="Permalink to this headline">#</a></h1>
+<p>The Agents class contains all the information pertaining to the individual agents. For example weight capacity, speed, their current states and
+as well as the loading and unloading of cargo. Just like the environment– the agent also has its own step function. This step function is separate from the
+environment step function and assists the agent in transitioning appropriately between states.</p>
+<section id="plane-states">
+<span id="id3"></span><h2>Plane States<a class="headerlink" href="#plane-states" title="Permalink to this headline">#</a></h2>
+<p>Airplanes can be in one of four states. These are all contained in the PlaneState enumeration located in agents.py.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="airlift.envs.agents.PlaneState">
+<span class="sig-prename descclassname"><span class="pre">airlift.envs.agents.</span></span><span class="sig-name descname"><span class="pre">PlaneState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.agents.PlaneState" title="Permalink to this definition">#</a></dt>
+<dd><p>Enumeration that defines the states an agent can be in</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="field-list simple">
+<dt class="field-odd">0</dt>
+<dd class="field-odd"><p>Waiting - airplane is waiting to process at an airport</p>
+</dd>
+</dl>
+</li>
+<li><dl class="field-list simple">
+<dt class="field-odd">1</dt>
+<dd class="field-odd"><p>Processing - airplane is refueling and loading/unloading cargo</p>
+</dd>
+</dl>
+</li>
+<li><dl class="field-list simple">
+<dt class="field-odd">2</dt>
+<dd class="field-odd"><p>Moving - Airplane is in flight to its destination</p>
+</dd>
+</dl>
+</li>
+<li><dl class="field-list simple">
+<dt class="field-odd">3</dt>
+<dd class="field-odd"><p>Ready for takeoff - airplane is ready for takeoff once it is given a destination</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<p>Also see: <a class="reference internal" href="../ch2_model/main.html#airplane-state-machine"><span class="std std-ref">airplane state machine</span></a></p>
+</section>
+<section id="load-cargo">
+<h2>Load Cargo<a class="headerlink" href="#load-cargo" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="airlift.envs.agents.EnvAgent.load_cargo">
+<span class="sig-prename descclassname"><span class="pre">airlift.envs.agents.EnvAgent.</span></span><span class="sig-name descname"><span class="pre">load_cargo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cargo_to_load</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Collection</span><span class="p"><span class="pre">[</span></span><span class="pre">airlift.envs.cargo.Cargo</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elapsed_steps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warnings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.agents.EnvAgent.load_cargo" title="Permalink to this definition">#</a></dt>
+<dd><p>Checks to make sure airplane can load cargo and loads the cargo. Also checks to ensure that cargo is assigned to
+that airplane</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cargo_to_load</strong> – A list that contains the Cargo to load</p></li>
+<li><p><strong>warnings</strong> – List of warnings issued by the environment. Ex: If an action is given to an unavailable route</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="unload-cargo">
+<h2>Unload Cargo<a class="headerlink" href="#unload-cargo" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="airlift.envs.agents.EnvAgent.unload_cargo">
+<span class="sig-prename descclassname"><span class="pre">airlift.envs.agents.EnvAgent.</span></span><span class="sig-name descname"><span class="pre">unload_cargo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cargo_to_unload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Collection</span><span class="p"><span class="pre">[</span></span><span class="pre">airlift.envs.cargo.Cargo</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warnings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.agents.EnvAgent.unload_cargo" title="Permalink to this definition">#</a></dt>
+<dd><p>Does a check to ensure the correct cargo is being unloaded and removes the cargo from the airplane.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cargo_to_unload</strong> – A list that contains the Cargo to unload</p></li>
+<li><p><strong>warnings</strong> – List of warnings issued by the environment. Ex: If an action is given to an unavailable route</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="current-cargo-weight">
+<h2>Current Cargo Weight<a class="headerlink" href="#current-cargo-weight" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="airlift.envs.agents.EnvAgent.current_cargo_weight">
+<span class="sig-prename descclassname"><span class="pre">airlift.envs.agents.EnvAgent.</span></span><span class="sig-name descname"><span class="pre">current_cargo_weight</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.agents.EnvAgent.current_cargo_weight" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets the total current cargo weight on an airplane</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>current cargo weight on an airplane</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+<section id="action-helper">
+<h1><em>Action Helper</em><a class="headerlink" href="#action-helper" title="Permalink to this headline">#</a></h1>
+<p>This class will assist you in making actions in the environment.</p>
+<section id="load-action">
+<h2>Load Action<a class="headerlink" href="#load-action" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="airlift.envs.airlift_env.ActionHelper.load_action">
+<span class="sig-prename descclassname"><span class="pre">airlift.envs.airlift_env.ActionHelper.</span></span><span class="sig-name descname"><span class="pre">load_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cargo_to_load</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#airlift.envs.airlift_env.ActionHelper.load_action" title="Permalink to this definition">#</a></dt>
+<dd><p>Loads Cargo by ID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cargo_to_load</strong> – int,cargo ID to load</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dictionary containing all the actions the agent will take that includes the cargo to load.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="unload-action">
+<h2>Unload Action<a class="headerlink" href="#unload-action" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="airlift.envs.airlift_env.ActionHelper.unload_action">
+<span class="sig-prename descclassname"><span class="pre">airlift.envs.airlift_env.ActionHelper.</span></span><span class="sig-name descname"><span class="pre">unload_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cargo_to_unload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#airlift.envs.airlift_env.ActionHelper.unload_action" title="Permalink to this definition">#</a></dt>
+<dd><p>Unloads Cargo by ID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cargo_to_unload</strong> – int, cargo ID to unload</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dictionary containing all the actions the agent will take that includes the cargo to unload.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="process-action">
+<h2>Process Action<a class="headerlink" href="#process-action" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="airlift.envs.airlift_env.ActionHelper.process_action">
+<span class="sig-prename descclassname"><span class="pre">airlift.envs.airlift_env.ActionHelper.</span></span><span class="sig-name descname"><span class="pre">process_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cargo_to_load</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cargo_to_unload</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#airlift.envs.airlift_env.ActionHelper.process_action" title="Permalink to this definition">#</a></dt>
+<dd><p>Processes an action</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cargo_to_load</strong> – A list containing the cargo IDs to load</p></li>
+<li><p><strong>cargo_to_unload</strong> – A list containing cargo IDs to unload</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dictionary that contains all the cargo to load and unload.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="takeoff-action">
+<h2>Takeoff Action<a class="headerlink" href="#takeoff-action" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="airlift.envs.airlift_env.ActionHelper.takeoff_action">
+<span class="sig-prename descclassname"><span class="pre">airlift.envs.airlift_env.ActionHelper.</span></span><span class="sig-name descname"><span class="pre">takeoff_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#airlift.envs.airlift_env.ActionHelper.takeoff_action" title="Permalink to this definition">#</a></dt>
+<dd><p>Gives the next destination</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>destination</strong> – int, destination ID airport</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dictionary containing the destination for the airplane to take off to.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="noop-action">
+<h2>Noop Action<a class="headerlink" href="#noop-action" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="airlift.envs.airlift_env.ActionHelper.noop_action">
+<span class="sig-prename descclassname"><span class="pre">airlift.envs.airlift_env.ActionHelper.</span></span><span class="sig-name descname"><span class="pre">noop_action</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#airlift.envs.airlift_env.ActionHelper.noop_action" title="Permalink to this definition">#</a></dt>
+<dd><p>No-Op Action, “Do nothing”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dictionary where the values contained will make the airplane take no action.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="is-noop-action">
+<h2>Is Noop Action<a class="headerlink" href="#is-noop-action" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="airlift.envs.airlift_env.ActionHelper.is_noop_action">
+<span class="sig-prename descclassname"><span class="pre">airlift.envs.airlift_env.ActionHelper.</span></span><span class="sig-name descname"><span class="pre">is_noop_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#airlift.envs.airlift_env.ActionHelper.is_noop_action" title="Permalink to this definition">#</a></dt>
+<dd><p>Checks if an action is a No-Op action.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>action</strong> – dictionary, contains actions of a single agent</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Boolean, True if No-Op action.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="id4">
+<h2>Example<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<p>Using the ActionHelper we can issue actions to the agents:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">airlift.envs.airlift_env</span> <span class="kn">import</span> <span class="n">ActionHelper</span> <span class="k">as</span> <span class="n">ah</span>
+
+<span class="c1"># We create a function that does one single agent action</span>
+<span class="k">def</span> <span class="nf">do_single_agent_action</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">agent</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">interimstate</span><span class="p">,</span> <span class="n">donestate</span><span class="p">,</span> <span class="n">render</span><span class="p">):</span>
+    <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">({</span><span class="n">agent</span><span class="p">:</span> <span class="n">action</span><span class="p">})</span>
+    <span class="k">while</span> <span class="n">env</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">agent</span><span class="p">)[</span><span class="s2">&quot;state&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">donestate</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">env</span><span class="o">.</span><span class="n">dones</span><span class="p">[</span><span class="n">agent</span><span class="p">]:</span>
+        <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">({</span><span class="n">agent</span><span class="p">:</span> <span class="kc">None</span><span class="p">})</span>
+
+<span class="c1"># Load Cargo #0</span>
+<span class="n">do_single_agent_action</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">agent</span><span class="p">,</span> <span class="n">ah</span><span class="o">.</span><span class="n">load_action</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">PlaneState</span><span class="o">.</span><span class="n">PROCESSING</span><span class="p">,</span> <span class="n">PlaneState</span><span class="o">.</span><span class="n">READY_FOR_TAKEOFF</span><span class="p">)</span>
+
+<span class="c1"># Unload Cargo #0</span>
+<span class="n">do_single_agent_action</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">agent</span><span class="p">,</span> <span class="n">ah</span><span class="o">.</span><span class="n">unload_action</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">PlaneState</span><span class="o">.</span><span class="n">PROCESSING</span><span class="p">,</span> <span class="n">PlaneState</span><span class="o">.</span><span class="n">READY_FOR_TAKEOFF</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="observation-helper">
+<h1><em>Observation Helper</em><a class="headerlink" href="#observation-helper" title="Permalink to this headline">#</a></h1>
+<p>This is a helper class to assist with utilizing the state and observation. Includes helper functions such as getting available destinations or the shortest path route.</p>
+<section id="airplane-idle">
+<h2>Airplane Idle<a class="headerlink" href="#airplane-idle" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="airlift.envs.airlift_env.ObservationHelper.is_airplane_idle">
+<span class="sig-prename descclassname"><span class="pre">airlift.envs.airlift_env.ObservationHelper.</span></span><span class="sig-name descname"><span class="pre">is_airplane_idle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airplane_obs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.airlift_env.ObservationHelper.is_airplane_idle" title="Permalink to this definition">#</a></dt>
+<dd><p>Checks to see if an airplane is idle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>airplane_obs</strong> – agent observation</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns True if the Airplane is in the Waiting state, or ready for take off and does not have any actions assigned.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="available-destinations">
+<h2>Available Destinations<a class="headerlink" href="#available-destinations" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="airlift.envs.airlift_env.ObservationHelper.available_destinations">
+<span class="sig-prename descclassname"><span class="pre">airlift.envs.airlift_env.ObservationHelper.</span></span><span class="sig-name descname"><span class="pre">available_destinations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">airplane_obs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.airlift_env.ObservationHelper.available_destinations" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns available destination from an airport node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state</strong> – Airplane current state</p></li>
+<li><p><strong>airplane_obs</strong> – Airplane Observation</p></li>
+<li><p><strong>plane_type</strong> – Airplane Model by PlaneTypeID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns a list of all available destinations that the agent can travel to from its current node.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="get-lowest-cost-path">
+<h2>Get Lowest Cost Path<a class="headerlink" href="#get-lowest-cost-path" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="airlift.envs.airlift_env.ObservationHelper.get_lowest_cost_path">
+<span class="sig-prename descclassname"><span class="pre">airlift.envs.airlift_env.ObservationHelper.</span></span><span class="sig-name descname"><span class="pre">get_lowest_cost_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">airport1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">airport2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.airlift_env.ObservationHelper.get_lowest_cost_path" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets the shortest path from airport1 to airport2 based on the plane model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state</strong> – Airplane current state</p></li>
+<li><p><strong>airport1</strong> – From Airport</p></li>
+<li><p><strong>airport2</strong> – To Airport</p></li>
+<li><p><strong>plane_type</strong> – airplane model by PlaneTypeID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list containing the shortest path from airport1 to airport2.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="get-active-cargo-info">
+<h2>Get Active Cargo Info<a class="headerlink" href="#get-active-cargo-info" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="airlift.envs.airlift_env.ObservationHelper.get_active_cargo_info">
+<span class="sig-prename descclassname"><span class="pre">airlift.envs.airlift_env.ObservationHelper.</span></span><span class="sig-name descname"><span class="pre">get_active_cargo_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cargoid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.airlift_env.ObservationHelper.get_active_cargo_info" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets current active cargo info. Active cargo is cargo that has not been assigned &amp; delivered.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state</strong> – Airplane current state</p></li>
+<li><p><strong>cargoid</strong> – Cargo by ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list containing all the currently active cargo.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="get-multigraph">
+<h2>Get MultiGraph<a class="headerlink" href="#get-multigraph" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="airlift.envs.airlift_env.ObservationHelper.get_multidigraph">
+<span class="sig-prename descclassname"><span class="pre">airlift.envs.airlift_env.ObservationHelper.</span></span><span class="sig-name descname"><span class="pre">get_multidigraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">&lt;networkx.classes.multidigraph.MultiDiGraph</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x00000157CF4ED7F0&gt;</span></span></span><a class="headerlink" href="#airlift.envs.airlift_env.ObservationHelper.get_multidigraph" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets the routemap as a multigraph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>state</strong> – Current Airplane state</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A route map as a MultiDiGraph</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="id5">
+<h2>Example<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<p>Using the ObservationHelper we can get important information that assists us in making the proper agent actions. An example
+of using the observation helper to check if an agent is idle and also has available routes. After checking for this we then use the “get_active_cargo_info”
+function to get active cargo information for that agent:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the ObservationHelper</span>
+<span class="kn">from</span> <span class="nn">airlift.envs.airlift_env</span> <span class="kn">import</span> <span class="n">ObservationHelper</span> <span class="k">as</span> <span class="n">oh</span>
+
+<span class="n">obs</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">oh</span><span class="o">.</span><span class="n">is_airplane_idle</span><span class="p">(</span><span class="n">obs</span><span class="p">)</span> <span class="ow">and</span> <span class="n">oh</span><span class="o">.</span><span class="n">available_destinations</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">obs</span><span class="p">[</span><span class="s2">&quot;plane_type&quot;</span><span class="p">]:</span> <span class="c1"># Sometimes available destinations is an empty list.</span>
+    <span class="n">available_destinations</span> <span class="o">=</span>  <span class="n">oh</span><span class="o">.</span><span class="n">available_destinations</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">obs</span><span class="p">[</span><span class="s2">&quot;plane_type&quot;</span><span class="p">]]</span>
+    <span class="n">actions</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;process&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                  <span class="s2">&quot;cargo_to_load&quot;</span><span class="p">:</span> <span class="nb">set</span><span class="p">(),</span>
+                  <span class="s2">&quot;cargo_to_unload&quot;</span><span class="p">:</span> <span class="nb">set</span><span class="p">(),</span>
+                  <span class="s2">&quot;destination&quot;</span><span class="p">:</span> <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">available_destinations</span><span class="p">)}</span>
+
+<span class="c1"># Get info about a cargo that needs to be picked up</span>
+<span class="n">ca</span> <span class="o">=</span> <span class="n">oh</span><span class="o">.</span><span class="n">get_active_cargo_info</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">cargo_to_pick_up</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters\API"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../ch6_solutions/main.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Solutions</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="environment.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Environment</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book community<br/>
+  
+    <div class="extra_footer">
+      <p>
+Distribution Statement A: Approved for Public Release; Distribution Unlimited: Case Number: AFRL-2022-5074, CLEARED on 19 Oct 2022
+</p>
+
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
