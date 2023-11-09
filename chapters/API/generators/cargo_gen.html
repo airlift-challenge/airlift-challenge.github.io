@@ -470,7 +470,7 @@ title="Print to PDF"
 <dd><p>Handles the dynamic generation of cargo using the Poisson process as utilized by Flatlands for train malfunctions</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="airlift.envs.generators.cargo_generators.DynamicCargoGenerator.generate_dynamic_orders">
-<span class="sig-name descname"><span class="pre">generate_dynamic_orders</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elapsed_steps</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">airlift.envs.cargo.Cargo</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#airlift.envs.generators.cargo_generators.DynamicCargoGenerator.generate_dynamic_orders" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">generate_dynamic_orders</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elapsed_steps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_cycles</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">airlift.envs.cargo.Cargo</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#airlift.envs.generators.cargo_generators.DynamicCargoGenerator.generate_dynamic_orders" title="Permalink to this definition">#</a></dt>
 <dd><p>The EventGenerator controls whether a new dynamic cargo is generated or not using poisson distribution. Makes sure that
 the upperbound limit of max cargo generated per episode is also adhered to.</p>
 <dl class="field-list simple">
@@ -607,7 +607,7 @@ The dynamic cargo generator accesses this function without going through the abo
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./chapters\API\generators"
+            path: "./chapters/API/generators"
         },
         predefinedOutput: true
     }
@@ -646,7 +646,7 @@ The dynamic cargo generator accesses this function without going through the abo
   
     <div class="extra_footer">
       <p>
-Distribution Statement A: Approved for Public Release; Distribution Unlimited: Case Number: AFRL-2022-5074, CLEARED on 19 Oct 2022
+Distribution Statement A: Approved for Public Release; Distribution Unlimited: Case Number: AFRL-2023-5573, CLEARED on 03 Nov 2023
 </p>
 
     </div>

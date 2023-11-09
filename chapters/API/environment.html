@@ -447,7 +447,7 @@ Should not be called before the environment is reset.</p>
 <dt class="sig sig-object py">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">metrics</span></span></dt>
 <dd><p>Returns metrics collected by the environment.
-Should be called after the episode is done.</p>
+Note: some values may be incorrect if this is called before the episode is done.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -521,7 +521,7 @@ dones, Dictionary that indicates if an agent has completed a scenario. info, A d
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./chapters\API"
+            path: "./chapters/API"
         },
         predefinedOutput: true
     }
@@ -560,7 +560,7 @@ dones, Dictionary that indicates if an agent has completed a scenario. info, A d
   
     <div class="extra_footer">
       <p>
-Distribution Statement A: Approved for Public Release; Distribution Unlimited: Case Number: AFRL-2022-5074, CLEARED on 19 Oct 2022
+Distribution Statement A: Approved for Public Release; Distribution Unlimited: Case Number: AFRL-2023-5573, CLEARED on 03 Nov 2023
 </p>
 
     </div>

@@ -996,7 +996,7 @@ to generate a policy for the agents:</p>
 <p>The solutions module also contains a <em>doepisode</em> function that can assist in creating the environment and running the defined solution.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="airlift.solutions.solutions.doepisode">
-<span class="sig-prename descclassname"><span class="pre">airlift.solutions.solutions.</span></span><span class="sig-name descname"><span class="pre">doepisode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution_seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_sleep_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.solutions.solutions.doepisode" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">airlift.solutions.solutions.</span></span><span class="sig-name descname"><span class="pre">doepisode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution_seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_sleep_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capture_metrics</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'human'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.solutions.solutions.doepisode" title="Permalink to this definition">#</a></dt>
 <dd><p>Runs a single episode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1191,7 +1191,7 @@ that airplane</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="airlift.envs.airlift_env.ActionHelper.noop_action">
 <span class="sig-prename descclassname"><span class="pre">airlift.envs.airlift_env.ActionHelper.</span></span><span class="sig-name descname"><span class="pre">noop_action</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#airlift.envs.airlift_env.ActionHelper.noop_action" title="Permalink to this definition">#</a></dt>
-<dd><p>No-Op Action, “Do nothing”</p>
+<dd><p>No-Op Action, “Do nothing” (except refuel based on priority)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>A dictionary where the values contained will make the airplane take no action.</p>
@@ -1242,20 +1242,6 @@ that airplane</p>
 <p>This is a helper class to assist with utilizing the state and observation. Includes helper functions such as getting available destinations or the shortest path route.</p>
 <section id="airplane-idle">
 <h2>Airplane Idle<a class="headerlink" href="#airplane-idle" title="Permalink to this headline">#</a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="airlift.envs.airlift_env.ObservationHelper.is_airplane_idle">
-<span class="sig-prename descclassname"><span class="pre">airlift.envs.airlift_env.ObservationHelper.</span></span><span class="sig-name descname"><span class="pre">is_airplane_idle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airplane_obs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.airlift_env.ObservationHelper.is_airplane_idle" title="Permalink to this definition">#</a></dt>
-<dd><p>Checks to see if an airplane is idle.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>airplane_obs</strong> – agent observation</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Returns True if the Airplane is in the Waiting state, or ready for take off and does not have any actions assigned.</p>
-</dd>
-</dl>
-</dd></dl>
-
 </section>
 <section id="available-destinations">
 <h2>Available Destinations<a class="headerlink" href="#available-destinations" title="Permalink to this headline">#</a></h2>
@@ -1324,7 +1310,7 @@ that airplane</p>
 <h2>Get MultiGraph<a class="headerlink" href="#get-multigraph" title="Permalink to this headline">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="airlift.envs.airlift_env.ObservationHelper.get_multidigraph">
-<span class="sig-prename descclassname"><span class="pre">airlift.envs.airlift_env.ObservationHelper.</span></span><span class="sig-name descname"><span class="pre">get_multidigraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">&lt;networkx.classes.multidigraph.MultiDiGraph</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x00000157CF4ED7F0&gt;</span></span></span><a class="headerlink" href="#airlift.envs.airlift_env.ObservationHelper.get_multidigraph" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">airlift.envs.airlift_env.ObservationHelper.</span></span><span class="sig-name descname"><span class="pre">get_multidigraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">&lt;networkx.classes.multidigraph.MultiDiGraph</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7f4e1083b370&gt;</span></span></span><a class="headerlink" href="#airlift.envs.airlift_env.ObservationHelper.get_multidigraph" title="Permalink to this definition">#</a></dt>
 <dd><p>Gets the routemap as a multigraph.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1374,7 +1360,7 @@ function to get active cargo information for that agent:</p>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./chapters\API"
+            path: "./chapters/API"
         },
         predefinedOutput: true
     }
@@ -1413,7 +1399,7 @@ function to get active cargo information for that agent:</p>
   
     <div class="extra_footer">
       <p>
-Distribution Statement A: Approved for Public Release; Distribution Unlimited: Case Number: AFRL-2022-5074, CLEARED on 19 Oct 2022
+Distribution Statement A: Approved for Public Release; Distribution Unlimited: Case Number: AFRL-2023-5573, CLEARED on 03 Nov 2023
 </p>
 
     </div>

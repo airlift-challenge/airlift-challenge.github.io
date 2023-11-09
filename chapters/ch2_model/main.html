@@ -53,7 +53,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"Reals": "\\mathbb{R}", "Indicator": ["\\mathbf{I} \\left(#1\\right)", 1], "Airports": "\\mathbf{A}", "AirplanesAtAirport": ["\\Airplanes_{#1}(#2)", 2], "workingcapactity": ["\\textit{capacity}_{#1}", 1], "processtime": ["\\textit{processtime}_{#1}", 1], "Routes": "\\mathbf{R}", "routecost": ["\\textit{routecost}_{#1#2}", 2], "routetime": ["\\textit{routetime}_{#1#2}", 2], "routestart": ["\\textit{start}_{#1}", 1], "routeend": ["\\textit{end}_{#1}", 1], "numflights": ["\\textit{numflights}_{#1#2}", 2], "AvailableRoutes": ["\\overline{\\mathbf{R}}(#1)", 1], "routemapdiameter": ["\\textit{diameter}_{#1}", 1], "Airplanes": "\\mathbf{P}", "currentairport": ["\\textit{airport}_{#1}(#2)", 2], "weightcapacity": ["\\textit{weightcapacity}_{#1}", 1], "Cargos": "\\mathbf{C}", "CargoOnPlane": ["\\Cargos_{#1}(#2)", 2], "CargoAtAirport": ["\\Cargos_{#1}(#2)", 2], "cargoweight": ["\\textit{weight}_{#1}", 1], "cargoloc": ["\\textit{loc}_{#1}", 1], "cargodest": ["\\textit{dest}_{#1}", 1], "softdeadline": ["\\textit{targetdelivery}_{#1}", 1], "harddeadline": ["\\textit{deadline}_{#1}", 1], "actualdelivery": ["\\textit{actualdelivery}_{#1}", 1], "totalcargo": "\\textit{totalcargo}", "process": ["process_{#1}", 1], "cargotoload": ["cargo\\_to\\_load_{#1}", 1], "cargotounload": ["cargo\\_to\\_unload_{#1}", 1], "destination": ["destination", 1], "missedcoeff": "\\alpha", "missed": "\\textit{missed}", "latenesscoeff": "\\beta", "lateness": ["\\textit{lateness}_{#1}", 1], "scaledlateness": "\\textit{scaledlateness}", "totalflightcostcoeff": "\\gamma", "flightcost": ["\\textit{flightcost}_{#1}", 1], "scaledflightcost": "\\textit{scaledflightcost}", "episodescore": "\\textit{EpisodeScore}", "randomscore": "\\textit{RandomScore}", "baselinescore": "\\textit{BaselineScore}", "normalizedescore": "\\textit{NormalizedScore}", "overallscore": "\\textit{OverallScore}"}}, "html_theme_options": {"use_download_button": false, "use_edit_page_button": false, "use_repository_button": false, "use_issues_button": false}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"Reals": "\\mathbb{R}", "Indicator": ["\\mathbf{I} \\left(#1\\right)", 1], "Airports": "\\mathbf{A}", "AirplanesAtAirport": ["\\Airplanes_{#1}(#2)", 2], "workingcapactity": ["\\textit{capacity}_{#1}", 1], "processtime": ["\\textit{processtime}_{#1}", 1], "Routes": "\\mathbf{R}", "routecost": ["\\textit{routecost}_{#1#2}", 2], "routetime": ["\\textit{routetime}_{#1#2}", 2], "routestart": ["\\textit{start}_{#1}", 1], "routeend": ["\\textit{end}_{#1}", 1], "numflights": ["\\textit{numflights}_{#1#2}", 2], "AvailableRoutes": ["\\overline{\\mathbf{R}}(#1)", 1], "routemapdiameter": ["\\textit{diameter}_{#1}", 1], "Airplanes": "\\mathbf{P}", "currentairport": ["\\textit{airport}_{#1}(#2)", 2], "weightcapacity": ["\\textit{weightcapacity}_{#1}", 1], "Cargos": "\\mathbf{C}", "CargoOnPlane": ["\\Cargos_{#1}(#2)", 2], "CargoAtAirport": ["\\Cargos_{#1}(#2)", 2], "cargoweight": ["\\textit{weight}_{#1}", 1], "cargoloc": ["\\textit{loc}_{#1}", 1], "cargodest": ["\\textit{dest}_{#1}", 1], "softdeadline": ["\\textit{targetdelivery}_{#1}", 1], "harddeadline": ["\\textit{deadline}_{#1}", 1], "actualdelivery": ["\\textit{actualdelivery}_{#1}", 1], "totalcargo": "\\textit{totalcargo}", "priority": ["priority_{#1}", 1], "cargotoload": ["cargo\\_to\\_load_{#1}", 1], "cargotounload": ["cargo\\_to\\_unload_{#1}", 1], "destination": ["destination", 1], "missedcoeff": "\\alpha", "missed": "\\textit{missed}", "latenesscoeff": "\\beta", "lateness": ["\\textit{lateness}_{#1}", 1], "scaledlateness": "\\textit{scaledlateness}", "totalflightcostcoeff": "\\gamma", "flightcost": ["\\textit{flightcost}_{#1}", 1], "scaledflightcost": "\\textit{scaledflightcost}", "episodescore": "\\textit{EpisodeScore}", "randomscore": "\\textit{RandomScore}", "baselinescore": "\\textit{BaselineScore}", "normalizedescore": "\\textit{NormalizedScore}", "overallscore": "\\textit{OverallScore}"}}, "html_theme_options": {"use_download_button": false, "use_edit_page_button": false, "use_repository_button": false, "use_issues_button": false}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -486,6 +486,11 @@ We elaborate on a few aspects of this model.
 If the working capacity at an airport is reached, then a plane will wait for an open slot.
 Once the airplane starts processing, it will need a fixed amount of processing time <span class="math notranslate nohighlight">\(\processtime{p}\)</span>, regardless of whether cargo is being loaded or unloaded.
 As in <span id="id1">[<a class="reference internal" href="../misc/bibliography.html#id5" title="Steven F. Baker, David P. Morton, Richard E. Rosenthal, and Laura Melody Williams. Optimizing military airlift. Operations Research, 50(4):582-602, 2002. URL: https://doi.org/10.1287/opre.50.4.582.2864.">2</a>]</span>, we impose two deadlines: one is a soft deadline <span class="math notranslate nohighlight">\(\softdeadline{c}\)</span> by which the cargo is expected to be delivered, and one is a hard deadline <span class="math notranslate nohighlight">\(\harddeadline{c}\)</span> after which the delivery is considered missed and no longer useful.</p>
+<p>One of the parameters we introduce in our ICAPS 2024 iteration of the Airlift Challenge is being able to assign priorities to agents. The priority of
+an agent is assigned when giving it an action. Priority replaces process, and agents are automatically processed for loading/unload when it is their turn in the queue.
+Priority dictate in what order airplanes will be processed when they land at an airport. The priority cannot
+be updated when an agent has been placed in the queue, and the lowest valued entry is retrieved first. The number of priorities allowed within the action space is set to the number of agents in a scenario. The implementation of the queue uses the PriortyQueue class and more information on it
+can be found at <a class="reference external" href="https://docs.python.org/3/library/queue.html">https://docs.python.org/3/library/queue.html</a>.</p>
 <table class="colwidths-given table" id="tab-sets">
 <caption><span class="caption-number">Table 1 </span><span class="caption-text">Sets and parameters</span><a class="headerlink" href="#tab-sets" title="Permalink to this table">#</a></caption>
 <colgroup>
@@ -524,7 +529,7 @@ Note: Routes are directed, i.e., the route between airports <span class="math no
 <td><p>For airplane <span class="math notranslate nohighlight">\(p \in \Airplanes\)</span>:</p>
 <ul class="simple">
 <li><p>Cargo weight capacity: <span class="math notranslate nohighlight">\(\weightcapacity{p}\)</span></p></li>
-<li><p>Time to process: <span class="math notranslate nohighlight">\(\processtime{p}\)</span>
+<li><p>priority: <span class="math notranslate nohighlight">\(\priority{p}\)</span>
 In practice, we will have a small number of airplane types which will have shared parameterizations. We leave this as an implementation detail.</p></li>
 </ul>
 </td>
@@ -596,8 +601,8 @@ Note that actions may become invalid as the state of the model evolves (for exam
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\process{p}\)</span></p></td>
-<td><p>Boolean indicating whether airplane should refuel and load/unload cargo when landed.</p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\priority{p}\)</span></p></td>
+<td><p>Integer indicating the priority of the airplane. This effects the queue order when processing at airports. Lowest value is retrieved first.</p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\cargotoload{p} \subseteq \CargoAtAirport{\currentairport{p}{t}}{t}\)</span></p></td>
 <td><p>Boolean indicating whether or not route <span class="math notranslate nohighlight">\(r\)</span> is available.</p></td>
@@ -624,7 +629,8 @@ The airplane will only take off if the route is available, i.e., if a random eve
 While in-flight, the airplane moves at a uniform rate along the route, set according to the flight time for that plane on the given route.
 The agent cannot issue any actions during the flight. Once it reaches an airport, the airplane will land and return to a waiting state pending further action by the agent.</p>
 <figure class="align-left" id="fig-state-machine">
-<img alt="../../_images/AirplaneStateMachine.svg" src="../../_images/AirplaneStateMachine.svg" /><figcaption>
+<img alt="../../_images/AirplaneStateMachine.png" src="../../_images/AirplaneStateMachine.png" />
+<figcaption>
 <p><span class="caption-number">Fig. 1 </span><span class="caption-text">Airplane state machine.
 Time parameters are omitted from events for clarity.
 The transition labels indicate the condition required for the transition to occur.
@@ -683,7 +689,7 @@ Specifically, the total scaled flight cost over all planes is defined as</p>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./chapters\ch2_model"
+            path: "./chapters/ch2_model"
         },
         predefinedOutput: true
     }
@@ -722,7 +728,7 @@ Specifically, the total scaled flight cost over all planes is defined as</p>
   
     <div class="extra_footer">
       <p>
-Distribution Statement A: Approved for Public Release; Distribution Unlimited: Case Number: AFRL-2022-5074, CLEARED on 19 Oct 2022
+Distribution Statement A: Approved for Public Release; Distribution Unlimited: Case Number: AFRL-2023-5573, CLEARED on 03 Nov 2023
 </p>
 
     </div>
