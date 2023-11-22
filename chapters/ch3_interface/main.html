@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Simulator Interface &#8212; Airlift Challenge v1.0.1 Documentation</title>
+    <title>Simulator Interface &#8212; Airlift Challenge v1.0.2 Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -98,7 +98,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <h1 class="site-logo" id="site-title">Airlift Challenge v1.0.1 Documentation</h1>
+      <h1 class="site-logo" id="site-title">Airlift Challenge v1.0.2 Documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -627,7 +627,7 @@ We use a custom space named DiGraph which represents a NetworkX directed graph.<
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">scenario_info</span></code></p></td>
 <td><p>N/A</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Discrete(1000)</span></code></p></td>
-<td><p>Contains information about the scenario. This includes maximum airport capacity and processing time.</p></td>
+<td><p>Contains information about the scenario. At the moment this only includes processing time.</p></td>
 </tr>
 </tbody>
 </table>
@@ -707,7 +707,7 @@ We use a custom space named DiGraph which represents a NetworkX directed graph.<
 <td><p>Contains the observation for each agent</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">route_map</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">DiGraph(number_of_nodes=max_airports,</span> <span class="pre">edge_attributes=['cost',</span> <span class="pre">'time',</span> <span class="pre">'route_available'])</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DiGraph(number_of_nodes=max_airports,</span> <span class="pre">node_attributes=['working_capacity'],</span> <span class="pre">edge_attributes=['cost',</span> <span class="pre">'time',</span> <span class="pre">'route_available',</span> <span class="pre">'mal',</span> <span class="pre">'expected_mal_steps'])</span></code></p></td>
 <td><p>Route map which contains information about airports and routes. This is a NetworkX DiGraph class.</p></td>
 </tr>
 </tbody>
@@ -726,11 +726,7 @@ We use a custom space named DiGraph which represents a NetworkX directed graph.<
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">working_capacity</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">Discrete(1000)</span></code></p></td>
-<td><p>Maximum working capacity of all airports.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">processing_time</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">processing_time</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Discrete(1000)</span></code></p></td>
 <td><p>Processing time for all airports.</p></td>
 </tr>
