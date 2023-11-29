@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Cargo Generators &#8212; Airlift Challenge v1.0.2 Documentation</title>
+    <title>Cargo Generators &#8212; Airlift Challenge v2.0 Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -37,6 +37,7 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
@@ -59,7 +60,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Map Generators" href="map_gen.html" />
     <link rel="prev" title="Airport Generators" href="airport_gen.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -96,7 +97,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <h1 class="site-logo" id="site-title">Airlift Challenge v1.0.2 Documentation</h1>
+      <h1 class="site-logo" id="site-title">Airlift Challenge v2.0 Documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
@@ -409,7 +410,7 @@ title="Print to PDF"
               <div>
                 
   <section id="module-airlift.envs.generators.cargo_generators">
-<span id="cargo-generators"></span><h1>Cargo Generators<a class="headerlink" href="#module-airlift.envs.generators.cargo_generators" title="Permalink to this headline">#</a></h1>
+<span id="cargo-generators"></span><h1>Cargo Generators<a class="headerlink" href="#module-airlift.envs.generators.cargo_generators" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="airlift.envs.generators.cargo_generators.CargoGenerator">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">airlift.envs.generators.cargo_generators.</span></span><span class="sig-name descname"><span class="pre">CargoGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_initial_tasks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_cargo_per_episode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_stagger_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.generators.cargo_generators.CargoGenerator" title="Permalink to this definition">#</a></dt>
@@ -476,11 +477,11 @@ title="Print to PDF"
 <dd><p>Handles the dynamic generation of cargo using the Poisson process as utilized by Flatlands for train malfunctions</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="airlift.envs.generators.cargo_generators.DynamicCargoGenerator.generate_dynamic_orders">
-<span class="sig-name descname"><span class="pre">generate_dynamic_orders</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elapsed_steps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_cycles</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">airlift.envs.cargo.Cargo</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#airlift.envs.generators.cargo_generators.DynamicCargoGenerator.generate_dynamic_orders" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">generate_dynamic_orders</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elapsed_steps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_cycles</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Cargo</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#airlift.envs.generators.cargo_generators.DynamicCargoGenerator.generate_dynamic_orders" title="Permalink to this definition">#</a></dt>
 <dd><p>The EventGenerator controls whether a new dynamic cargo is generated or not using poisson distribution. Makes sure that
 the upperbound limit of max cargo generated per episode is also adhered to.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><cite>cargo_task</cite> : a List that contains a single Cargo or an empty list if no cargo was generated</p>
 </dd>
 </dl>
@@ -493,19 +494,19 @@ the upperbound limit of max cargo generated per episode is also adhered to.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">airlift.envs.generators.cargo_generators.</span></span><span class="sig-name descname"><span class="pre">EarliestPickupCargoGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_of_tasks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soft_deadline_multiplier</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hard_deadline_multiplier</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_step_interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">15000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.generators.cargo_generators.EarliestPickupCargoGenerator" title="Permalink to this definition">#</a></dt>
 <dd><dl class="py method">
 <dt class="sig sig-object py" id="airlift.envs.generators.cargo_generators.EarliestPickupCargoGenerator.generate_cargo_order">
-<span class="sig-name descname"><span class="pre">generate_cargo_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cargo_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_off_airports</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ordered_set.OrderedSet</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../airports.html#airlift.envs.airport.Airport" title="airlift.envs.airport.Airport"><span class="pre">airlift.envs.airport.Airport</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pickup_airports</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ordered_set.OrderedSet</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../airports.html#airlift.envs.airport.Airport" title="airlift.envs.airport.Airport"><span class="pre">airlift.envs.airport.Airport</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_available</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">airlift.envs.cargo.Cargo</span></span></span><a class="headerlink" href="#airlift.envs.generators.cargo_generators.EarliestPickupCargoGenerator.generate_cargo_order" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">generate_cargo_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cargo_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_off_airports</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">OrderedSet</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../airports.html#airlift.envs.airport.Airport" title="airlift.envs.airport.Airport"><span class="pre">Airport</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pickup_airports</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">OrderedSet</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../airports.html#airlift.envs.airport.Airport" title="airlift.envs.airport.Airport"><span class="pre">Airport</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_available</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Cargo</span></span></span><a class="headerlink" href="#airlift.envs.generators.cargo_generators.EarliestPickupCargoGenerator.generate_cargo_order" title="Permalink to this definition">#</a></dt>
 <dd><p>Generates cargo orders based on several parameters. Takes into account if we are running a scenario with a
 concentrated drop off or pick up location as well as non-concentrated locations that utilize the entire map.
 The dynamic cargo generator accesses this function without going through the above generate_order function.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>cargo_id</strong> – Incremental count of what cargo to create</p></li>
 <li><p><strong>drop_off_airports</strong> – List that contains all the airports that are drop off locations’</p></li>
 <li><p><strong>pick_up_airports</strong> – List that contains all the airports that are pick up locations</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><cite>cargo_task</cite> : A fully generated cargo task</p>
 </dd>
 </dl>
@@ -523,7 +524,7 @@ static or dynamic generators. Generally used for testing purposes.</p>
 <span class="sig-name descname"><span class="pre">generate_initial_orders</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">set</span></span></span><a class="headerlink" href="#airlift.envs.generators.cargo_generators.HardcodedCargoGenerator.generate_initial_orders" title="Permalink to this definition">#</a></dt>
 <dd><p>Generates the initial hard-coded cargo values.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><cite>initialcargo</cite> : A set that contains the cargo.</p>
 </dd>
 </dl>
@@ -547,13 +548,13 @@ static or dynamic generators. Generally used for testing purposes.</p>
 <dd><p>Creates a schedule that cargo must be delivered by for it to be considered late (soft deadline) or completely
 missed (hard deadline)</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>source</strong> – Source Airport</p></li>
 <li><p><strong>destination</strong> – Destination Airport</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><cite>(soft_deadline, hard_deadline)</cite> : Returns a tuple[int, int] containing soft/hard deadlines for cargo.</p>
 </dd>
 </dl>
@@ -561,19 +562,19 @@ missed (hard deadline)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="airlift.envs.generators.cargo_generators.StaticCargoGenerator.generate_cargo_order">
-<span class="sig-name descname"><span class="pre">generate_cargo_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cargo_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_off_airports</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ordered_set.OrderedSet</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../airports.html#airlift.envs.airport.Airport" title="airlift.envs.airport.Airport"><span class="pre">airlift.envs.airport.Airport</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pickup_airports</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ordered_set.OrderedSet</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../airports.html#airlift.envs.airport.Airport" title="airlift.envs.airport.Airport"><span class="pre">airlift.envs.airport.Airport</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_available</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soft_deadline_multiplier</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hard_deadline_multiplier</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">airlift.envs.cargo.Cargo</span></span></span><a class="headerlink" href="#airlift.envs.generators.cargo_generators.StaticCargoGenerator.generate_cargo_order" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">generate_cargo_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cargo_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_off_airports</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">OrderedSet</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../airports.html#airlift.envs.airport.Airport" title="airlift.envs.airport.Airport"><span class="pre">Airport</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pickup_airports</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">OrderedSet</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../airports.html#airlift.envs.airport.Airport" title="airlift.envs.airport.Airport"><span class="pre">Airport</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_available</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soft_deadline_multiplier</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hard_deadline_multiplier</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Cargo</span></span></span><a class="headerlink" href="#airlift.envs.generators.cargo_generators.StaticCargoGenerator.generate_cargo_order" title="Permalink to this definition">#</a></dt>
 <dd><p>Generates cargo orders based on several parameters. Takes into account if we are running a scenario with a
 concentrated drop off or pick up location as well as non-concentrated locations that utilize the entire map.
 The dynamic cargo generator accesses this function without going through the above generate_order function.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>cargo_id</strong> – Incremental count of what cargo to create</p></li>
 <li><p><strong>drop_off_airports</strong> – List that contains all the airports that are drop off locations’</p></li>
 <li><p><strong>pick_up_airports</strong> – List that contains all the airports that are pick up locations</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><cite>cargo_task</cite> : A fully generated cargo task</p>
 </dd>
 </dl>
@@ -584,7 +585,7 @@ The dynamic cargo generator accesses this function without going through the abo
 <span class="sig-name descname"><span class="pre">generate_initial_orders</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#airlift.envs.generators.cargo_generators.StaticCargoGenerator.generate_initial_orders" title="Permalink to this definition">#</a></dt>
 <dd><p>Generates static cargo orders upon creation of the environment.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><cite>order_list</cite> - Returns a set that contains all the (static) generated cargo orders</p>
 </dd>
 </dl>
@@ -607,7 +608,7 @@ The dynamic cargo generator accesses this function without going through the abo
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./chapters/API/generators"
+            path: "./chapters\API\generators"
         },
         predefinedOutput: true
     }

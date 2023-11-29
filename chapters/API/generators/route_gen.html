@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Route Generators &#8212; Airlift Challenge v1.0.2 Documentation</title>
+    <title>Route Generators &#8212; Airlift Challenge v2.0 Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -37,6 +37,7 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
@@ -59,7 +60,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="World Generators" href="world_gen.html" />
     <link rel="prev" title="Map Generators" href="map_gen.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -96,7 +97,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <h1 class="site-logo" id="site-title">Airlift Challenge v1.0.2 Documentation</h1>
+      <h1 class="site-logo" id="site-title">Airlift Challenge v2.0 Documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
@@ -409,14 +410,14 @@ title="Print to PDF"
               <div>
                 
   <section id="module-airlift.envs.generators.route_generators">
-<span id="route-generators"></span><h1>Route Generators<a class="headerlink" href="#module-airlift.envs.generators.route_generators" title="Permalink to this headline">#</a></h1>
+<span id="route-generators"></span><h1>Route Generators<a class="headerlink" href="#module-airlift.envs.generators.route_generators" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="airlift.envs.generators.route_generators.HardcodedRouteGenerator">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">airlift.envs.generators.route_generators.</span></span><span class="sig-name descname"><span class="pre">HardcodedRouteGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">routeinfo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.generators.route_generators.HardcodedRouteGenerator" title="Permalink to this definition">#</a></dt>
 <dd><p>Can be utilized to hard code a route between nodes. This class is primarily used for testing purposes.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="airlift.envs.generators.route_generators.HardcodedRouteGenerator.generate">
-<span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">routemap</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../route_map.html#airlift.envs.route_map.RouteMap" title="airlift.envs.route_map.RouteMap"><span class="pre">airlift.envs.route_map.RouteMap</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.generators.route_generators.HardcodedRouteGenerator.generate" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">routemap</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../route_map.html#airlift.envs.route_map.RouteMap" title="airlift.envs.route_map.RouteMap"><span class="pre">RouteMap</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.generators.route_generators.HardcodedRouteGenerator.generate" title="Permalink to this definition">#</a></dt>
 <dd><p>Adds edges to nodes based upon the information passed to it using the initializer</p>
 </dd></dl>
 
@@ -439,7 +440,7 @@ title="Print to PDF"
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="airlift.envs.generators.route_generators.RouteInfo.malfunction_generator">
-<span class="sig-name descname"><span class="pre">malfunction_generator</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="event_interval_gen.html#airlift.envs.events.event_interval_generator.EventIntervalGenerator" title="airlift.envs.events.event_interval_generator.EventIntervalGenerator"><span class="pre">airlift.envs.events.event_interval_generator.EventIntervalGenerator</span></a></em><a class="headerlink" href="#airlift.envs.generators.route_generators.RouteInfo.malfunction_generator" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">malfunction_generator</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="event_interval_gen.html#airlift.envs.events.event_interval_generator.EventIntervalGenerator" title="airlift.envs.events.event_interval_generator.EventIntervalGenerator"><span class="pre">EventIntervalGenerator</span></a></em><a class="headerlink" href="#airlift.envs.generators.route_generators.RouteInfo.malfunction_generator" title="Permalink to this definition">#</a></dt>
 <dd><p>Alias for field number 5</p>
 </dd></dl>
 
@@ -478,7 +479,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./chapters/API/generators"
+            path: "./chapters\API\generators"
         },
         predefinedOutput: true
     }

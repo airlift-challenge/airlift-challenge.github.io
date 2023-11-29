@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Solutions &#8212; Airlift Challenge v1.0.2 Documentation</title>
+    <title>Solutions &#8212; Airlift Challenge v2.0 Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -37,6 +37,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -59,7 +60,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Essential API" href="../API/essential_api.html" />
     <link rel="prev" title="Generating Scenarios" href="../ch5_gen/main.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -96,7 +97,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <h1 class="site-logo" id="site-title">Airlift Challenge v1.0.2 Documentation</h1>
+      <h1 class="site-logo" id="site-title">Airlift Challenge v2.0 Documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -466,23 +467,23 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="solutions">
-<span id="sec-solutions"></span><h1>Solutions<a class="headerlink" href="#solutions" title="Permalink to this headline">#</a></h1>
+<span id="sec-solutions"></span><h1>Solutions<a class="headerlink" href="#solutions" title="Permalink to this heading">#</a></h1>
 <section id="vignette-the-need-for-cooperation">
-<h2>Vignette: The need for cooperation<a class="headerlink" href="#vignette-the-need-for-cooperation" title="Permalink to this headline">#</a></h2>
+<h2>Vignette: The need for cooperation<a class="headerlink" href="#vignette-the-need-for-cooperation" title="Permalink to this heading">#</a></h2>
 <p>Due to the complexity present in multi-agent environments, the optimal policy of an agent depends not only on the environment, but on the policies of other agents as well.
 It is important that agents are capable of coordinating to find a good solution <span id="id1">[<a class="reference internal" href="../misc/bibliography.html#id7" title="Ann Nowé, Peter Vrancx, and Yann-Michaël De Hauwere. Game Theory and Multi-agent Reinforcement Learning, pages 441–470. Springer Berlin Heidelberg, Berlin, Heidelberg, 2012. URL: https://doi.org/10.1007/978-3-642-27645-3_14.">10</a>]</span>.
-As an illustrative example, consider the scenario shown in <a class="reference internal" href="#fig-bottleneck"><span class="std std-numref">Fig. 6</span></a>(a).
+As an illustrative example, consider the scenario shown in <a class="reference internal" href="#fig-bottleneck"><span class="std std-numref">Fig. 2</span></a>(a).
 Cargo must be picked up from airports 1 and 2 and delivered to airport 3.
 An optimal policy may route the cargo between airports 1 and 3 via airport 4 (where the airplane can be refueled).
 Likewise, it may route cargo between airports 2 and 3 via airport 0.
-Now, suppose that the route between airports 4 and 3 become unavailable for a long duration due to a disruption, as shown in <a class="reference internal" href="#fig-bottleneck"><span class="std std-numref">Fig. 6</span></a>(b).
+Now, suppose that the route between airports 4 and 3 become unavailable for a long duration due to a disruption, as shown in <a class="reference internal" href="#fig-bottleneck"><span class="std std-numref">Fig. 2</span></a>(b).
 In this case, since airport 4 no longer provides a viable route to the destination, a new policy for airplanes at airport 1 may route them through airport 0.
 However, this introduces a bottleneck at Airport 0.
-If we instead re-calculate the optimal policy for all planes, we may find a new policy as shown in <a class="reference internal" href="#fig-bottleneck"><span class="std std-numref">Fig. 6</span></a>©.
+If we instead re-calculate the optimal policy for all planes, we may find a new policy as shown in <a class="reference internal" href="#fig-bottleneck"><span class="std std-numref">Fig. 2</span></a>©.
 This policy takes into account the interaction of the planes at airport 0, and opts to re-route the cargo from airport 2 through airport 5 instead of airport 0.</p>
 <figure class="align-left" id="fig-bottleneck">
 <img alt="../../_images/BottleneckScenario.svg" src="../../_images/BottleneckScenario.svg" /><figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Example of a bottleneck scenario that may be faced by an algorithm.
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Example of a bottleneck scenario that may be faced by an algorithm.
 (a) An optimal policy under normal conditions.
 (b) A disruption removes one of the routes, and airplanes from airport 1 are re-routed through airport 0, causing a bottleneck.
 © An optimal policy may re-route airplanes from airport 1 through airport 5 to eliminate the bottleneck.</span><a class="headerlink" href="#fig-bottleneck" title="Permalink to this image">#</a></p>
@@ -490,7 +491,7 @@ This policy takes into account the interaction of the planes at airport 0, and o
 </figure>
 </section>
 <section id="related-work">
-<h2>Related Work<a class="headerlink" href="#related-work" title="Permalink to this headline">#</a></h2>
+<h2>Related Work<a class="headerlink" href="#related-work" title="Permalink to this heading">#</a></h2>
 <p>The movement of cargo is typically formulated as a Pickup and Delivery Problem (PDP) where the goal is to pick up and deliver items, often within a specified time window <span id="id2">[<a class="reference internal" href="../misc/bibliography.html#id9" title="Gerardo Berbeglia, Jean-François Cordeau, and Gilbert Laporte. Dynamic pickup and delivery problems. European Journal of Operational Research, 202(1):8-15, 2010. URL: https://www.sciencedirect.com/science/article/pii/S0377221709002999, doi:https://doi.org/10.1016/j.ejor.2009.04.024.">3</a>]</span>.
 A number of works consider the problem in the specific context of air cargo delivery (see Section 3.1.3 of <span id="id3">[<a class="reference internal" href="../misc/bibliography.html#id8" title="Bo Feng, Yanzhi Li, and Zuo-Jun Max Shen. Air cargo operations: literature review and comparison with practices. Transportation Research Part C: Emerging Technologies, 56:263-280, 2015. URL: https://www.sciencedirect.com/science/article/pii/S0968090X15001175.">7</a>]</span> for a survey of the fleet planning and flight scheduling literature).
 The problem is often formulated as a Mixed Integer Linear Program (MILP), which optimizes over profit or cost by assigning aircraft and routes with which to transport cargo.
@@ -514,7 +515,7 @@ There is hope that RL algorithms may be better able to prevent catastrophic resu
 We expect that the development of a light-weight surrogate environment will facilitate application of these new techniques to the airlift planning problem.</p>
 </section>
 <section id="baselines">
-<h2>Baselines<a class="headerlink" href="#baselines" title="Permalink to this headline">#</a></h2>
+<h2>Baselines<a class="headerlink" href="#baselines" title="Permalink to this heading">#</a></h2>
 <p>We include the following two <a class="reference external" href="https://github.com/airlift-challenge/airlift/blob/main/airlift/solutions/baselines.py">baselines</a>:</p>
 <ol class="simple">
 <li><p><em>Random Agent</em>.
@@ -540,7 +541,7 @@ If the airplane cannot bring the cargo all the way to its destination, the cargo
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./chapters/ch6_solutions"
+            path: "./chapters\ch6_solutions"
         },
         predefinedOutput: true
     }

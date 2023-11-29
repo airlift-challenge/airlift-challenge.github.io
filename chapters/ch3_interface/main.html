@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Simulator Interface &#8212; Airlift Challenge v1.0.2 Documentation</title>
+    <title>Simulator Interface &#8212; Airlift Challenge v2.0 Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -37,6 +37,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -61,7 +62,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Competition" href="../ch4_competition/main.html" />
     <link rel="prev" title="Model" href="../ch2_model/main.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -98,7 +99,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <h1 class="site-logo" id="site-title">Airlift Challenge v1.0.2 Documentation</h1>
+      <h1 class="site-logo" id="site-title">Airlift Challenge v2.0 Documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -488,7 +489,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="simulator-interface">
-<span id="sec-interface"></span><h1>Simulator Interface<a class="headerlink" href="#simulator-interface" title="Permalink to this headline">#</a></h1>
+<span id="sec-interface"></span><h1>Simulator Interface<a class="headerlink" href="#simulator-interface" title="Permalink to this heading">#</a></h1>
 <p>The simulator takes the form of a cooperative multi-agent system <span id="id1">[<a class="reference internal" href="../misc/bibliography.html#id6" title="Liviu Panait and Sean Luke. Cooperative multi-agent learning: the state of the art. Autonomous agents and multi-agent systems, 11(3):387–434, 2005.">11</a>]</span> implemented using the <a class="reference external" href="https://www.gymlibrary.dev/">OpenAI Gym</a> and <a class="reference external" href="https://www.pettingzoo.ml/">Petting Zoo interfaces</a>.
 The environment is advanced by calling the environment step method:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">obs</span><span class="p">,</span> <span class="n">rewards</span><span class="p">,</span> <span class="n">dones</span><span class="p">,</span> <span class="n">infos</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">actions</span><span class="p">)</span>
@@ -499,16 +500,16 @@ It then returns an observation of the environment (which is customizable by the 
 All variables are <code class="docutils literal notranslate"><span class="pre">obs</span></code>, <code class="docutils literal notranslate"><span class="pre">rewards</span></code>, <code class="docutils literal notranslate"><span class="pre">dones</span></code>, <code class="docutils literal notranslate"><span class="pre">infos</span></code>, and <code class="docutils literal notranslate"><span class="pre">actions</span></code> are dictionaries which are indexed by agent ID.
 A list of agent IDs can be obtained from <code class="docutils literal notranslate"><span class="pre">env.agents</span></code>.</p>
 <section id="action-space">
-<span id="id2"></span><h2>Action Space<a class="headerlink" href="#action-space" title="Permalink to this headline">#</a></h2>
+<span id="id2"></span><h2>Action Space<a class="headerlink" href="#action-space" title="Permalink to this heading">#</a></h2>
 <p>The simulator implements incorporates aspects of the OpenAI Gym and Petting Zoo “Parallel Environment” reinforcement learning interfaces.
 The action space is defined in <a class="reference internal" href="#tab-actionspace"><span class="std std-numref">Table 4</span></a>. This space adheres to the OpenAI Gym space standard, and incorporates a custom-defined “List” space.
 The actions are designed such that the agent does not need to provide fine-grained control of the airplane, but rather can provide a list of “orders” for the airplane to follow at each airport.
-For example, by issuing a single action, the agent can order an airplane to (1) load cargo, (2) unload cargo, (3) priority and (4) take off for a destination when done processing.
+For example, by issuing a single action, the agent can order an airplane to (1) load cargo, (2) unload cargo, (3) set priority and (4) take off for a destination when done processing.
 At subsequent steps, the airplane state machine will execute the action automatically, and the agent need not issue a new action until the airplane reaches its next destination (or a change in the environment requires an updated action plan).
 As the state machine proceeds, it will automatically update the current action (e.g. emptying the <code class="docutils literal notranslate"><span class="pre">cargo_to_load</span></code> list once the cargo has started loading).</p>
 <p>Priority of the airplane effects the processing queue. This priority can be updated at every time-step, but cannot be updated after an agent enters the queue for processing. Once
 processing is complete, the priority can then be updated again. The number of priorities allowed in the action space is equal to the total number of agents within the scenario.</p>
-<table class="colwidths-given table" id="tab-actionspace">
+<table class="table" id="tab-actionspace">
 <caption><span class="caption-number">Table 4 </span><span class="caption-text">Action Space</span><a class="headerlink" href="#tab-actionspace" title="Permalink to this table">#</a></caption>
 <colgroup>
 <col style="width: 20%" />
@@ -557,13 +558,13 @@ num_agents in scenario = Lowest priority.</p></td>
 </table>
 </section>
 <section id="observation-space">
-<h2>Observation Space<a class="headerlink" href="#observation-space" title="Permalink to this headline">#</a></h2>
+<h2>Observation Space<a class="headerlink" href="#observation-space" title="Permalink to this heading">#</a></h2>
 <p><a class="reference internal" href="#tab-obsspace"><span class="std std-numref">Table 5</span></a> shows the observation space itself.
 The observation contains information specific to an agent, whereas the “globalstate” entry contains information global to all agents (including the observations of all other agents).
-Note that the “globalstate” value is the same as that returned by the environment’s <code class="docutils literal notranslate"><span class="pre">state()</span></code> method.</p>
-<p><a class="reference internal" href="#tab-cargoinfo"><span class="std std-numref">Table 6</span></a> and <a class="reference internal" href="#tab-actionspace"><span class="std std-numref">Table 4</span></a> describe subspaces that are used in the observation, and
-We use a custom space named DiGraph which represents a NetworkX directed graph.</p>
-<table class="colwidths-given table" id="tab-obsspace">
+Note that the “globalstate” value is the same as that returned by the environment’s <code class="docutils literal notranslate"><span class="pre">state()</span></code> method.
+<a class="reference internal" href="#tab-cargoinfo"><span class="std std-numref">Table 6</span></a> and <a class="reference internal" href="#tab-globalspace"><span class="std std-numref">Table 7</span></a> describe subspaces that are used in the observation, and
+we use a custom space named DiGraph which represents a NetworkX directed graph.</p>
+<table class="table" id="tab-obsspace">
 <caption><span class="caption-number">Table 5 </span><span class="caption-text">Observation Space (Dictionary). Provides observation for Airplane/Agent <span class="math notranslate nohighlight">\(p \in \Airplanes\)</span></span><a class="headerlink" href="#tab-obsspace" title="Permalink to this table">#</a></caption>
 <colgroup>
 <col style="width: 25%" />
@@ -632,7 +633,7 @@ We use a custom space named DiGraph which represents a NetworkX directed graph.<
 </tbody>
 </table>
 <p>The state space uses the following named tuple to describe cargo:</p>
-<table class="colwidths-given table" id="tab-cargoinfo">
+<table class="table" id="tab-cargoinfo">
 <caption><span class="caption-number">Table 6 </span><span class="caption-text">CargoInfo Space (NamedTuple). Describes an individual piece of cargo <span class="math notranslate nohighlight">\(c \in \Cargos\)</span>.</span><a class="headerlink" href="#tab-cargoinfo" title="Permalink to this table">#</a></caption>
 <colgroup>
 <col style="width: 25%" />
@@ -680,7 +681,7 @@ We use a custom space named DiGraph which represents a NetworkX directed graph.<
 </tr>
 </tbody>
 </table>
-<table class="colwidths-given table" id="tab-globalspace">
+<table class="table" id="tab-globalspace">
 <caption><span class="caption-number">Table 7 </span><span class="caption-text">StateSpace (Dictionary) used by observation space. This contains global state that is common to all agents.</span><a class="headerlink" href="#tab-globalspace" title="Permalink to this table">#</a></caption>
 <colgroup>
 <col style="width: 25%" />
@@ -712,7 +713,7 @@ We use a custom space named DiGraph which represents a NetworkX directed graph.<
 </tr>
 </tbody>
 </table>
-<table class="colwidths-given table" id="tab-scenariospace">
+<table class="table" id="tab-scenariospace">
 <caption><span class="caption-number">Table 8 </span><span class="caption-text">ScenarioSpace (NamedTuple) used by observation space. This contains general information about the scenario itself.</span><a class="headerlink" href="#tab-scenariospace" title="Permalink to this table">#</a></caption>
 <colgroup>
 <col style="width: 25%" />
@@ -734,9 +735,9 @@ We use a custom space named DiGraph which represents a NetworkX directed graph.<
 </table>
 </section>
 <section id="reward">
-<h2>Reward<a class="headerlink" href="#reward" title="Permalink to this headline">#</a></h2>
+<h2>Reward<a class="headerlink" href="#reward" title="Permalink to this heading">#</a></h2>
 <p>The reward signal is shown in <a class="reference internal" href="#tab-rewards"><span class="std std-numref">Table 9</span></a>, and follows directly from the objective function defined in <em>(4)</em>.</p>
-<table class="colwidths-given table" id="tab-rewards">
+<table class="table" id="tab-rewards">
 <caption><span class="caption-number">Table 9 </span><span class="caption-text">Rewards given at each step of the simulation.</span><a class="headerlink" href="#tab-rewards" title="Permalink to this table">#</a></caption>
 <colgroup>
 <col style="width: 75%" />
@@ -761,10 +762,10 @@ We use a custom space named DiGraph which represents a NetworkX directed graph.<
 </table>
 </section>
 <section id="info-dictionary">
-<h2>Info Dictionary<a class="headerlink" href="#info-dictionary" title="Permalink to this headline">#</a></h2>
+<h2>Info Dictionary<a class="headerlink" href="#info-dictionary" title="Permalink to this heading">#</a></h2>
 <p>The step method returns an <code class="docutils literal notranslate"><span class="pre">info</span></code> dictionary with an entry for each agent.
 The value is a dictionary with the following entries:</p>
-<table class="colwidths-given table" id="tab-info">
+<table class="table" id="tab-info">
 <caption><span class="caption-number">Table 10 </span><span class="caption-text">Info dictionary.</span><a class="headerlink" href="#tab-info" title="Permalink to this table">#</a></caption>
 <colgroup>
 <col style="width: 25%" />
@@ -792,7 +793,7 @@ This will occur when the solution policy takes too long to issue the next action
 </table>
 </section>
 <section id="stopping-criteria">
-<h2>Stopping criteria<a class="headerlink" href="#stopping-criteria" title="Permalink to this headline">#</a></h2>
+<h2>Stopping criteria<a class="headerlink" href="#stopping-criteria" title="Permalink to this heading">#</a></h2>
 <p>The episode ends when all cargo is either (1) delivered or (2) missed, and when there is no more cargo to be generated by the dynamic cargo generator.</p>
 </section>
 </section>
@@ -810,7 +811,7 @@ This will occur when the solution policy takes too long to issue the next action
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./chapters/ch3_interface"
+            path: "./chapters\ch3_interface"
         },
         predefinedOutput: true
     }

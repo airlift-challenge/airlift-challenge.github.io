@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Event Interval Generator &#8212; Airlift Challenge v1.0.2 Documentation</title>
+    <title>Event Interval Generator &#8212; Airlift Challenge v2.0 Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -37,6 +37,7 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
@@ -59,7 +60,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Contact Us" href="../../misc/contact.html" />
     <link rel="prev" title="Event Generator" href="event_gen.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -96,7 +97,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <h1 class="site-logo" id="site-title">Airlift Challenge v1.0.2 Documentation</h1>
+      <h1 class="site-logo" id="site-title">Airlift Challenge v2.0 Documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
@@ -409,7 +410,7 @@ title="Print to PDF"
               <div>
                 
   <section id="module-airlift.envs.events.event_interval_generator">
-<span id="event-interval-generator"></span><h1>Event Interval Generator<a class="headerlink" href="#module-airlift.envs.events.event_interval_generator" title="Permalink to this headline">#</a></h1>
+<span id="event-interval-generator"></span><h1>Event Interval Generator<a class="headerlink" href="#module-airlift.envs.events.event_interval_generator" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="airlift.envs.events.event_interval_generator.EventInterval">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">airlift.envs.events.event_interval_generator.</span></span><span class="sig-name descname"><span class="pre">EventInterval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_broken_steps</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.events.event_interval_generator.EventInterval" title="Permalink to this definition">#</a></dt>
@@ -430,10 +431,10 @@ This generator is based upon the Flatland Train Malfunction generator and uses p
 EventGenerator class.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="airlift.envs.events.event_interval_generator.EventIntervalGenerator.generate">
-<span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#airlift.envs.events.event_interval_generator.EventInterval" title="airlift.envs.events.event_interval_generator.EventInterval"><span class="pre">airlift.envs.events.event_interval_generator.EventInterval</span></a></span></span><a class="headerlink" href="#airlift.envs.events.event_interval_generator.EventIntervalGenerator.generate" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#airlift.envs.events.event_interval_generator.EventInterval" title="airlift.envs.events.event_interval_generator.EventInterval"><span class="pre">EventInterval</span></a></span></span><a class="headerlink" href="#airlift.envs.events.event_interval_generator.EventIntervalGenerator.generate" title="Permalink to this definition">#</a></dt>
 <dd><p>Generates an Event with an Interval from min duration to max duration</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><cite>EventInterval</cite>: a NamedTuple that contains the number of steps something will become unavailable for. The number of
 steps is 0 of an interval wasn’t generated.</p>
 </dd>
@@ -451,7 +452,7 @@ steps is 0 of an interval wasn’t generated.</p>
 <span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.events.event_interval_generator.NoEventIntervalGen.generate" title="Permalink to this definition">#</a></dt>
 <dd><p>Generates an Event with an Interval from min duration to max duration</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><cite>EventInterval</cite>: a NamedTuple that contains the number of steps something will become unavailable for. The number of
 steps is 0 of an interval wasn’t generated.</p>
 </dd>
@@ -475,7 +476,7 @@ steps is 0 of an interval wasn’t generated.</p>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./chapters/API/generators"
+            path: "./chapters\API\generators"
         },
         predefinedOutput: true
     }

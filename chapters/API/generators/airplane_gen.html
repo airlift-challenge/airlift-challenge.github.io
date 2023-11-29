@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Airplane Generators &#8212; Airlift Challenge v1.0.2 Documentation</title>
+    <title>Airplane Generators &#8212; Airlift Challenge v2.0 Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -37,6 +37,7 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
@@ -59,7 +60,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Airport Generators" href="airport_gen.html" />
     <link rel="prev" title="Generators" href="generators.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -96,7 +97,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <h1 class="site-logo" id="site-title">Airlift Challenge v1.0.2 Documentation</h1>
+      <h1 class="site-logo" id="site-title">Airlift Challenge v2.0 Documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
@@ -409,7 +410,7 @@ title="Print to PDF"
               <div>
                 
   <section id="module-airlift.envs.generators.airplane_generators">
-<span id="airplane-generators"></span><h1>Airplane Generators<a class="headerlink" href="#module-airlift.envs.generators.airplane_generators" title="Permalink to this headline">#</a></h1>
+<span id="airplane-generators"></span><h1>Airplane Generators<a class="headerlink" href="#module-airlift.envs.generators.airplane_generators" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="airlift.envs.generators.airplane_generators.AirplaneGenerator">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">airlift.envs.generators.airplane_generators.</span></span><span class="sig-name descname"><span class="pre">AirplaneGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_of_agents</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.generators.airplane_generators.AirplaneGenerator" title="Permalink to this definition">#</a></dt>
@@ -417,16 +418,16 @@ title="Print to PDF"
 limitations are.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="airlift.envs.generators.airplane_generators.AirplaneGenerator.generate">
-<span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">routemap</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../route_map.html#airlift.envs.route_map.RouteMap" title="airlift.envs.route_map.RouteMap"><span class="pre">airlift.envs.route_map.RouteMap</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">airlift.envs.agents.EnvAgent</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#airlift.envs.generators.airplane_generators.AirplaneGenerator.generate" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">routemap</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../route_map.html#airlift.envs.route_map.RouteMap" title="airlift.envs.route_map.RouteMap"><span class="pre">RouteMap</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">EnvAgent</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#airlift.envs.generators.airplane_generators.AirplaneGenerator.generate" title="Permalink to this definition">#</a></dt>
 <dd><p>Generates an EnvAgent at a start location for each plane model as defined in the plane_types.py file. The function
 ensures that there is at a minimum of 2 or more connected components at an airport before placing the airplane at 
 that location. This in turn makes sure that the agent is not stuck on one single airport. The dictionary keys are 
 accessible using the plane model: Ex: 0, 1..</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>routemap</strong> – A Dictionary of DiGraphs that that contains all the routes specific plane models are able to traverse</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><cite>airplanes</cite>, A list that contains all the EnvAgents</p>
 </dd>
 </dl>
@@ -466,7 +467,7 @@ accessible using the plane model: Ex: 0, 1..</p>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./chapters/API/generators"
+            path: "./chapters\API\generators"
         },
         predefinedOutput: true
     }

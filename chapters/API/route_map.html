@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Route Map &#8212; Airlift Challenge v1.0.2 Documentation</title>
+    <title>Route Map &#8212; Airlift Challenge v2.0 Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -37,6 +37,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -59,7 +60,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Generators" href="generators/generators.html" />
     <link rel="prev" title="Local Evaluator" href="local_eval.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -96,7 +97,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <h1 class="site-logo" id="site-title">Airlift Challenge v1.0.2 Documentation</h1>
+      <h1 class="site-logo" id="site-title">Airlift Challenge v2.0 Documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -409,10 +410,10 @@ title="Print to PDF"
               <div>
                 
   <section id="module-airlift.envs.route_map">
-<span id="route-map"></span><h1>Route Map<a class="headerlink" href="#module-airlift.envs.route_map" title="Permalink to this headline">#</a></h1>
+<span id="route-map"></span><h1>Route Map<a class="headerlink" href="#module-airlift.envs.route_map" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="airlift.envs.route_map.RouteMap">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">airlift.envs.route_map.</span></span><span class="sig-name descname"><span class="pre">RouteMap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">airlift.envs.world_map.Map</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">airports</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="airports.html#airlift.envs.airport.Airport" title="airlift.envs.airport.Airport"><span class="pre">airlift.envs.airport.Airport</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane_types</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Collection</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="plane_types.html#airlift.envs.plane_types.PlaneType" title="airlift.envs.plane_types.PlaneType"><span class="pre">airlift.envs.plane_types.PlaneType</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_off_area</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pick_up_area</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.route_map.RouteMap" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">airlift.envs.route_map.</span></span><span class="sig-name descname"><span class="pre">RouteMap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Map</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">airports</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="airports.html#airlift.envs.airport.Airport" title="airlift.envs.airport.Airport"><span class="pre">Airport</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane_types</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Collection</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="plane_types.html#airlift.envs.plane_types.PlaneType" title="airlift.envs.plane_types.PlaneType"><span class="pre">PlaneType</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_off_area</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pick_up_area</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#airlift.envs.route_map.RouteMap" title="Permalink to this definition">#</a></dt>
 <dd><p>Defines the graph network between the Airports for each airplane model. Creates and controls all the edges
 as well as any malfunctions that may occur.</p>
 <dl class="py method">
@@ -423,11 +424,11 @@ as well as any malfunctions that may occur.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="airlift.envs.route_map.RouteMap.add_route">
-<span class="sig-name descname"><span class="pre">add_route</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="plane_types.html#airlift.envs.plane_types.PlaneType" title="airlift.envs.plane_types.PlaneType"><span class="pre">airlift.envs.plane_types.PlaneType</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="airports.html#airlift.envs.airport.Airport" title="airlift.envs.airport.Airport"><span class="pre">airlift.envs.airport.Airport</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="airports.html#airlift.envs.airport.Airport" title="airlift.envs.airport.Airport"><span class="pre">airlift.envs.airport.Airport</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cost</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">malfunction_generator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="generators/event_interval_gen.html#airlift.envs.events.event_interval_generator.EventIntervalGenerator" title="airlift.envs.events.event_interval_generator.EventIntervalGenerator"><span class="pre">airlift.envs.events.event_interval_generator.EventIntervalGenerator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">bidirectional</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#airlift.envs.route_map.RouteMap.add_route" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">add_route</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="plane_types.html#airlift.envs.plane_types.PlaneType" title="airlift.envs.plane_types.PlaneType"><span class="pre">PlaneType</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="airports.html#airlift.envs.airport.Airport" title="airlift.envs.airport.Airport"><span class="pre">Airport</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="airports.html#airlift.envs.airport.Airport" title="airlift.envs.airport.Airport"><span class="pre">Airport</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cost</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">malfunction_generator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="generators/event_interval_gen.html#airlift.envs.events.event_interval_generator.EventIntervalGenerator" title="airlift.envs.events.event_interval_generator.EventIntervalGenerator"><span class="pre">EventIntervalGenerator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">bidirectional</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#airlift.envs.route_map.RouteMap.add_route" title="Permalink to this definition">#</a></dt>
 <dd><p>Adds an edge between two nodes. Populates the edge with airplane model, time, cost and adds a malfunction
 object to it.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>plane_model</strong> – Airplane Model</p></li>
 <li><p><strong>airport1</strong> – From Airport</p></li>
@@ -449,16 +450,16 @@ object to it.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="airlift.envs.route_map.RouteMap.get_available_routes">
-<span class="sig-name descname"><span class="pre">get_available_routes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="airports.html#airlift.envs.airport.Airport" title="airlift.envs.airport.Airport"><span class="pre">airlift.envs.airport.Airport</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="plane_types.html#airlift.envs.plane_types.PlaneType" title="airlift.envs.plane_types.PlaneType"><span class="pre">airlift.envs.plane_types.PlaneType</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Collection</span></span></span><a class="headerlink" href="#airlift.envs.route_map.RouteMap.get_available_routes" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_available_routes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="airports.html#airlift.envs.airport.Airport" title="airlift.envs.airport.Airport"><span class="pre">Airport</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="plane_types.html#airlift.envs.plane_types.PlaneType" title="airlift.envs.plane_types.PlaneType"><span class="pre">PlaneType</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Collection</span></span></span><a class="headerlink" href="#airlift.envs.route_map.RouteMap.get_available_routes" title="Permalink to this definition">#</a></dt>
 <dd><p>Gets all available routes from an Airport Node to ones it can directly travel to.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>source</strong> – Source Airport</p></li>
 <li><p><strong>plane_model</strong> – Airplane Model</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><cite>frozenset</cite> : a frozenset that contains what routes are disabled/malfunctioning</p>
 </dd>
 </dl>
@@ -466,17 +467,17 @@ object to it.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="airlift.envs.route_map.RouteMap.get_flight_cost">
-<span class="sig-name descname"><span class="pre">get_flight_cost</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="airports.html#airlift.envs.airport.Airport" title="airlift.envs.airport.Airport"><span class="pre">airlift.envs.airport.Airport</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="airports.html#airlift.envs.airport.Airport" title="airlift.envs.airport.Airport"><span class="pre">airlift.envs.airport.Airport</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="plane_types.html#airlift.envs.plane_types.PlaneType" title="airlift.envs.plane_types.PlaneType"><span class="pre">airlift.envs.plane_types.PlaneType</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#airlift.envs.route_map.RouteMap.get_flight_cost" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_flight_cost</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="airports.html#airlift.envs.airport.Airport" title="airlift.envs.airport.Airport"><span class="pre">Airport</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="airports.html#airlift.envs.airport.Airport" title="airlift.envs.airport.Airport"><span class="pre">Airport</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="plane_types.html#airlift.envs.plane_types.PlaneType" title="airlift.envs.plane_types.PlaneType"><span class="pre">PlaneType</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#airlift.envs.route_map.RouteMap.get_flight_cost" title="Permalink to this definition">#</a></dt>
 <dd><p>Gets the flight cost associated with traversing from start to end airport.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>start</strong> – Starting Airport</p></li>
 <li><p><strong>end</strong> – Ending Airport</p></li>
 <li><p><strong>plane</strong> – Airplane Model</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><cite>flight_distance</cite> : Returns the distance (cost) associated with traversing from start to end node</p>
 </dd>
 </dl>
@@ -484,17 +485,17 @@ object to it.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="airlift.envs.route_map.RouteMap.get_flight_time">
-<span class="sig-name descname"><span class="pre">get_flight_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="airports.html#airlift.envs.airport.Airport" title="airlift.envs.airport.Airport"><span class="pre">airlift.envs.airport.Airport</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="airports.html#airlift.envs.airport.Airport" title="airlift.envs.airport.Airport"><span class="pre">airlift.envs.airport.Airport</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="plane_types.html#airlift.envs.plane_types.PlaneType" title="airlift.envs.plane_types.PlaneType"><span class="pre">airlift.envs.plane_types.PlaneType</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#airlift.envs.route_map.RouteMap.get_flight_time" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_flight_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="airports.html#airlift.envs.airport.Airport" title="airlift.envs.airport.Airport"><span class="pre">Airport</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="airports.html#airlift.envs.airport.Airport" title="airlift.envs.airport.Airport"><span class="pre">Airport</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="plane_types.html#airlift.envs.plane_types.PlaneType" title="airlift.envs.plane_types.PlaneType"><span class="pre">PlaneType</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#airlift.envs.route_map.RouteMap.get_flight_time" title="Permalink to this definition">#</a></dt>
 <dd><p>Gets the flight time associated with traversing from start to end Airport.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>start</strong> – Starting Airport</p></li>
 <li><p><strong>end</strong> – Ending Airport</p></li>
 <li><p><strong>plane</strong> – Airplane Model</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><cite>flight_time</cite> : Flight Time associated with traversing from start to end node</p>
 </dd>
 </dl>
@@ -502,17 +503,17 @@ object to it.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="airlift.envs.route_map.RouteMap.get_malfunction_time">
-<span class="sig-name descname"><span class="pre">get_malfunction_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="plane_types.html#airlift.envs.plane_types.PlaneType" title="airlift.envs.plane_types.PlaneType"><span class="pre">airlift.envs.plane_types.PlaneType</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#airlift.envs.route_map.RouteMap.get_malfunction_time" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_malfunction_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="plane_types.html#airlift.envs.plane_types.PlaneType" title="airlift.envs.plane_types.PlaneType"><span class="pre">PlaneType</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#airlift.envs.route_map.RouteMap.get_malfunction_time" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the time remaining on a route being offline.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>source</strong> – Starting Airport</p></li>
 <li><p><strong>destination</strong> – Destination Airport</p></li>
 <li><p><strong>plane_type</strong> – Airplane Model</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><cite>int</cite>: An integer that contains how long (in steps) an edge is malfunctioning for</p>
 </dd>
 </dl>
@@ -523,7 +524,7 @@ object to it.</p>
 <span class="sig-name descname"><span class="pre">get_total_malfunctions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#airlift.envs.route_map.RouteMap.get_total_malfunctions" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns total malfunctions in episode.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><cite>int</cite> : An integer containing how many malfunctions have occurred</p>
 </dd>
 </dl>
@@ -531,17 +532,17 @@ object to it.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="airlift.envs.route_map.RouteMap.reachable">
-<span class="sig-name descname"><span class="pre">reachable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="airports.html#airlift.envs.airport.Airport" title="airlift.envs.airport.Airport"><span class="pre">airlift.envs.airport.Airport</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="airports.html#airlift.envs.airport.Airport" title="airlift.envs.airport.Airport"><span class="pre">airlift.envs.airport.Airport</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="plane_types.html#airlift.envs.plane_types.PlaneType" title="airlift.envs.plane_types.PlaneType"><span class="pre">airlift.envs.plane_types.PlaneType</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#airlift.envs.route_map.RouteMap.reachable" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">reachable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="airports.html#airlift.envs.airport.Airport" title="airlift.envs.airport.Airport"><span class="pre">Airport</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="airports.html#airlift.envs.airport.Airport" title="airlift.envs.airport.Airport"><span class="pre">Airport</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="plane_types.html#airlift.envs.plane_types.PlaneType" title="airlift.envs.plane_types.PlaneType"><span class="pre">PlaneType</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#airlift.envs.route_map.RouteMap.reachable" title="Permalink to this definition">#</a></dt>
 <dd><p>Checks to see if an airport is reachable from the current airport.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>destination</strong> – Destination Airport</p></li>
 <li><p><strong>source</strong> – Starting Airport</p></li>
 <li><p><strong>plane_type</strong> – Airplane Model</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><cite>boolean</cite> : Returns True if an airplane can travel directly from source to destination</p>
 </dd>
 </dl>
@@ -571,7 +572,7 @@ unavailable</p>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./chapters/API"
+            path: "./chapters\API"
         },
         predefinedOutput: true
     }

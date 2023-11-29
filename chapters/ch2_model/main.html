@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Model &#8212; Airlift Challenge v1.0.2 Documentation</title>
+    <title>Model &#8212; Airlift Challenge v2.0 Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -37,6 +37,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -61,7 +62,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Simulator Interface" href="../ch3_interface/main.html" />
     <link rel="prev" title="Getting Started" href="../ch1_getting_started/main.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -98,7 +99,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <h1 class="site-logo" id="site-title">Airlift Challenge v1.0.2 Documentation</h1>
+      <h1 class="site-logo" id="site-title">Airlift Challenge v2.0 Documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -478,9 +479,9 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="model">
-<span id="sec-model"></span><h1>Model<a class="headerlink" href="#model" title="Permalink to this headline">#</a></h1>
+<span id="sec-model"></span><h1>Model<a class="headerlink" href="#model" title="Permalink to this heading">#</a></h1>
 <section id="definitions">
-<h2>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">#</a></h2>
+<h2>Definitions<a class="headerlink" href="#definitions" title="Permalink to this heading">#</a></h2>
 <p>The sets and their associated parameters are shown in <a class="reference internal" href="#tab-sets"><span class="std std-numref">Table 1</span></a>.
 We elaborate on a few aspects of this model.
 If the working capacity at an airport is reached, then a plane will wait for an open slot.
@@ -491,7 +492,7 @@ an agent is assigned when giving it an action. Priority replaces process, and ag
 Priority dictate in what order airplanes will be processed when they land at an airport. The priority cannot
 be updated when an agent has been placed in the queue, and the lowest valued entry is retrieved first. The number of priorities allowed within the action space is set to the number of agents in a scenario. The implementation of the queue uses the PriortyQueue class and more information on it
 can be found at <a class="reference external" href="https://docs.python.org/3/library/queue.html">https://docs.python.org/3/library/queue.html</a>.</p>
-<table class="colwidths-given table" id="tab-sets">
+<table class="table" id="tab-sets">
 <caption><span class="caption-number">Table 1 </span><span class="caption-text">Sets and parameters</span><a class="headerlink" href="#tab-sets" title="Permalink to this table">#</a></caption>
 <colgroup>
 <col style="width: 10%" />
@@ -549,11 +550,11 @@ In practice, we will have a small number of airplane types which will have share
 </table>
 </section>
 <section id="dynamic-features">
-<h2>Dynamic Features<a class="headerlink" href="#dynamic-features" title="Permalink to this headline">#</a></h2>
+<h2>Dynamic Features<a class="headerlink" href="#dynamic-features" title="Permalink to this heading">#</a></h2>
 <p>We start by providing a list of variables.
 For brevity, we only identify key variables rather than provide an exhaustive list.
 Given airplane <span class="math notranslate nohighlight">\(p \in \Airplanes\)</span> and airport <span class="math notranslate nohighlight">\(a \in \Airports\)</span>, <a class="reference internal" href="#tab-state"><span class="std std-numref">Table 2</span></a> defines variables and sets that reflect the environment state at time <span class="math notranslate nohighlight">\(t\)</span>.</p>
-<table class="colwidths-given table" id="tab-state">
+<table class="table" id="tab-state">
 <caption><span class="caption-number">Table 2 </span><span class="caption-text">State</span><a class="headerlink" href="#tab-state" title="Permalink to this table">#</a></caption>
 <colgroup>
 <col style="width: 20%" />
@@ -589,7 +590,7 @@ Given airplane <span class="math notranslate nohighlight">\(p \in \Airplanes\)</
 </ul>
 <p>The available actions for each agent are shown <a class="reference internal" href="#tab-actions"><span class="std std-numref">Table 3</span></a>.
 Note that actions may become invalid as the state of the model evolves (for example an airplane’s destination may become unreachable).</p>
-<table class="colwidths-given table" id="tab-actions">
+<table class="table" id="tab-actions">
 <caption><span class="caption-number">Table 3 </span><span class="caption-text">Actions for airplane <span class="math notranslate nohighlight">\(p \in \Airplanes\)</span> at time <span class="math notranslate nohighlight">\(t\)</span></span><a class="headerlink" href="#tab-actions" title="Permalink to this table">#</a></caption>
 <colgroup>
 <col style="width: 20%" />
@@ -618,13 +619,15 @@ Note that actions may become invalid as the state of the model evolves (for exam
 </table>
 </section>
 <section id="airplane-state-machine">
-<span id="id2"></span><h2>Airplane State Machine<a class="headerlink" href="#airplane-state-machine" title="Permalink to this headline">#</a></h2>
+<span id="id2"></span><h2>Airplane State Machine<a class="headerlink" href="#airplane-state-machine" title="Permalink to this heading">#</a></h2>
 <p>A state machine for the airplane is shown in <a class="reference internal" href="#fig-state-machine"><span class="std std-numref">Fig. 1</span></a> (see a <a class="reference internal" href="../API/essential_api.html#plane-states"><span class="std std-ref">list of airplane states with descriptions</span></a>).
-Airplanes must process at least once after landing before they can before they are fully fueled and ready to take off.
+Airplanes will process before they can before they are fully fueled and ready to take off.
 Although we do not explicitly model fuel usage, the processing state introduces a wait typically needed for refueling and other maintenance.
-The agent may choose to load/unload cargo during processing, or may simply process the airplane without moving cargo.
+If airport capacity is reached, the airplanes will process according to their priority and in the order in which they arrived.
+The agent may choose to load/unload cargo during processing, or may let the airplane process without moving cargo.
 While the cargo is being loaded, it will be removed from the airport cargo set during processing, and then added to the airplane cargo set when finished.
-A similar process is followed for unloading cargo. Once ready for takeoff, the agent may choose to re-process the plane so that cargo can be loaded/unloaded (perhaps in response to recent events), or may specify a route for takeoff.
+A similar process is followed for unloading cargo. Once ready for takeoff, the airplane will take off for the specified destination.
+The agent may specify additional cargo to load/unload and the airplane will re-process.
 The airplane will only take off if the route is available, i.e., if a random event has not taken the route offline.
 While in-flight, the airplane moves at a uniform rate along the route, set according to the flight time for that plane on the given route.
 The agent cannot issue any actions during the flight. Once it reaches an airport, the airplane will land and return to a waiting state pending further action by the agent.</p>
@@ -640,7 +643,7 @@ The notation <span class="math notranslate nohighlight">\(\mathbf{A} \stackrel{\
 </figure>
 </section>
 <section id="metrics">
-<h2>Metrics<a class="headerlink" href="#metrics" title="Permalink to this headline">#</a></h2>
+<h2>Metrics<a class="headerlink" href="#metrics" title="Permalink to this heading">#</a></h2>
 <p>We base the score and reward on three raw metrics:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-missed">
 <span class="eqno">(1)<a class="headerlink" href="#equation-eqn-missed" title="Permalink to this equation">#</a></span>\[\missed
@@ -689,7 +692,7 @@ Specifically, the total scaled flight cost over all planes is defined as</p>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./chapters/ch2_model"
+            path: "./chapters\ch2_model"
         },
         predefinedOutput: true
     }
